@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  18 FEB 2016 21:39
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  8 MAR 2016 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis-usach.tex
 (./tesis-usach.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 7 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./tesis-usach.cls
 Document Class: tesis-usach 2015/12/30 Template Thesis USACH
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -1421,35 +1421,35 @@ babelbib extension \btxifchangecaseon added to \extrasenglish
 
 File: ./images/LogoUsach.png Graphic file (type QTm)
  <use  "./images/LogoUsach.png" >
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 20.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 20.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \hbox (badness 7667) in paragraph at lines 20--20
+Underfull \hbox (badness 7667) in paragraph at lines 22--22
 []|\EU1/Arial(0)/m/n/10 Tesis de grado presentada en
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
 \EU1/Arial(0)/m/n/10 conformidad a los requisitos
  []
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 20--20
+Underfull \hbox (badness 5490) in paragraph at lines 22--22
 [] \EU1/Arial(0)/m/n/10 Magíster
  []
 
@@ -1576,12 +1576,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 59.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 30145 strings out of 495563
- 514830 string characters out of 6185554
- 623566 words of memory out of 5000000
- 32857 multiletter control sequences out of 15000+600000
+ 30145 strings out of 493918
+ 514830 string characters out of 6150563
+ 627769 words of memory out of 5000000
+ 32971 multiletter control sequences out of 15000+600000
  8940 words of font info for 53 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
+ 1144 hyphenation exceptions out of 8191
  53i,11n,51p,10407b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on tesis-usach.pdf (18 pages).
