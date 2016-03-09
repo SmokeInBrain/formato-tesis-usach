@@ -3,28 +3,200 @@
 
 \section{Antecedentes y motivaci\'on}
 \label{intro:motivacion}
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i \citep{Codishetal2000}.
+El \textit{Atacama Large Millimeter/Submillimiter Array} es un instrumento revolucionario en su concepto científico, su diseño de ingeniería y su organización como un esfuerzo científico global. Construido en el desierto de Atacama de Chile septentrional a una altitud de 5.000 metros sobre el nivel del mar en el llano Chajnantor, ALMA cuenta con 66 antenas de alta precisión funcionando juntas en longitudes de onda milimétricas y submilimétricas. Gracias a su alta resolución y sensibilidad, ALMA abre una “ventana” totalmente nueva al Universo, permitiendo a los científicos desenmarañar misterios astronómicos importantes y de muchos años, explorando nuestros orígenes cósmicos \cite{alma}.
+
+ALMA captura señales del cielo con dos o más antenas combinadas con el fin de analizar  la señal y así obtener información acerca de la fuente que emite dicha señal (ya sea una estrella, planeta, galaxia u otro objeto astronómico). De esta forma, combinando las ondas de radio recolectadas por muchas antenas es posible construir una imagen. Estas imágenes son comparables con un hipotético telescopio gigante o una antena de 14.000 metros de diámetro. Como la construcción y operación de una antena de tal tamaño es técnicamente imposible, lo factible es construir muchas antenas pequeñas y combinar su salida \cite{howalma}.
+
+Sin embargo, este problema no es tan simple como parece, puesto que para la reconstrucción de las imágenes se necesitan algoritmos especializados. Actualmente existen dos grandes tipos de algoritmos: aquellos basados en transformaciones lineales y aquellos con un soporte Bayesiano, no lineal.
+
+Estos últimos tienen una base matemática sólida, pero fueron dejados de lado por su pobre rendimiento computacional. Es por ello que gracias al desarrollo del hardware, especialmente de las GPU, se pretende acelerar estos algoritmos para tener imágenes de mejor calidad en un tiempo menor al que se obtiene con soluciones secuenciales.
 
 \section{Descripci\'on del problema}
 \label{intro:problema}
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i.
+
+\subsection{Estado del arte}
+\label{sec:estadodelarte}
+
+
+La reconstrucción de imágenes usando radiointerferómetros que captan una señal del cielo a medida que rota la tierra es llamado un problema \textit{ill-posed} \cite{chen}, debido a la irregularidad de los muestreos Nyquist en el dominio de Fourier. Estos muestreos resultan en \textit{aliasing} o sobreposición de ondas en la imagen debido a los altos lóbulos laterales en la respuesta del \textit{array} de antenas. Es importante entender que obtener imágenes de alta calidad depende tanto de contar con los mejores equipos como con las mejores técnicas de reconstrucción. En ese sentido, cada generación de radiotelescopios involucra un esfuerzo en el desarrollo de \textit{hardware}. Sin embargo, para explotar las capacidades de ese \textit{hardware} se requiere una constante mejora en los enfoques de reconstrucción de imágenes para poder igualar la sensibilidad del receptor.
+
+Durante los últimos 40 años, múltiples técnicas de deconvolución han sido desarrolladas para resolver el problema mencionado anteriormente. 
+
+La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \cite{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina como \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada de Fourier inversa sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada. 
+
+\begin{equation}
+I^{D}(x,y) = \int\int V(u,v)S(u,v)e^{2\pi i(ux+vy)}\;du\,dv
+\label{eq:dirtyimage}
+\end{equation}
+
+CLEAN supone que la imagen verdadera ($I^{T}$) puede ser obtenida mediante un muestreo completo en el dominio de Fourier como en la ecuación \ref{eq:fullcoverage}.
+
+\begin{equation}
+I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
+\label{eq:fullcoverage}
+\end{equation} 
+
+Luego por el teorema de la convolución se tiene que:
+
+\begin{equation}
+I^{D}(x,y) = I^{T}(x,y) \ast B(x,y)
+\end{equation}
+
+Donde $B(x,y)$ es la PSF(\textit{point spread function}) llamada \textit{dirty beam} que se calcula de la siguiente forma:
+
+\begin{equation}
+B(x,y) = \int\int S(u,v) \exp\{2\pi j(ux+vy)\} \;du\,dv
+\end{equation}
+
+Por lo tanto, CLEAN asume que la imagen es una colección de fuentes puntuales e iterativamente remueve fuentes puntuales para crear una imagen de residuos.
+
+Sin embargo, este método posee tanto deficiencias técnicas como matemáticas. Esto debido a que CLEAN no ofrece una alternativa de regularización del problema y tampoco una interpretación estadística del resultado que entrega \cite{libroAstro2}. Además, CLEAN no tiene una convergencia definida por lo que debe iterarse según la apreciación que el usuario tiene de la imagen. Además, el problema de la reconstrucción de una imagen consiste en seleccionar una solución de muchas posibles y CLEAN sólo selecciona una probable imagen de un conjunto de soluciones factibles.
+ 
+Otra técnica de deconvolución importante es el método de máxima entropía (MEM), que consiste en seleccionar una imagen que se ajuste a las visibilidades observadas dentro de un nivel de ruido y cuyos píxeles satisfagan la restricción de máxima entropía.
+
+Esta técnica ha sido modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Estas formas fueron propuestas en \cite{FRIEDEN:72, themaxen, memsan, daddario}. Por ejemplo, \cite{FRIEDEN:72} y \cite{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en este trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$. En \cite{memsan} y \cite{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$.
+
+Por otro lado, tomando en cuenta que MEM es un problema no lineal, Cornwell y Evans \cite{smemda} modifican el algoritmo de minimización de MEM usando Newton-Raphson.
+
+Si bien MEM produce una imagen positiva en un rango definido de píxeles haciendo que la imagen final sea suave y que tenga una super-resolución en brillos y objetos aislados, al ser un problema no lineal, su costo en tiempo computacional es muy alto \cite{libroAstro2}.
+
+%En ese sentido, esto es un problema, puesto que los astrónomos desean tener los datos en un tiempo acotado para poder observarlos, si bien CLEAN cumple con esto, se llega a la pregunta de ¿Qué tan cierto es lo que se está observando? Esto puede responderse sólo con un enfoque matemático y estadístico que puede ser llevado a cabo por el algoritmo iterativo MEM.
+
+
+
+Más allá de estas dos técnicas, existen otros algoritmos que no son tan famosos en las astronomía. Por ejemplo, han sido desarrollada una técnica de mínimos cuadrados globales no-negativos \textit{Global nonnegative least squares}(LS) propuesta por Briggs \cite{briggs1995}. Esto es una técnica basada en matrices paramétricas como la de mínima varianza (\textit{LS minimum variance imaging}, LS-MVI) \cite{Lesheradioastronomical}, y por último una técnica de máxima verosimilitud \textit{Maximum likelihood} \cite{BenDavid:2008ff}.
+
+Por otro lado, las tarjetas gráficas, o GPU, son \textit{hardware} que durante los últimos años han pasado de ser de propósito particular, es decir, sólo útil para juegos, películas 3D e interfaces gráficas, a ser de propósito general (GPGPU). Esto gracias a que en los últimos años se ha visto una explosión en el interés científico por aprovechar las capacidades de estos \textit{chips} para llevar a cabo aplicaciones y cómputos de propósito general. Así es como las GPGPU han sido utilizadas para llevar a cabo simulaciones, aplicaciones de visión por computador, procesamiento y análisis de señales, procesamiento de imágenes y minería de datos \cite{Owens:2007:ASO}.
+
+
+Recientemente, se propuso un enfoque que busca realizar inferencias Bayesianas para observaciones radioastronómicas (BIRO) \cite{BIRO}. Este enfoque lleva a cabo una inferencia Bayesiana para muestrear un conjunto de parámetros representando un modelo del cielo para proponer las visibilidades que mejor se ajusten a éste. Este trabajo parametriza la imagen en un conjunto reducido de parámetros, y no reconstruye la imagen en sí, sino un modelo de imagen, restringido a puntos y funciones Gaussianas. Además se ha propuesto Montblanc \cite{montblanc}, una implementación en GPU en apoyo a BIRO y que permite paralelizar la proposición de visibilidades.
+
+\subsection{Definición del problema}
+El radio observatorio ALMA \cite{alma2} entrega  datos observacionales  en  el  espectro  de  radio  frecuencias con  una  resolución  nunca  antes  lograda.  Para  una 
+observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disperso (no regular) de  la  transformada  de  Fourier  de  la imagen. La cantidad de muestras (visibilidades) depende del objeto que se esté observando y del tiempo de observación. La Tabla \ref{tab:data} muestra el número de visibilidades observadas de el set de datos HLTau muestrado en la banda de frecuencia 6 y su respectivo valor en bytes. Este último número es calculado multiplicando el número de visibilidades observadas por la suma bytes de las variables utilizadas, tal como, las coordenadas de las visibilidades en el plano de Fourier, las visibilidades que contienen una parte real e imaginaria y la varianza asociada a éstas. Cada una de estas variables es considerada un \textit{double} por lo cual cada una tiene un valor de 8 bytes. Cabe destacar que si bien el número de bytes no es tan alto, para cada objeto observado se muestrean diferentes características como las moléculas de monóxido de carbono, las moléculas de bicarbonato, entre otras. Además, también es importante tomar en cuenta que los objetos se muestrean en distintas bandas de frecuencias. Sin embargo, el problema de reconstruir la imagen no pasa simplemente por usar la transformada inversa del conjunto de puntos. Pues como se dijo anteriormente, los puntos recolectados no coiciden con una grilla regular. Este problema es conocido en matemáticas como \textit{“Fourier Synthesis”} \cite{marechal} y sorprendentemente aún se encuentra como una floreciente línea de investigación en el campo del análisis armónico \cite{pablo}.
+
+
+%\begin{table}[h!]
+%\centering
+%\caption{Set de datos y visibilidades}
+%\label{tab:data}
+%\begin{tabular}{|l|l|l|}
+%\hline
+%\rowcolor[HTML]{EFEFEF} 
+%Set de datos   & Número de visibilidades & Bytes       \\ \hline
+%HD142527       & 78.375                  & 3.135.000   \\ \hline
+%CO(6-5)        & 120.982                 & 4.839.280   \\ \hline
+ %HLTau - Band 6 & 5.343.914               & 213.756.560 \\ \hline
+%\end{tabular}
+%\end{table}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\begin{table}[h!]
+\centering
+\ra{1.2}
+\caption{Datos HLTau Band 6}
+\label{tab:data}
+\begin{tabular}{@{}rcrrcr@{}} 
+\toprule
+ \multicolumn{1}{c}{{\bf Set de datos}} & \phantom{a} & \multicolumn{2}{c}{{\bf Número de visibilidades}}  & \multicolumn{1}{c}{{\bf Bytes}} \\
+ \midrule    
+ HLTau - Band 6   && 5.343.914 &&  213.756.560\\
+ \toprule
+\end{tabular}
+\end{table}
+
+%Poner illposedness
+%\subsubsection{CLEAN}
+
+Son variados los métodos que permiten reconstruir una imagen a partir de muestras dispersas y no regulares en el espacio Fourier. Entre ellos se encuentran los conocidos métodos CLEAN \cite{CLEAN} y MEM \cite{MEM}, en donde el primero es un algoritmo basado en transformaciones lineales y el segundo basado en la teoría Bayesiana. Ambos son conocidos particularmente en el campo de la astronomía.
+
+
+El algoritmo CLEAN provee una solución basada en representar la imagen mediante un conjunto de fuentes puntuales. La imagen final, mejor conocida como la imagen CLEAN, es la suma de todos los componentes de los puntos convolucionados con el \textit{CLEAN beam}, esto es, la imagen de una función Gaussiana, con el fin de restar importancia a las frecuencias espaciales más altas que suelen ser falsamente extrapoladas \cite{libroAstro2}. Finalmente, CLEAN es un procedimiento cuyo objetivo es generar una imagen de residuos con variaciones homogéneas y similares al ruido térmico presente en los datos. 
+
+Como se menciona en la sección \ref{sec:estadodelarte}, CLEAN posee deficiencias técnicas y matemáticas, a pesar de su éxito y su uso actual en ALMA.
+
+Sin embargo, este método sigue siendo utilizado como una herramienta diaria por la comunidad astronómica y es preferido de acuerdo a su eficiencia computacional, pese a que los algoritmos Bayesianos tales como MEM, generan mejores imágenes y gozan de mayor sustento estadístico. Sin embargo, estos últimos no se utilizan porque se desconocen sus propiedades estadísticas, debido a que no existe una estrategia de paralelización que provea soluciones de forma rápida y que permita estudiar el rendimiento a nivel de calidad de imágenes del algoritmo.
+
+En ese sentido la pregunta de investigación que se desea responder es: ¿El algoritmo MEM produce imágenes de mejor calidad que CLEAN?
+
+También es importante mencionar que MEM tiene un enfoque Bayesiano que tiene como resultado una función no lineal. Para minimizar este tipo de funciones existen distintos tipos de métodos de optimización, como por ejemplo, el método de gradiente conjugado \cite{ncg}. Por lo tanto, el desafío técnico de este trabajo es diseñar una estrategia de paralelización en una arquitectura SIMT para este problema.
+
+
 
 \section{Soluci\'on propuesta}
 \label{intro:solucion}
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i.
+\subsection{Características de la solución}
+\label{subsec:caracteristicas}
+Se pretende llevar a cabo el desarrollo de un algoritmo de reconstrucción basado en el principio de máxima entropía, aplicando una estrategia de paralelización en múltiples GPU y usando la plataforma de computación paralela CUDA, para luego caracterizar el algoritmo a nivel de calidad de imagen.
+
+En MEM, la imagen y los datos son considerados variables aleatorias con distribuciones de probabilidad conocidas.
+
+Sea $P(V|I)$ la probabilidad de ver las visibilidades $V$ dada la imagen $I$ y sea $P(I)$ un conocimiento \textit{a priori} de la imagen. Entonces mediante el teorema de Bayes se obtiene:
+
+\begin{equation}
+P(I|V) = \frac{P(V|I)P(I)}{P(V)}
+\label{eq:bayes}
+\end{equation}	
+
+La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$ la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{O}$ son las visibilidades observadas.
+
+\begin{equation}
+ P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\biggl|\frac{V^m_k(I)-V^o_k}{\sigma_k}}\biggr|^2\biggr\}
+ \label{eq:chi2}
+\end{equation} 
+
+El \textit{prior} $P(I)$ se considera una distribución multinomial de una intensidad total discreta que cubre la imagen completa. Sea $n$ el número de píxeles y sea $N_{i}$ el número de fotones en el píxel $i$, el \textit{prior} puede expresarse de la forma:
+
+\begin{equation}
+P(I) = \frac{N!}{n^N\prod_i{N_i!}} 
+\label{eq:imageProb}
+\end{equation}
+
+Donde $N=\sum_i N_{i}$ y la intensidad de la imagen en el píxel $i$ es interpretado en el modelo como $I_{i} \propto N_{i}$.
+
+El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por lo tanto no forma parte de la ecuación. Usando logaritmo y la aproximación de Stirling para factoriales y además omitiendo constantes aditivas relevantes el problema de reconstrucción de la imagen se convierte en la búsqueda de una imagen que satisfaga la probabilidad Maximum a Posteriori(MAP).
+
+\begin{equation}
+\arg \max_{I} \biggl\{
+            -\frac{1}{2} \sum_k^{Z}{ \biggl| \frac{V^m_k(I)-V^o_k}{\sigma_k}  \biggr|^2 }-
+            \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
+            \biggr\}
+\label{eq:phi}
+\end{equation} 
+
+Se reconoce al primer término de la ecuación \ref{eq:phi} como $\chi^{2}$ y al segundo como la entropía de Shannon $S$. Estos dos parámetros son relevantes en el modelo, así como $\lambda$ que tiene un rol similar a los multiplicadores de Lagrange y actúa como un penalizador.
+
+Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el problema en una minimización.
+
+\begin{align}
+\label{eq:phiFinal}
+ \Phi = \frac{1}{2}\sum_k^{Z}{{|\frac{V^m_k(I)-V^o_k}{\sigma_k}|^2} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
+\end{align}
+
+
+La Ecuación \ref{eq:phiFinal} es no lineal y se debe minimizar con algoritmos apropiados, como por ejemplo, el método de gradiente conjugado Polak-Ribiere \cite{polak}.
+
+Cabe destacar, que este cálculo debe ser llevado a cabo para cada frecuencia, es por ello que cada GPU calculará $\Phi$ y $\nabla\Phi$ para cada frecuencia, para luego hacer una reducción en una única GPU.
+
+\subsection{Propósitos de la solución}
+El propósito de la solución es caracterizar el algoritmo MEM a nivel de calidad de imagen con el fin de darle a conocer a la comunidad astronómica sus propiedades, de manera que se transforme en una alternativa real para obtener imágenes de gran resolución y poco ruido en un tiempo acotado y de manera práctica.
 
 
 \section{Objetivos y alcance del proyecto}
 \label{intro:objetivos}
 
 \subsection{Objetivo general}
-	Objectivo general de la tesis.
+El objetivo general del proyecto es diseñar y caracterizar un algoritmo de alto rendimiento basado en el método de máxima entropía (MEM), es decir, medir parámetros de rendimiento, resolución y nivel de ruido de las imágenes reconstruidas a partir de datos sintéticos para proveer a la comunidad astronómica una solución de reconstrucción de imágenes que sea de uso práctico y que además genere imágenes de mejor calidad que los algoritmos usados actualmente.
+.
 
 \subsection{Objetivos espec\'ificos}
+
 \begin{enumerate}
-	\item Objetivo espec\'ifico 1.
-	\item Objetivo espec\'ifico 2.
-	\item Objetivo espec\'ifico 3.
+\item Formular matemáticamente el método MEM.
+\item Diseñar una estrategia de paralelización en múltiples GPU para el método.
+\item Llevar a cabo una implementación en múltiples GPU mediante la plataforma de computación paralela \textit{CUDA}.
+\item Evaluar el rendimiento computacional, comparando los tiempos de ejecución de la solución a implementar en multi-GPU y la versión multi-hebreada de MEM existente.
+\item Evaluar la calidad de la imagen obtenida, comparando la imagen obtenida con la imagen CLEAN respectiva que usan los astrónomos actualmente.
 \end{enumerate}
 
 \subsection{Alcances}
@@ -35,10 +207,73 @@ Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\
 \label{intro:metodologia}
 
 \subsection{Metodolog\'ia}
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i.
+El trabajo a realizar posee una etapa inicial de investigación, en la cual por medio de la literatura, la observación y la experimentación se debe estudiar el método MEM  para luego buscar diseños de paralelización adecuados a éste. Bajo dicha perspectiva el método científico es útil para guiar la totalidad del trabajo. Sin embargo, como se menciona anteriormente, una vez que se haya obtenido el diseño, se debe desarrollar un software, por lo que se utilizarán reglas de la metodología \textit{Extreme Programming}(XP) que ya han sido probadas en el ámbito de la investigación científica \cite{xp}. Las etapas de esta metodología son:
+
+\begin{enumerate}
+\item \textbf{Feedback}: Se toma en cada iteración  un compromiso serio por la entrega de software que  se trabaja. Se muestra el software temprano y con frecuencia luego se escucha con atención al cliente y hacen los cambios necesarios.
+
+\item \textbf{Diseño incremental}: Se debe trabajar por un cierto tiempo, por ejemplo, dos semanas (iteración), y al final de éstas debe entregarse un software funcionando.
+
+\item \textbf{Programación en parejas (\textit{Pair programming})}: Los programadores trabajan en parejas. Todo el código es desarrollado por dos programadores (alumno y profesor guía en este caso).
+
+\item \textbf{Reuniones diarias}: El propósito de esto es tener una reunión diaria para comunicar problemas, soluciones y promover la concentración del equipo.
+
+\item \textbf{Pruebas}: Por cada funcionalidad nueva, se deben realizar pruebas unitarias, pruebas de aceptación, pruebas de humo, de stress y rendimiento.
+
+\item \textbf{Integración continua}: Se deben automatizar las pruebas anteriormente mencionadas, para que cada vez que se agreguen nuevas funcionalidades se asegure que todas siguen funcionando.
+\end{enumerate}
 
 \subsection{Herramientas de desarrollo}
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i.
+A continuación se presentan las herramientas que se utilizarán para el desarrollo del
+proyecto.
+
+
+Para el desarrollo de prototipos y pruebas de concepto se utiliza:
+\begin{enumerate}
+\item Sistema Operativo Ubuntu 14.04.
+\item Matlab 2015a.
+\end{enumerate}
+Para el desarrollo, compilación y ejecución de las implementaciones paralelas se utilizara:
+\begin{enumerate}
+\item Sistema Operativo Ubuntu 14.04.
+\item CUDA 7.0.
+\end{enumerate}
+
+%Para la escritura del documento se utilizararon las siguientes herramientas:
+%\begin{enumerate}
+%\item Sistema Operativo Ubuntu 14.04.
+%\item TexMaker.
+%\end{enumerate}
+
+\subsection{Ambiente de desarrollo}
+
+En cuanto al ambiente de desarrollo, cabe destacar que existe un ambiente de pruebas y uno de produccción.
+
+Las pruebas de rendimiento y producción serán realizadas un cluster de GPUs con las siguientes características:
+
+
+\begin{enumerate}
+\item 2x 10 Core Intel Xeon E5-2640 V2 2GHz
+\item 256 GB de RAM
+\item 4 Tarjetas de video NVIDIA Tesla K80
+\end{enumerate}
+
+Además son utilizados los recursos computacionales personales del estudiante, los cuales son:
+
+\begin{enumerate}
+\item Un computador de escritorio con:
+\begin{itemize}
+\item 8 GB de RAM.
+\item Procesador Intel i7-3770 3.40GHz x 8. 
+\item Tarjeta de video NVIDIA GeForce GTX 750 (1 GB).
+\end{itemize}
+\item Un computador portátil ASUS 450LN con:
+\begin{itemize}
+\item 8 GB de RAM DDR3.
+\item Procesador Intel i7-4500U (1800 MHz-3000 MHz)
+\item Tarjeta de video híbrida Intel GMA HD Graphics 4400 \& NVIDIA GeForce 840M (2 GB)
+\end{itemize}
+\end{enumerate}
 
 \section{Organizaci\'on del documento}
 \label{intro:organizacion}

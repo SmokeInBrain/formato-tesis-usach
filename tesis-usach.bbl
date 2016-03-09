@@ -1,17 +1,147 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 
-\bibitem[{Codish et~al.(2000)Codish, Marriott, \& Taboch}]{Codishetal2000}
-Codish, M., Marriott, K., \& Taboch, C. (2000).
-\newblock Improving program analyses by structure untupling.
-\newblock {\em Journal of Logic Programming\/}, {\em 43\/}, 251--263.
+\bibitem[{{Ables}(1974)}]{memsan}
+{Ables}, J.~G. (1974).
+\newblock {Maximum Entropy Spectral Analysis}.
+\newblock {\em AAPS\/}, {\em 15\/}, 383.
 
-\bibitem[{Samza(2014)}]{samza}
-Samza, A. (2014).
-\newblock Samza.
-\newblock [Online] \url{http://samza.incubator.apache.org/}.
+\bibitem[{ALMA(2009{\natexlab{a}})}]{alma}
+ALMA (2009{\natexlab{a}}).
+\newblock About alma.
+\newblock \url{http://www.almaobservatory.org/en/about-alma}.
+
+\bibitem[{ALMA(2009{\natexlab{b}})}]{howalma}
+ALMA (2009{\natexlab{b}}).
+\newblock How does alma work.
+\newblock
+  \url{http://www.almaobservatory.org/en/about-alma/how-does-alma-work}.
+
+\bibitem[{Ben-David \& Leshem(2008)}]{BenDavid:2008ff}
+Ben-David, C., \& Leshem, A. (2008).
+\newblock {Parametric high resolution techniques for radio astronomical
+  imaging}.
+\newblock {\em IEEE J.Sel.Top.Sig.Proc.\/}, {\em 2\/}, 670--684.
+
+\bibitem[{Briggs(1995)}]{briggs1995}
+Briggs, D. (1995).
+\newblock {\em High Fidelity Deconvolution of Moderately Resolved Sources\/}.
+\newblock D. Briggs.
+\newline\urlprefix\url{http://books.google.cl/books?id=JTU1GwAACAAJ}
+
+\bibitem[{Chen(2011)}]{chen}
+Chen, W. (2011).
+\newblock The ill-posedness of the sampling problem and regularized sampling
+  algorithm.
+\newblock {\em Digital Signal Processing\/}, {\em 21\/}(2), 375 -- 390.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S1051200410001454}
+
+\bibitem[{Cornwell(2009)}]{CLEAN}
+Cornwell, T.~J. (2009).
+\newblock Hogbom's clean algorithm. impact on astronomy and beyond.
+\newblock {\em Astronomy and Astrophysics\/}, {\em 500\/}(1), 65--66.
+
+\bibitem[{{Cornwell} \& {Evans}(1985)}]{smemda}
+{Cornwell}, T.~J., \& {Evans}, K.~F. (1985).
+\newblock {A simple maximum entropy deconvolution algorithm}.
+\newblock {\em AAP\/}, {\em 143\/}, 77--83.
+
+\bibitem[{Frieden(1972)}]{FRIEDEN:72}
+Frieden, B.~R. (1972).
+\newblock Restoring with maximum likelihood and maximum entropy.
+\newblock {\em J. Opt. Soc. Am.\/}, {\em 62\/}(4), 511--518.
+\newline\urlprefix\url{http://www.osapublishing.org/abstract.cfm?URI=josa-62-4-511}
+
+\bibitem[{{Gull} \& {Daniell}(1978)}]{themaxen}
+{Gull}, S.~F., \& {Daniell}, G.~J. (1978).
+\newblock {Image reconstruction from incomplete and noisy data}.
+\newblock {\em Nature\/}, {\em 272\/}(5655), 686--690.
+\newline\urlprefix\url{http://dx.doi.org/10.1038/272686a0}
+
+\bibitem[{Hager \& Zhang(2006)}]{ncg}
+Hager, W.~W., \& Zhang, H. (2006).
+\newblock {A survey of nonlinear conjugate gradient methods}.
+\newblock {\em Pacific journal of Optimization\/}, {\em 2\/}(1), 35--58.
+
+\bibitem[{Leshem \& jan Van Der~Veen(2000)}]{Lesheradioastronomical}
+Leshem, A., \& jan Van Der~Veen, A. (2000).
+\newblock Radio astronomical imaging in the presence of strong radio
+  interference.
+\newblock {\em IEEE Trans. on Information Theory\/}, {\em 46\/}, 1730--1747.
+
+\bibitem[{{Lochner} et~al.(2015){Lochner}, {Natarajan}, {Zwart}, {Smirnov},
+  {Bassett}, {Oozeer}, \& {Kunz}}]{BIRO}
+{Lochner}, M., {Natarajan}, I., {Zwart}, J.~T.~L., {Smirnov}, O., {Bassett},
+  B.~A., {Oozeer}, N., \& {Kunz}, M. (2015).
+\newblock {Bayesian inference for radio observations}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society\/}, {\em
+  450\/}, 1308--1319.
+
+\bibitem[{Maréchal \& Wallach(2009)}]{marechal}
+Maréchal, P., \& Wallach, D. (2009).
+\newblock Fourier synthesis via partially finite convex programming.
+\newblock {\em Mathematical and Computer Modelling\/}, {\em 49\/}(11–12),
+  2206 -- 2212.
+\newblock Trends in Application of Mathematics to MedicineTrends in Application
+  of Mathematics to Medicine.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0895717708002380}
+
+\bibitem[{{Narayan} \& {Nityananda}(1986)}]{MEM}
+{Narayan}, R., \& {Nityananda}, R. (1986).
+\newblock {Maximum entropy image restoration in astronomy}.
+\newblock {\em Annual Review of Astronomy and Astrophysics\/}, {\em 24\/},
+  127--170.
+
+\bibitem[{Owens et~al.(2007)Owens, Luebke, Govindaraju, Harris, Krüger,
+  Lefohn, \& Purcell}]{Owens:2007:ASO}
+Owens, J.~D., Luebke, D., Govindaraju, N., Harris, M., Krüger, J., Lefohn, A.,
+  \& Purcell, T.~J. (2007).
+\newblock A survey of general-purpose computation on graphics hardware.
+\newblock {\em Computer Graphics Forum\/}, {\em 26\/}(1), 80--113.
+\newline\urlprefix\url{http://www.blackwell-synergy.com/doi/pdf/10.1111/j.1467-8659.2007.01012.x}
+
+\bibitem[{Peck \& Beasley(2008)}]{alma2}
+Peck, A.~B., \& Beasley, A.~J. (2008).
+\newblock {High resolution sub-millimeter imaging with ALMA}.
+\newblock {\em Journal of Physics: Conference Series\/}, {\em 131\/}(1),
+  012049.
+\newline\urlprefix\url{http://stacks.iop.org/1742-6596/131/i=1/a=012049}
+
+\bibitem[{Perkins et~al.(2015)Perkins, Marais, Zwart, Natarajan, \&
+  Smirnov}]{montblanc}
+Perkins, S., Marais, P., Zwart, J., Natarajan, I., \& Smirnov, O. (2015).
+\newblock Montblanc: {GPU} accelerated radio interferometer measurement
+  equations in support of bayesian inference for radio observations.
+\newblock {\em CoRR\/}, {\em abs/1501.07719\/}.
+\newline\urlprefix\url{http://arxiv.org/abs/1501.07719}
+
+\bibitem[{Polak \& Ribiere(1969)}]{polak}
+Polak, E., \& Ribiere, G. (1969).
+\newblock Note sur la convergence de méthodes de directions conjuguées.
+\newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis -
+  Modélisation Mathématique et Analyse Numérique\/}, (pp. 35--43).
+
+\bibitem[{Román(2012)}]{pablo}
+Román, P.~E. (2012).
+\newblock El problema de síntesis de fourier en radio-astronomía y su
+  resolución mediante métodos variacionales.
+\newblock {\em Revista del Instituto Chileno de Investigación Operativa\/},
+  (2), 13--19.
+
+\bibitem[{Taylor et~al.(1999)Taylor, Carilli, \& Perley}]{libroAstro2}
+Taylor, G.~B., Carilli, C.~L., \& Perley, R.~A. (Eds.)  (1999).
+\newblock {\em {Synthesis Imaging in Radio Astronomy II}\/}, vol. 180 of {\em
+  Astronomical Society of the Pacific Conference Series\/}.
+\newblock San Francisco: Astronomical Society of the Pacific.
+\newline\urlprefix\url{http://adsabs.harvard.edu/cgi-bin/nph-bib\_query?bibcode=1999ASPC..180.....T}
+
+\bibitem[{Wernecke \& D'Addario(1977)}]{daddario}
+Wernecke, S.~J., \& D'Addario, L.~R. (1977).
+\newblock Maximum entropy image reconstruction.
+\newblock {\em {IEEE} Trans. Computers\/}, {\em 26\/}(4), 351--364.
+\newline\urlprefix\url{http://doi.ieeecomputersociety.org/10.1109/TC.1977.1674845}
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis-usach.aux
 A level-1 auxiliary file: preliminares/cubierta.aux
@@ -11,44 +11,83 @@ A level-1 auxiliary file: chapters/3-Conclusiones.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: anexos/Anexo-1.aux
 Database file #1: bibliografia.bib
-You've used 2 entries,
+Warning--entry type for "alma" isn't style-file defined
+--line 16 of file bibliografia.bib
+Warning--entry type for "howalma" isn't style-file defined
+--line 24 of file bibliografia.bib
+Repeated entry---line 550 of file bibliografia.bib
+ : @article{alma
+ :              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 562 of file bibliografia.bib
+ : @article{pablo
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 571 of file bibliografia.bib
+ : @article{MEM
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 588 of file bibliografia.bib
+ : @book{libroAstro2
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 596 of file bibliografia.bib
+ : @article{CLEAN
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 888 of file bibliografia.bib
+ : @article{marechal
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 908 of file bibliografia.bib
+ : @article{chen
+ :              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 925 of file bibliografia.bib
+ : @article{polak
+ :               ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "samza"
+Warning--there's a number but no volume in pablo
+You've used 22 entries,
             2804 wiz_defined-function locations,
-            604 strings with 5072 characters,
-and the built_in function-call counts, 1004 in all, are:
-= -- 84
-> -- 37
-< -- 1
-+ -- 14
-- -- 12
-* -- 71
-:= -- 171
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 14
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 69
-empty$ -- 71
-format.name$ -- 16
-if$ -- 187
-int.to.chr$ -- 1
+            753 strings with 8834 characters,
+and the built_in function-call counts, 12390 in all, are:
+= -- 1000
+> -- 459
+< -- 20
++ -- 177
+- -- 150
+* -- 956
+:= -- 1934
+add.period$ -- 67
+call.type$ -- 22
+change.case$ -- 161
+chr.to.int$ -- 21
+cite$ -- 23
+duplicate$ -- 913
+empty$ -- 945
+format.name$ -- 220
+if$ -- 2407
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 17
-num.names$ -- 8
-pop$ -- 26
+missing$ -- 193
+newline$ -- 128
+num.names$ -- 89
+pop$ -- 340
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 138
 quote$ -- 0
-skip$ -- 28
+skip$ -- 320
 stack$ -- 0
-substring$ -- 47
-swap$ -- 33
-text.length$ -- 0
+substring$ -- 616
+swap$ -- 501
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
-warning$ -- 0
-while$ -- 8
+type$ -- 192
+warning$ -- 1
+while$ -- 90
 width$ -- 0
-write$ -- 31
+write$ -- 301
+(There were 8 error messages)

@@ -71,6 +71,7 @@
 % Tablas
 \RequirePackage{multirow}	% Multiples filas en Tablas
 \RequirePackage{array}
+\RequirePackage{booktabs}
 \RequirePackage{caption}
 \captionsetup[table]{position=top,belowskip=4pt,aboveskip=4pt}
 \RequirePackage{longtable}	% Para cortar tablas grandes
