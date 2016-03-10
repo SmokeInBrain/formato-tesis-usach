@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  9 MAR 2016 14:21
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  10 MAR 2016 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis-usach.tex
 (./tesis-usach.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 7 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./tesis-usach.cls
 Document Class: tesis-usach 2015/12/30 Template Thesis USACH
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -1564,34 +1564,32 @@ Package natbib Warning: Citation `xp' on page 8 undefined on input line 210.
 
  (./chapters/2-Cuerpo.tex
 Cap\'itulo 2.
-
-LaTeX Warning: Reference `fig:ejemplo' on page 11 undefined on input line 7.
-
-
-LaTeX Warning: Reference `tab:ejemplo' on page 11 undefined on input line 20.
-
-
-Overfull \hbox (15.0pt too wide) detected at line 56
-[][] 
- []
-
-) [11
+[11
 
 
 
-] [12]
+]
+Cap\'itulo 3.
+[12
+
+]
+Cap\'itulo 4.
+[13
+
+]
+Cap\'itulo 5.
+) [14
+
+]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (./chapters/3-Conclusiones.tex
-Cap\'itulo 3.
-
-Package natbib Warning: Citation `samza' on page 13 undefined on input line 3.
-
-) [13
+Cap\'itulo 6.
+) [15
 
 
 
-] (./tesis-usach.bbl [14
+] (./tesis-usach.bbl [16
 
 
 ]
@@ -1600,12 +1598,12 @@ Underfull \hbox (badness 1127) in paragraph at lines 122--126
 délisation Mathématique et
  []
 
-) [15]
+) [17]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (./anexos/Anexo-1.tex
 Anexo A.
-) [16
+) [18
 
 
 ]
@@ -1621,19 +1619,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
 ))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 59.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 59.
-
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 30271 strings out of 495563
- 516654 string characters out of 6185554
- 636113 words of memory out of 5000000
- 32982 multiletter control sequences out of 15000+600000
- 8940 words of font info for 53 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
- 53i,12n,50p,10407b,683s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30228 strings out of 493918
+ 516269 string characters out of 6150563
+ 640248 words of memory out of 5000000
+ 33054 multiletter control sequences out of 15000+600000
+ 8932 words of font info for 52 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 53i,12n,50p,10407b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis-usach.pdf (26 pages).
+Output written on tesis-usach.pdf (28 pages).
