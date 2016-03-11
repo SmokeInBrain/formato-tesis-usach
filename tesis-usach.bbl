@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -124,6 +124,12 @@ Polak, E., \& Ribiere, G. (1969).
 \newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis -
   Modélisation Mathématique et Analyse Numérique\/}, (pp. 35--43).
 
+\bibitem[{Remijan et~al.(2015)Remijan, Adams, \& Warmels}]{alma-handbook}
+Remijan, A., Adams, M., \& Warmels, R. (2015).
+\newblock {ALMA Cycle 3 Technical Handbook}.
+\newblock Tech. rep., ALMA.
+\newblock Version 1.0.
+
 \bibitem[{Román(2012)}]{pablo}
 Román, P.~E. (2012).
 \newblock El problema de síntesis de fourier en radio-astronomía y su
@@ -143,5 +149,13 @@ Wernecke, S.~J., \& D'Addario, L.~R. (1977).
 \newblock Maximum entropy image reconstruction.
 \newblock {\em {IEEE} Trans. Computers\/}, {\em 26\/}(4), 351--364.
 \newline\urlprefix\url{http://doi.ieeecomputersociety.org/10.1109/TC.1977.1674845}
+
+\bibitem[{Wood \& Kleb(2002)}]{xp}
+Wood, W., \& Kleb, W. (2002).
+\newblock Extreme programming in a research environment.
+\newblock In D.~Wells, \& L.~Williams (Eds.) {\em Extreme Programming and Agile
+  Methods — XP/Agile Universe 2002\/}, vol. 2418 of {\em Lecture Notes in
+  Computer Science\/}, (pp. 89--99). Springer Berlin Heidelberg.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/3-540-45672-4_9}
 
 \end{thebibliography}

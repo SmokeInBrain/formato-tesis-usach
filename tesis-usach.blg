@@ -47,47 +47,46 @@ Repeated entry---line 925 of file bibliografia.bib
  : @article{polak
  :               ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "samza"
 Warning--there's a number but no volume in pablo
-You've used 22 entries,
+You've used 24 entries,
             2804 wiz_defined-function locations,
-            753 strings with 8834 characters,
-and the built_in function-call counts, 12390 in all, are:
-= -- 1000
-> -- 459
-< -- 20
-+ -- 177
-- -- 150
-* -- 956
-:= -- 1934
-add.period$ -- 67
-call.type$ -- 22
-change.case$ -- 161
-chr.to.int$ -- 21
-cite$ -- 23
-duplicate$ -- 913
-empty$ -- 945
-format.name$ -- 220
-if$ -- 2407
+            768 strings with 9219 characters,
+and the built_in function-call counts, 13734 in all, are:
+= -- 1108
+> -- 512
+< -- 23
++ -- 196
+- -- 167
+* -- 1062
+:= -- 2130
+add.period$ -- 75
+call.type$ -- 24
+change.case$ -- 182
+chr.to.int$ -- 23
+cite$ -- 25
+duplicate$ -- 1019
+empty$ -- 1040
+format.name$ -- 246
+if$ -- 2675
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 193
-newline$ -- 128
-num.names$ -- 89
-pop$ -- 340
+missing$ -- 216
+newline$ -- 140
+num.names$ -- 99
+pop$ -- 387
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 151
 quote$ -- 0
-skip$ -- 320
+skip$ -- 356
 stack$ -- 0
-substring$ -- 616
-swap$ -- 501
-text.length$ -- 2
+substring$ -- 660
+swap$ -- 568
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 192
+type$ -- 210
 warning$ -- 1
-while$ -- 90
+while$ -- 99
 width$ -- 0
-write$ -- 301
+write$ -- 332
 (There were 8 error messages)
