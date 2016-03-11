@@ -15,11 +15,18 @@
 \BOOKMARK [2][]{subsection.1.5.2}{1.5.2\040Herramientas\040de\040desarrollo}{section.1.5}% 15
 \BOOKMARK [2][]{subsection.1.5.3}{1.5.3\040Ambiente\040de\040desarrollo}{section.1.5}% 16
 \BOOKMARK [1][]{section.1.6}{1.6 Organización del documento}{chapter.1}% 17
-\BOOKMARK [0][]{chapter.2}{2 Reconstrucción de imágenes de interferometría}{}% 18
-\BOOKMARK [0][]{chapter.3}{3\040GPGPU}{}% 19
-\BOOKMARK [0][]{chapter.4}{4\040Pruebas}{}% 20
-\BOOKMARK [0][]{chapter.5}{5\040Resultados}{}% 21
-\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 22
-\BOOKMARK [0][]{chapter*.9}{Referencias bibliográficas}{}% 23
-\BOOKMARK [0][]{section*.10}{Anexos}{}% 24
-\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 25
+\BOOKMARK [0][]{chapter.2}{2 Reconstrucción de imágenes de radiointerferometría}{}% 18
+\BOOKMARK [1][]{section.2.1}{2.1\040CLEAN}{chapter.2}% 19
+\BOOKMARK [1][]{section.2.2}{2.2 Método de máxima entropía}{chapter.2}% 20
+\BOOKMARK [0][]{chapter.3}{3\040GPGPU}{}% 21
+\BOOKMARK [1][]{section.3.1}{3.1 Arquitectura Unificada de Dispositivos de Cómputo}{chapter.3}% 22
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1\040Arquitectura}{section.3.1}% 23
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2\040Peer-to-Peer}{section.3.1}% 24
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3\040Direccionamiento\040virtual\040unificado}{section.3.1}% 25
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4\040GPUVMEM}{section.3.1}% 26
+\BOOKMARK [0][]{chapter.4}{4\040Pruebas}{}% 27
+\BOOKMARK [0][]{chapter.5}{5\040Resultados}{}% 28
+\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 29
+\BOOKMARK [0][]{chapter*.9}{Referencias bibliográficas}{}% 30
+\BOOKMARK [0][]{section*.10}{Anexos}{}% 31
+\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 32

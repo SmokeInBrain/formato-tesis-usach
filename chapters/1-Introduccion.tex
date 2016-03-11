@@ -94,13 +94,15 @@ observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disp
 \begin{table}[h!]
 \centering
 \ra{1.2}
-\caption{Datos HLTau Band 6}
+\caption{Datos HLTau}
 \label{tab:data}
 \begin{tabular}{@{}rcrrcr@{}} 
 \toprule
  \multicolumn{1}{c}{{\bf Set de datos}} & \phantom{a} & \multicolumn{2}{c}{{\bf Número de visibilidades}}  & \multicolumn{1}{c}{{\bf Bytes}} \\
- \midrule    
- HLTau - Band 6   && 5.343.914 &&  213.756.560\\
+ \midrule
+ Band 3   && - &&  -\\
+ Band 6   && 5.343.914 &&  213.756.560\\    
+ Band 7   && - &&  -\\
  \toprule
 \end{tabular}
 \end{table}
@@ -154,7 +156,7 @@ P(I) = \frac{N!}{n^N\prod_i{N_i!}}
 
 Donde $N=\sum_i N_{i}$ y la intensidad de la imagen en el píxel $i$ es interpretado en el modelo como $I_{i} \propto N_{i}$.
 
-El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por lo tanto no forma parte de la ecuación. Usando logaritmo y la aproximación de Stirling para factoriales y además omitiendo constantes aditivas relevantes el problema de reconstrucción de la imagen se convierte en la búsqueda de una imagen que satisfaga la probabilidad Maximum a Posteriori(MAP).
+El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por lo tanto no forma parte de la ecuación. Usando logaritmo y la aproximación de Stirling para factoriales y además omitiendo constantes aditivas relevantes el problema de reconstrucción de la imagen se convierte en la búsqueda de una imagen que satisfaga la probabilidad Maximum a Posteriori (MAP).
 
 \begin{equation}
 \arg \max_{I} \biggl\{

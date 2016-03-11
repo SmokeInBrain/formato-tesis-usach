@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  10 MAR 2016 12:38
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  11 MAR 2016 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis-usach.tex
 (./tesis-usach.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 7 languages loaded.
 (./tesis-usach.cls
 Document Class: tesis-usach 2015/12/30 Template Thesis USACH
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -1549,7 +1549,7 @@ Cap\'itulo 1.
 
 
 ] [2] [3] [4] [5]
-Underfull \hbox (badness 1097) in paragraph at lines 141--142
+Underfull \hbox (badness 1097) in paragraph at lines 143--144
 []\EU1/Arial(0)/m/n/10 La probabilidad $\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 V\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )$ \EU1/Arial
 (0)/m/n/10 puede ser aproximada mediante el hecho de que las
@@ -1557,7 +1557,7 @@ Underfull \hbox (badness 1097) in paragraph at lines 141--142
 
 [6] [7]
 
-Package natbib Warning: Citation `xp' on page 8 undefined on input line 210.
+Package natbib Warning: Citation `xp' on page 8 undefined on input line 212.
 
 [8] [9]) [10]
 \openout2 = `chapters/2-Cuerpo.aux'.
@@ -1622,12 +1622,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 59.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 30228 strings out of 493918
- 516269 string characters out of 6150563
- 640248 words of memory out of 5000000
- 33054 multiletter control sequences out of 15000+600000
+ 30231 strings out of 495563
+ 516304 string characters out of 6185554
+ 636677 words of memory out of 5000000
+ 32943 multiletter control sequences out of 15000+600000
  8932 words of font info for 52 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
+ 62 hyphenation exceptions out of 8191
  53i,12n,50p,10407b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on tesis-usach.pdf (28 pages).
