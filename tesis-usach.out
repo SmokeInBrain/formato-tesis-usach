@@ -17,15 +17,17 @@
 \BOOKMARK [1][]{section.1.6}{1.6 Organización del documento}{chapter.1}% 17
 \BOOKMARK [0][]{chapter.2}{2 Síntesis de imágenes de radiointerferometría}{}% 18
 \BOOKMARK [1][]{section.2.1}{2.1\040Atacama\040Large\040Millimeter-Submillimeter\040Array}{chapter.2}% 19
-\BOOKMARK [0][]{chapter.3}{3\040GPGPU}{}% 20
-\BOOKMARK [1][]{section.3.1}{3.1 Arquitectura Unificada de Dispositivos de Cómputo}{chapter.3}% 21
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1\040Arquitectura}{section.3.1}% 22
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2\040Peer-to-Peer}{section.3.1}% 23
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3\040Direccionamiento\040virtual\040unificado}{section.3.1}% 24
-\BOOKMARK [2][]{subsection.3.1.4}{3.1.4\040GPUVMEM}{section.3.1}% 25
-\BOOKMARK [0][]{chapter.4}{4\040Pruebas}{}% 26
-\BOOKMARK [0][]{chapter.5}{5\040Resultados}{}% 27
-\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 28
-\BOOKMARK [0][]{chapter*.11}{Referencias bibliográficas}{}% 29
-\BOOKMARK [0][]{section*.12}{Anexos}{}% 30
-\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 31
+\BOOKMARK [1][]{section.2.2}{2.2 Principios y conceptos de interferometría}{chapter.2}% 20
+\BOOKMARK [1][]{section.2.3}{2.3 Métodos existentes de deconvolución}{chapter.2}% 21
+\BOOKMARK [0][]{chapter.3}{3\040GPGPU}{}% 22
+\BOOKMARK [1][]{section.3.1}{3.1 Arquitectura Unificada de Dispositivos de Cómputo}{chapter.3}% 23
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1\040Arquitectura}{section.3.1}% 24
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2\040Peer-to-Peer}{section.3.1}% 25
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3\040Direccionamiento\040virtual\040unificado}{section.3.1}% 26
+\BOOKMARK [2][]{subsection.3.1.4}{3.1.4\040GPUVMEM}{section.3.1}% 27
+\BOOKMARK [0][]{chapter.4}{4\040Pruebas}{}% 28
+\BOOKMARK [0][]{chapter.5}{5\040Resultados}{}% 29
+\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 30
+\BOOKMARK [0][]{chapter*.12}{Referencias bibliográficas}{}% 31
+\BOOKMARK [0][]{section*.13}{Anexos}{}% 32
+\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 33
