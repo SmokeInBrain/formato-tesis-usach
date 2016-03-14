@@ -55,7 +55,7 @@ La resolución angular de un interferómetro, $\delta$, es el angulo más peque�
 
 
 
-La relación entre la distribución del brillo del cielo y una visibilidad compleja está dada por el teorema de van Cittert-Zernike y es la base de la interferometría. Dado que los interferómetros no obtienen la imagen del cielo directamente, sino que obtienen visibilidades, que son que son la transformada de Fourier de la distribución del brillo del cielo en el plano de la imagen. Cada par de antenas forma un vector $\vec{k} = (u,v)$ en el plano de Fourier. Así mismo, la distribución del brillo del cielo es la transformada inversa de Fourier de las visibilidades complejas. Por lo tanto, la visibilidad $V(\vec{k})$ para un par de antenas con un \textit{baseline} $\vec{k}$, y su respectiva transformada inversa es:
+La relación entre la distribución del brillo del cielo y una visibilidad compleja está dada por el teorema de van Cittert-Zernike \citep{zernike} y es la base de la interferometría. Dado que los interferómetros no obtienen la imagen del cielo directamente, sino que obtienen visibilidades, que son que son la transformada de Fourier de la distribución del brillo del cielo en el plano de la imagen. Cada par de antenas forma un vector $\vec{k} = (u,v)$ en el plano de Fourier. Así mismo, la distribución del brillo del cielo es la transformada inversa de Fourier de las visibilidades complejas. Por lo tanto, la visibilidad $V(\vec{k})$ para un par de antenas con un \textit{baseline} $\vec{k}$, y su respectiva transformada inversa es:
 
 %\begin{equation}
 %V(\vec{k}) = \int_{-\infty}^{+\infty} A(\vec{x})I(\vec{x})e^{2\pi i %\vec{k}\vec{x}}\frac{dx dy}{\sqrt{1-x^{2}-y^{2}}}
@@ -97,6 +97,57 @@ Los datos astronómicos resultan desde la adición de el ruido instrumental hast
 \section{Métodos existentes de deconvolución} 
 
 \subsection{CLEAN}
+
+Uno de los algoritmos más exitosos y utilizados por la comunidad astronómica es CLEAN, creado por \citep{hogbom}. CLEAN postula que la distribución de intensidad está compuesta de fuentes puntuales. Dado que la imagen de una fuente puntual está dada por la convolución de ésta con el \textit{dirty beam} o Point Spread Function (PSF) (Ecuación \ref{eq:dirtybeam}). Donde este último está dado por:
+
+\begin{equation}
+B(x,y) = \int\int S(u,v) \exp\{2\pi j(ux+vy)\} \;du\,dv
+\label{eq:dirtybeam}
+\end{equation}
+
+En cada iteración CLEAN encuentra el punto más brillante en la \textit{dirty image} (Ecuación \ref{eq:dirtyimage}) que está dada por:
+
+\begin{equation}
+I^{D}(x,y) = \int\int V(u,v)S(u,v)e^{2\pi i(ux+vy)}\;du\,dv
+\label{eq:dirtyimage}
+\end{equation}
+
+Donde,
+
+\begin{equation}
+I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
+\label{eq:fullcoverage}
+\end{equation} 
+
+Y luego por el teorema de la convolución se tiene que:
+
+\begin{equation}
+I^{D}(x,y) = I^{T}(x,y) \ast B(x,y)
+\end{equation}
+
+CLEAN agrega este punto (posición e intensidad) a la lista de fuentes puntuales. Luego, una fracción de ésta ($\gamma$, $0 < \gamma < 1$) es removida de la \textit{dirty image} y de las visibilidades. Este proceso se repite hasta que la imagen residual ($I^{D}$) sea solamente ruido.
+
+Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes puntuales con el \textit{beam} de CLEAN.
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+    \STATE{Compute $I^D(x,y)$}
+    \STATE{Compute $B(x,y)$}
+    \STATE{$i=0$}
+    \WHILE{$I_D$ not noise-like}
+        \STATE{$(x_i, y_i) = \arg\max I^D(x,y)$}
+        \STATE{$\lambda_i = I(x_i, y_i)$}
+        \FORALL{$(u,v)$}
+            \STATE{$V(u,v) -= \gamma \lambda_i \exp\{-2\pi j(u x_i+ v y_i)\}$}
+        \ENDFOR
+        \STATE{Recompute $I^D(x,y)$}
+    \ENDWHILE
+    \STATE{$I_R(x,y) = I^D(x,y) + \sum_i \gamma\lambda_i B(x-x_i,y-y_i)$}
+\end{algorithmic}
+\label{alg:clean}
+\caption{Algoritmo CLEAN}
+\end{algorithm}
+
 
 \subsection{MEM}
 

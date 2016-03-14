@@ -24,30 +24,6 @@ Durante los últimos 40 años, múltiples técnicas de deconvolución han sido d
 
 La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \citep{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina como \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada de Fourier inversa sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada. 
 
-\begin{equation}
-I^{D}(x,y) = \int\int V(u,v)S(u,v)e^{2\pi i(ux+vy)}\;du\,dv
-\label{eq:dirtyimage}
-\end{equation}
-
-CLEAN supone que la imagen verdadera ($I^{T}$) puede ser obtenida mediante un muestreo completo en el dominio de Fourier como en la ecuación \ref{eq:fullcoverage}.
-
-\begin{equation}
-I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
-\label{eq:fullcoverage}
-\end{equation} 
-
-Luego por el teorema de la convolución se tiene que:
-
-\begin{equation}
-I^{D}(x,y) = I^{T}(x,y) \ast B(x,y)
-\end{equation}
-
-Donde $B(x,y)$ es la PSF(\textit{point spread function}) llamada \textit{dirty beam} que se calcula de la siguiente forma:
-
-\begin{equation}
-B(x,y) = \int\int S(u,v) \exp\{2\pi j(ux+vy)\} \;du\,dv
-\end{equation}
-
 Por lo tanto, CLEAN asume que la imagen es una colección de fuentes puntuales e iterativamente remueve fuentes puntuales para crear una imagen de residuos.
 
 Sin embargo, este método posee tanto deficiencias técnicas como matemáticas. Esto debido a que CLEAN no ofrece una alternativa de regularización del problema y tampoco una interpretación estadística del resultado que entrega \citep{libroAstro2}. Además, CLEAN no tiene una convergencia definida por lo que debe iterarse según la apreciación que el usuario tiene de la imagen. Además, el problema de la reconstrucción de una imagen consiste en seleccionar una solución de muchas posibles y CLEAN sólo selecciona una probable imagen de un conjunto de soluciones factibles.
