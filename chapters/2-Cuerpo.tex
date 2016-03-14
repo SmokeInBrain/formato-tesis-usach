@@ -51,11 +51,11 @@ Luego de que las ondas milimétricas y submilímetricas son recibidas por las an
 
 La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena. 
 
-La resolución angular de un interferómetro, $\delta$, es el angulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que una solo telescopio de radio $D$.
+La resolución angular de un interferómetro, $\delta$, es el angulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que un solo telescopio de radio $D$.
 
 
 
-La relación entre la distribución del brillo del cielo y una visibilidad compleja está dada por el teorema de van Cittert-Zernike y es la base de la interferometría. Dado que los interferómetros no obtienen la imagen del cielo directamente, sino que obtienen visibilidades, que son que son la transformada de Fourier de la distribución del brillo del cielo en el plano de la imagen. Es decir, cada par de antenas forma un vector $\vec{k} = (u,v)$ en el plano de Fourier. Así mismo, la distribución del brillo del cielo es la transformada inversa de Fourier de las visibilidades complejas. Por lo tanto, la visibilidad $V(\vec{k})$ para un par de antenas con un \textit{baseline} $\vec{k}$, y su respectiva transformada inversa es:
+La relación entre la distribución del brillo del cielo y una visibilidad compleja está dada por el teorema de van Cittert-Zernike y es la base de la interferometría. Dado que los interferómetros no obtienen la imagen del cielo directamente, sino que obtienen visibilidades, que son que son la transformada de Fourier de la distribución del brillo del cielo en el plano de la imagen. Cada par de antenas forma un vector $\vec{k} = (u,v)$ en el plano de Fourier. Así mismo, la distribución del brillo del cielo es la transformada inversa de Fourier de las visibilidades complejas. Por lo tanto, la visibilidad $V(\vec{k})$ para un par de antenas con un \textit{baseline} $\vec{k}$, y su respectiva transformada inversa es:
 
 %\begin{equation}
 %V(\vec{k}) = \int_{-\infty}^{+\infty} A(\vec{x})I(\vec{x})e^{2\pi i %\vec{k}\vec{x}}\frac{dx dy}{\sqrt{1-x^{2}-y^{2}}}
@@ -116,7 +116,7 @@ Los datos astronómicos resultan desde la adición de el ruido instrumental hast
 \section{Arquitectura Unificada de Dispositivos de Cómputo}
 \subsection{Arquitectura}
 \subsection{Peer-to-Peer}
-\subsection{Direccionamiento virtual unificado}
+\subsection{Acceso virtual unificado}
 \subsection{GPUVMEM}
 
 \chapter{Pruebas}
