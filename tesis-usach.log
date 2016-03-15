@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  15 MAR 2016 20:02
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  15 MAR 2016 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1594,39 +1594,42 @@ File: images/HLTau_B3total.png Graphic file (type QTm)
 <use  "images/HLTau_B3total.png" >
 File: images/HLTau_B6total.png Graphic file (type QTm)
  <use  "images/HLTau_B6total.png" >
+Overfull \hbox (29.4969pt too wide) in paragraph at lines 68--69
+ [][][][] 
+ []
+
 File: images/HLTau_B7total.png Graphic file (type QTm)
-
-<use  "images/HLTau_B7total.png" > [13
-
-]
-File: images/antenas.png Graphic file (type QTm)
- <use  "images/antenas.png" >
+<use  "images/HLTau_B7total.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15]
+[13
+
+] [14]
+File: images/antenas.png Graphic file (type QTm)
+ <use  "images/antenas.png" > [15]
 Overfull \hbox (15.0pt too wide) detected at line 180
 [][] 
  []
 
-[16]
+[16] [17]
 Cap\'itulo 3.
-[17
+[18
 
 ]
 Cap\'itulo 4.
-) [18
+) [19
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (./chapters/3-Conclusiones.tex
 Cap\'itulo 5.
-) [19
+) [20
 
 
 
-] (./tesis-usach.bbl [20
+] (./tesis-usach.bbl [21
 
 
 ]
@@ -1635,12 +1638,12 @@ Underfull \hbox (badness 1127) in paragraph at lines 128--132
 délisation Mathématique et
  []
 
-) [21]
+) [22]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (./anexos/Anexo-1.tex
 Anexo A.
-) [22
+) [23
 
 
 ]
@@ -1657,6 +1660,9 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 59.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
@@ -1668,4 +1674,4 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  53i,12n,50p,10407b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis-usach.pdf (32 pages).
+Output written on tesis-usach.pdf (33 pages).
