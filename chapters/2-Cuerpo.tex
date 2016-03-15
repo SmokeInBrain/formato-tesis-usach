@@ -108,7 +108,7 @@ B(x,y) = \int\int S(u,v) \exp\{2\pi j(ux+vy)\} \;du\,dv
 En cada iteración CLEAN encuentra el punto más brillante en la \textit{dirty image} (Ecuación \ref{eq:dirtyimage}) que está dada por:
 
 \begin{equation}
-I^{D}(x,y) = \int\int V(u,v)S(u,v)e^{2\pi i(ux+vy)}\;du\,dv
+I_{D}(x,y) = \int\int V(u,v)S(u,v)e^{2\pi i(ux+vy)}\;du\,dv
 \label{eq:dirtyimage}
 \end{equation}
 
@@ -122,17 +122,17 @@ I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
 Y luego por el teorema de la convolución se tiene que:
 
 \begin{equation}
-I^{D}(x,y) = I^{T}(x,y) \ast B(x,y)
+I_{D}(x,y) = I^{T}(x,y) \ast B(x,y)
 \end{equation}
 
-CLEAN agrega este punto (posición e intensidad) a la lista de fuentes puntuales. Luego, una fracción de ésta ($\gamma$, $0 < \gamma < 1$) es removida de la \textit{dirty image} y de las visibilidades. Este proceso se repite hasta que la imagen residual ($I^{D}$) sea solamente ruido.
+CLEAN agrega este punto (posición e intensidad) a la lista de fuentes puntuales. Luego, una fracción de ésta ($\gamma$, $0 < \gamma < 1$) es removida de la \textit{dirty image} y de las visibilidades. Este proceso se repite hasta que la imagen residual ($I_D$) sea solamente ruido.
 
 Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes puntuales con el \textit{beam} de CLEAN.
 
 \begin{algorithm}
 \begin{algorithmic}[1]
-    \STATE{Compute $I^D(x,y)$}
-    \STATE{Compute $B(x,y)$}
+    \STATE{Compute $I_D(x,y)$}
+    \STATE{$B_R(x,y) = Gaussian$}
     \STATE{$i=0$}
     \WHILE{$I_D$ not noise-like}
         \STATE{$(x_i, y_i) = \arg\max I^D(x,y)$}
@@ -140,9 +140,10 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
         \FORALL{$(u,v)$}
             \STATE{$V(u,v) -= \gamma \lambda_i \exp\{-2\pi j(u x_i+ v y_i)\}$}
         \ENDFOR
-        \STATE{Recompute $I^D(x,y)$}
+        \STATE{Recompute $I_D(x,y)$}
+        \STATE{$i=i+1$}
     \ENDWHILE
-    \STATE{$I_R(x,y) = I^D(x,y) + \sum_i \gamma\lambda_i B(x-x_i,y-y_i)$}
+    \STATE{$I_R(x,y) = I_D(x,y) + \sum_i \gamma\lambda_i B_R(x-x_i,y-y_i)$}
 \end{algorithmic}
 \label{alg:clean}
 \caption{Algoritmo CLEAN}
