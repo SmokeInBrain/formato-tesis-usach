@@ -3,17 +3,32 @@
 
 \section{Atacama Large Millimeter-Submillimeter Array}
 
-El Atacama Large Millimeter-Submillimeter Array (ALMA) es un radiointerferómetro compuesto de 66 antenas de alta precisión que operan a un ancho rango de frecuencias milimétricas y submilimétricas. Cincuenta de estas antenas miden 12 metros de diámetro y son utilizadas para síntesis de imágenes de alta resolución. Por otra parte, esto es complementado por el \textit{Atacama Compact Array} también llamado \textit{Morita Array} compuesto por doce antenas de 7 metros de diámetro y por otras 4 antenas de 12 metros diámetro para observaciones de poder total (\textit{Total Power}).
+El Atacama Large Millimeter-Submillimeter Array (ALMA) es un radiointerferómetro compuesto de 66 antenas de alta precisión que operan a un ancho rango de frecuencias milimétricas y submilimétricas. Cincuenta de estas antenas miden 12 metros de diámetro y son utilizadas para síntesis de imágenes de alta resolución. Por otra parte, esto es complementado por el \textit{Atacama Compact Array} también llamado \textit{Morita Array} compuesto por doce antenas de 7 metros de diámetro y por otras 4 antenas de 12 metros diámetro que sirve para muestrear estructuraS de gran escala que no son bien muestreadas por las demás antenas de 12 metros. Además, todas las antenas se clasifican en tres tipos:
+
+\begin{itemize}
+\item \textbf{AEM (DA) 12m}: Estas antenas fueron ensambladas antes de llegar a Chile, por lo tanto, llegaron en pocas piezas. Estas antenas están manejadas por motores lineales, es decir, imanes que proveen el movimiento sin que exista un contacto entre las partes.
+\item \textbf{Vertex (DV) 12m}: La estructura que sostiene al platillo está hecha de plástico reforzado con fibra de carbón, lo cual es importante debido a las duras condiciones de 5.000 metros de altura.
+\item \textbf{MELCO (PM) 12m y 7m}: Estas antenas también poseen motores lineales además de una conducción en tres direcciones (altura, de lado a lado y de arriba a abajo), para seguir suavemente la fuente durante la observación.
+\end{itemize}
 
 El conjunto de antenas está ubicado en el llano Chajnantor a 5.000 metros sobre el nivel del mar, un sitio que ofrece un cielo claro y un aire seco, una condición ambiental requerida para observar ondas milimétricas y submilimétricas.
 
-La distribución de las antenas cede paso a lo que es llamado \textit{baseline} o distancia entre un par de antenas, que van desde 15 Km. hasta 16 Km. aproximadamente. Tanto la distribución de antes como la distancia entre éstas es crucial en la determinación de la calidad de la imagen y la resolución de ALMA.
+La distribución de las antenas cede paso a lo que es llamado \textit{baseline} o distancia entre un par de antenas, que van desde 15 Km. hasta 16 Km. aproximadamente. Tanto la distribución como la distancia entre éstas es crucial en la determinación de la calidad de la imagen y la resolución de ALMA. Esto debido a que si el conjunto de antenas está distribuido de forma extendida dará como resultado una alta resolución espacial, en cambio, si la distribución es compacta, el resultado será una mejor sensibilidad para fuentes extendidas.
+
+A continuación, la Figura \ref{almaarray1} muestra la distribución de antenas para el muestro del objeto HLTauri en banda 6. Además la Figura \ref{almaarray2} muestra el centro de la primera figura en donde se puede visualizar una gran concentración de antenas. Además, se puede ver que cada antena posee un identificador (DA, DV o PM) dando a conocer el tipo de antena que está siendo utilizado para el muestreo.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.1]{images/almaarray.jpg}
-\caption{Distribución de antenas en el llano Chajnantor. Fuente: ALMA (ESO/NAOJ/NRAO)}
-\label{fig:almaarray}
+\includegraphics[scale=0.25]{images/HLTau_B6antennas1.png}
+\caption{Distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia)}
+\label{fig:almaarray1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.25]{images/HLTau_B6antennasCenter.png}
+\caption{Centro de la distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia)}
+\label{fig:almaarray2}
 \end{figure}
 
 
@@ -25,8 +40,6 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 \begin{table}[h!]
 \centering
 \ra{1.2}
-\caption{Las 10 Bandas de frecuencia de ALMA}
-\label{tab:bands}
 \begin{tabular}{@{}rcrrcr@{}} 
 \toprule
  \multicolumn{1}{c}{{\bf Banda}} & \phantom{a} & \multicolumn{2}{c}{{\bf Rango de frecuencia (GHz)}}  & \multicolumn{1}{c}{{\bf Temperatura (K)}} \\
@@ -43,9 +56,25 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
  10  && 787 - 950 &&  344\\
  \toprule
 \end{tabular}
+\caption{Las 10 Bandas de frecuencia de ALMA}
+\label{tab:bands}
 \end{table}
 
-Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y llevadas al correlacionador. El correlacionador recibe señales de voltaje desde cada antena, calcula la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y produce las visibilidades complejas que los astrónomos reciben para sintetizar imágenes \citep{alma-handbook}. Para entender de mejor forma qué son las visibilidades es necesario conocer los conceptos esenciales de interferometría.
+Por ejemplo, la estrella HLTauri ha sido muestreada en banda 3, banda 6 y banda 7.
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Banda 3]{\includegraphics[scale=0.12]{images/HLTau_B3total.png}}%
+\subfloat[Banda 6]{\includegraphics[scale=0.12]{images/HLTau_B6total.png}}%
+\subfloat[Banda 7]{\includegraphics[scale=0.12]{images/HLTau_B7total.png}}%
+\label{fig:HLTau-total}
+\caption{Mapeos $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia}
+\end{figure}
+
+
+
+Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y llevadas al correlacionador. El correlacionador recibe señales de voltaje desde cada antena, calcula la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y produce las visibilidades complejas que los astrónomos reciben para sintetizar imágenes \citep{alma-handbook}. Para entender de mejor forma qué son las visibilidades y qué implicancia tienen en la síntesis de imágenes es necesario conocer los conceptos esenciales de interferometría.
 
 \section{Principios y conceptos de interferometría}
 
@@ -71,7 +100,7 @@ Donde $\vec{x} = (x,y)$ son las coordenadas del objeto a observar y estudiar, $A
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{images/antenas.png}
-\caption{Dos antenas y su respectivo \textit{baseline}. $\vec{x}$ es la posición del objeto estudiado, y por otro lado $\vec{k}$ es el \textit{baseline} correspondiente a las dos antenas.}
+\caption{Dos antenas y su respectivo \textit{baseline}. $\vec{x}$ es la posición del objeto estudiado, y por otro lado $\vec{k}$ es el \textit{baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.}
 \label{fig:antena}
 \end{figure}
 
@@ -90,6 +119,7 @@ Esto quiere decir que la imagen de la distribución del brillo del cielo puede r
 %&= \sum_{k}\left(\cos(-2\pi\vec{k}_{k}\vec{x})+i\sin(-2\pi\vec{k}_{k}\vec{x})\right) \\
 %&= \sum_{k}\cos(2\pi\vec{k}_{k}\vec{x})
 %\end{align}
+
 
 Los datos astronómicos resultan desde la adición de el ruido instrumental hasta la convolución de la imagen del cielo con la respuesta instrumental. Debido al muestreo incompleto en el plano $(u,v)$, la obtención de una imagen del cielo se convierte en un problema inverso que requiere algoritmos de síntesis de imágenes. 
 
@@ -127,7 +157,7 @@ I_{D}(x,y) = I^{T}(x,y) \ast B(x,y)
 
 CLEAN agrega este punto (posición e intensidad) a la lista de fuentes puntuales. Luego, una fracción de ésta ($\gamma$, $0 < \gamma < 1$) es removida de la \textit{dirty image} y de las visibilidades. Este proceso se repite hasta que la imagen residual ($I_D$) sea solamente ruido.
 
-Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes puntuales con el \textit{beam} de CLEAN.
+Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes puntuales con el \textit{beam} de CLEAN, que se asume la mayoría de las veces como una Gaussiana.
 
 \begin{algorithm}
 \begin{algorithmic}[1]
@@ -164,14 +194,15 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
 
 
 
-\chapter{GPGPU}
-\label{cap:gpgpu}
+%\chapter{GPGPU}
+%\label{cap:gpgpu}
 
-\section{Arquitectura Unificada de Dispositivos de Cómputo}
-\subsection{Arquitectura}
-\subsection{Peer-to-Peer}
-\subsection{Acceso virtual unificado}
-\subsection{GPUVMEM}
+%\section{Arquitectura Unificada de Dispositivos de Cómputo}
+%\subsection{Arquitectura}
+%\subsection{cuFFT}
+%\subsection{Peer-to-Peer}
+%\subsection{Acceso virtual unificado}
+%\subsection{GPUVMEM}
 
 \chapter{Pruebas}
 \label{cap:pruebas}

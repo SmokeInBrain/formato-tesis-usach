@@ -21,15 +21,9 @@
 \BOOKMARK [1][]{section.2.3}{2.3 Métodos existentes de deconvolución}{chapter.2}% 21
 \BOOKMARK [2][]{subsection.2.3.1}{2.3.1\040CLEAN}{section.2.3}% 22
 \BOOKMARK [2][]{subsection.2.3.2}{2.3.2\040MEM}{section.2.3}% 23
-\BOOKMARK [0][]{chapter.3}{3\040GPGPU}{}% 24
-\BOOKMARK [1][]{section.3.1}{3.1 Arquitectura Unificada de Dispositivos de Cómputo}{chapter.3}% 25
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1\040Arquitectura}{section.3.1}% 26
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2\040Peer-to-Peer}{section.3.1}% 27
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3\040Acceso\040virtual\040unificado}{section.3.1}% 28
-\BOOKMARK [2][]{subsection.3.1.4}{3.1.4\040GPUVMEM}{section.3.1}% 29
-\BOOKMARK [0][]{chapter.4}{4\040Pruebas}{}% 30
-\BOOKMARK [0][]{chapter.5}{5\040Resultados}{}% 31
-\BOOKMARK [0][]{chapter.6}{6\040Conclusiones}{}% 32
-\BOOKMARK [0][]{chapter*.12}{Referencias bibliográficas}{}% 33
-\BOOKMARK [0][]{section*.13}{Anexos}{}% 34
-\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 35
+\BOOKMARK [0][]{chapter.3}{3\040Pruebas}{}% 24
+\BOOKMARK [0][]{chapter.4}{4\040Resultados}{}% 25
+\BOOKMARK [0][]{chapter.5}{5\040Conclusiones}{}% 26
+\BOOKMARK [0][]{chapter*.14}{Referencias bibliográficas}{}% 27
+\BOOKMARK [0][]{section*.15}{Anexos}{}% 28
+\BOOKMARK [0][]{appendix.A}{A\040Anexo\040de\040ejemplo}{}% 29

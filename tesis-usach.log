@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  14 MAR 2016 22:16
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  15 MAR 2016 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis-usach.tex
 (./tesis-usach.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 7 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./tesis-usach.cls
 Document Class: tesis-usach 2015/12/30 Template Thesis USACH
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -1560,12 +1560,22 @@ Underfull \hbox (badness 1097) in paragraph at lines 119--120
 
  (./chapters/2-Cuerpo.tex
 Cap\'itulo 2.
-File: images/almaarray.jpg Graphic file (type QTm)
-<use  "images/almaarray.jpg" > [11
+
+LaTeX Warning: Reference `almaarray1' on page 11 undefined on input line 18.
+
+
+LaTeX Warning: Reference `almaarray2' on page 11 undefined on input line 18.
+
+[11
 
 
 
 ]
+File: images/HLTau_B6antennas1.png Graphic file (type QTm)
+ <use  "images/HLTau_B6antennas1.png" >
+File: images/HLTau_B6antennasCenter.png Graphic file (type QTm)
+
+<use  "images/HLTau_B6antennasCenter.png" > [12]
 
 ! LaTeX Error: Command \ra already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -1574,38 +1584,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 ...{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+l.39 ...{\ra}[1]{\renewcommand{\arraystretch}{#1}}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[12
+File: images/HLTau_B3total.png Graphic file (type QTm)
+<use  "images/HLTau_B3total.png" >
+File: images/HLTau_B6total.png Graphic file (type QTm)
+ <use  "images/HLTau_B6total.png" >
+File: images/HLTau_B7total.png Graphic file (type QTm)
+
+<use  "images/HLTau_B7total.png" > [13
 
 ]
 File: images/antenas.png Graphic file (type QTm)
- <use  "images/antenas.png" > [13] [14]
-Overfull \hbox (15.0pt too wide) detected at line 150
+ <use  "images/antenas.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14] [15]
+Overfull \hbox (15.0pt too wide) detected at line 180
 [][] 
  []
 
-[15]
+[16]
 Cap\'itulo 3.
-[16
-
-]
-Cap\'itulo 4.
 [17
 
 ]
-Cap\'itulo 5.
+Cap\'itulo 4.
 ) [18
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (./chapters/3-Conclusiones.tex
-Cap\'itulo 6.
+Cap\'itulo 5.
 ) [19
 
 
@@ -1637,15 +1653,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
 ))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 59.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 59.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 30293 strings out of 495563
- 516998 string characters out of 6185554
- 637574 words of memory out of 5000000
- 33000 multiletter control sequences out of 15000+600000
+ 30304 strings out of 493918
+ 517284 string characters out of 6150563
+ 641528 words of memory out of 5000000
+ 33122 multiletter control sequences out of 15000+600000
  8940 words of font info for 53 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
+ 1144 hyphenation exceptions out of 8191
  53i,12n,50p,10407b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on tesis-usach.pdf (32 pages).
