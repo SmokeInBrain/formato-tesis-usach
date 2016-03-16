@@ -15,7 +15,7 @@ El conjunto de antenas está ubicado en el llano Chajnantor a 5.000 metros sobre
 
 La distribución de las antenas cede paso a lo que es llamado \textit{baseline} o distancia entre un par de antenas, que van desde 15 Km. hasta 16 Km. aproximadamente. Tanto la distribución como la distancia entre éstas es crucial en la determinación de la calidad de la imagen y la resolución de ALMA. Esto debido a que si el conjunto de antenas está distribuido de forma extendida dará como resultado una alta resolución espacial, en cambio, si la distribución es compacta, el resultado será una mejor sensibilidad para fuentes extendidas.
 
-A continuación, la Figura \ref{almaarray1} muestra la distribución de antenas para el muestro del objeto HLTauri en banda 6. Además la Figura \ref{almaarray2} muestra el centro de la primera figura en donde se puede visualizar una gran concentración de antenas. Además, se puede ver que cada antena posee un identificador (DA, DV o PM) dando a conocer el tipo de antena que está siendo utilizado para el muestreo.
+A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de antenas para el muestreo del objeto HLTauri en banda 6. Además la Figura \ref{fig:almaarray2} muestra el centro de la primera figura en donde se puede visualizar una gran concentración de antenas. Además, se puede ver que cada antena posee un identificador (DA, DV o PM) dando a conocer los tipos de antena que están siendo utilizados para el muestreo.
 
 \begin{figure}[h!]
 \centering
@@ -60,21 +60,23 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 \label{tab:bands}
 \end{table}
 
-Por ejemplo, la estrella HLTauri ha sido muestreada en banda 3, banda 6 y banda 7.
+Por ejemplo, la estrella HLTauri ha sido muestreada en las bandas 3, 6 y 7, en la Figura \ref{fig:HLTau-total} es posible apreciar cada uno de los planos $(u,v)$ formados en cada muestreo.
 
 
 \begin{figure}[h!]
 \centering
-\subfloat[Banda 3]{\includegraphics[scale=0.2]{images/HLTau_B3total.png}}%
-\subfloat[Banda 6]{\includegraphics[scale=0.2]{images/HLTau_B6total.png}}\\
-\subfloat[Banda 7]{\includegraphics[scale=0.2]{images/HLTau_B7total.png}}%
+\subfloat[Banda 3]{\includegraphics[scale=0.15]{images/HLTau_B3total.png}}%
+\subfloat[Banda 6]{\includegraphics[scale=0.15]{images/HLTau_B6total.png}}\\
+\subfloat[Banda 7]{\includegraphics[scale=0.15]{images/HLTau_B7total.png}}%
+\caption{Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia}
 \label{fig:HLTau-total}
-\caption{Mapeos $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia}
 \end{figure}
 
 
 
-Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y llevadas al correlacionador. El correlacionador recibe señales de voltaje desde cada antena, calcula la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y produce las visibilidades complejas que los astrónomos reciben para sintetizar imágenes \citep{alma-handbook}. Para entender de mejor forma qué son las visibilidades y qué implicancia tienen en la síntesis de imágenes es necesario conocer los conceptos esenciales de interferometría.
+Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}. 
+
+Es importante destacar que los correlacionadores reciben señales de voltaje desde cada antena, calculan la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y producen las visibilidades de valores complejos que los astrónomos reciben para sintetizar imágenes. Para entender de mejor forma qué son las visibilidades y cual es la implicancia que tienen en la síntesis de imágenes es necesario conocer los conceptos esenciales de interferometría.
 
 \section{Principios y conceptos de interferometría}
 
