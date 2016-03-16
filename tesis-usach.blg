@@ -48,45 +48,45 @@ Repeated entry---line 925 of file bibliografia.bib
  :               ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in pablo
-You've used 26 entries,
+You've used 27 entries,
             2804 wiz_defined-function locations,
-            782 strings with 9533 characters,
-and the built_in function-call counts, 14746 in all, are:
-= -- 1192
-> -- 532
-< -- 25
-+ -- 206
-- -- 173
-* -- 1130
-:= -- 2288
-add.period$ -- 81
-call.type$ -- 26
-change.case$ -- 194
-chr.to.int$ -- 25
-cite$ -- 27
-duplicate$ -- 1097
-empty$ -- 1130
-format.name$ -- 254
-if$ -- 2877
+            787 strings with 9690 characters,
+and the built_in function-call counts, 15141 in all, are:
+= -- 1222
+> -- 542
+< -- 26
++ -- 210
+- -- 176
+* -- 1152
+:= -- 2356
+add.period$ -- 84
+call.type$ -- 27
+change.case$ -- 199
+chr.to.int$ -- 26
+cite$ -- 28
+duplicate$ -- 1127
+empty$ -- 1167
+format.name$ -- 258
+if$ -- 2956
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 232
-newline$ -- 151
-num.names$ -- 107
-pop$ -- 410
+missing$ -- 239
+newline$ -- 157
+num.names$ -- 111
+pop$ -- 425
 preamble$ -- 1
-purify$ -- 161
+purify$ -- 166
 quote$ -- 0
-skip$ -- 385
+skip$ -- 400
 stack$ -- 0
-substring$ -- 732
-swap$ -- 608
+substring$ -- 743
+swap$ -- 619
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 228
+type$ -- 234
 warning$ -- 1
-while$ -- 107
+while$ -- 110
 width$ -- 0
-write$ -- 359
+write$ -- 372
 (There were 8 error messages)

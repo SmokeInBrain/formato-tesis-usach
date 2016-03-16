@@ -15,24 +15,79 @@ El conjunto de antenas está ubicado en el llano Chajnantor a 5.000 metros sobre
 
 La distribución de las antenas cede paso a lo que es llamado \textit{baseline} o distancia entre un par de antenas, que van desde 15 Km. hasta 16 Km. aproximadamente. Tanto la distribución como la distancia entre éstas es crucial en la determinación de la calidad de la imagen y la resolución de ALMA. Esto debido a que si el conjunto de antenas está distribuido de forma extendida dará como resultado una alta resolución espacial, en cambio, si la distribución es compacta, el resultado será una mejor sensibilidad para fuentes extendidas.
 
-A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de antenas para el muestreo del objeto HLTauri en banda 6. Además la Figura \ref{fig:almaarray2} muestra el centro de la primera figura en donde se puede visualizar una gran concentración de antenas. Además, se puede ver que cada antena posee un identificador (DA, DV o PM) dando a conocer los tipos de antena que están siendo utilizados para el muestreo.
+A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de antenas para el muestreo del objeto HLTauri en banda 6. Además la Figura \ref{fig:almaarray2} muestra el centro de la primera figura en donde se puede visualizar una gran concentración de antenas. Además, se puede ver que cada antena posee un identificador (DA, DV o PM) dando a conocer los tipos de antena que están siendo utilizados para el muestreo. Es importante que cada antena tiene una coordenada $X$ que apunta hacia al este geográfico y una coordenada $Y$ que apunta al norte geográfico.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.25]{images/HLTau_B6antennas1.png}
-\caption{Distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia)}
+\caption{Distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.}
 \label{fig:almaarray1}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.25]{images/HLTau_B6antennasCenter.png}
-\caption{Centro de la distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia)}
+\caption{Centro de la distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.}
 \label{fig:almaarray2}
 \end{figure}
 
+Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. $H$ se mide a partir del punto $Q$ (intersección del meridiano del lugar con el Ecuador) en sentido horario. Su extremo es el punto $A$ (intersección del meridiano que pasa por el objeto a observar con el Ecuador). El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Por otro lado, la declinación es el ángulo medido sobre el meridiano que pasa por la estrella u objeto a observar, entre el Ecuador y la dirección de éste. Es decir, el ángulo correspondiente al arco $AE$. Sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio Norte, y entre cero y $-90°$ para los astros del hemisferio Sur \citep{astroelemental}.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{images/ecuatorial.png}
+\caption{Coordenadas ecuatoriales horarias}. Fuente: \citep{astroelemental}
+\label{fig:almaarray2}
+\end{figure}
+
+Es importante destacar que las estrellas describen en su movimiento diurno aparente, círculos paralelos de la Esfera Celeste y tiene por lo tanto declinación constante. Sin embargo, no sucede lo mismo con el Sol, la Luna o los planetas.
+
+Teniendo esto en consideración, una coordenada del plano $(u,v)$ que genera un baseline está dada por:
+
+\begin{equation}
+\begin{bmatrix}
+u\\
+v\\
+w
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sin{H} & \cos{H} & 0\\
+-\sin{\delta}\cos{H} & \sin{\delta}\sin{H} & \cos{\delta}\\
+\cos{\delta}\cos{H} & -\cos{\delta}\sin{H} & \sin{\delta}
+\end{bmatrix}
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+\end{equation}
+
+
+Donde las coordenadas en el sistema $(X,Y,Z)$ están dadas por:
+
+\begin{equation}
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+=
+D
+\begin{bmatrix}
+\cos{d}\cos{h}\\
+-\cos{d}\sin{h}\\
+\sin{d}
+\end{bmatrix}
+\end{equation} 
+
+Aquí, $(H, \delta)$ son el ángulo horario y la declinación de la posición de referencia. Por otra parte es importante especificar el vector del \textit{baseline} en términos de su longitud $D$ y el ángulo horario y declinación $(h,d)$ de la intersección de la dirección del \textit{baseline} con el norte celestial.
+
 
 \clearpage
+
+
 
 Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-end}) que permite que las éstas capten información en diez bandas de frecuencia diferentes. Para ello cada antena está equipada con un criostato y su criorefrigerador adjunto. Estos criostatos contienen receptores que están montados y pueden ser reemplazados de forma fácil. En la tabla \ref{tab:bands} se adjuntan los datos de las distintas bandas de frecuencia que ALMA puede cubrir gracias a su front-end.
 

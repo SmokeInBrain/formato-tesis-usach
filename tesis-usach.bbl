@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -149,6 +149,12 @@ Taylor, G.~B., Carilli, C.~L., \& Perley, R.~A. (Eds.)  (1999).
   Astronomical Society of the Pacific Conference Series\/}.
 \newblock San Francisco: Astronomical Society of the Pacific.
 \newline\urlprefix\url{http://adsabs.harvard.edu/cgi-bin/nph-bib\_query?bibcode=1999ASPC..180.....T}
+
+\bibitem[{Valero(2006)}]{astroelemental}
+Valero, J. (2006).
+\newblock {\em Una mirada al universo: astronom{\'\i}a b{\'a}sica elemental\/}.
+\newblock Editorial T{\'e}bar, S. L.
+\newline\urlprefix\url{https://books.google.cl/books?id=YWL1kYrA2vcC}
 
 \bibitem[{Wernecke \& D'Addario(1977)}]{daddario}
 Wernecke, S.~J., \& D'Addario, L.~R. (1977).
