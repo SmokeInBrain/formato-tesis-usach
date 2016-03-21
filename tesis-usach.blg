@@ -27,6 +27,10 @@ Repeated entry---line 571 of file bibliografia.bib
  : @article{MEM
  :             ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 580 of file bibliografia.bib
+ : @book{libroAstro
+ :                 ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 588 of file bibliografia.bib
  : @book{libroAstro2
  :                  ,
@@ -48,45 +52,45 @@ Repeated entry---line 925 of file bibliografia.bib
  :               ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in pablo
-You've used 27 entries,
+You've used 28 entries,
             2804 wiz_defined-function locations,
-            787 strings with 9690 characters,
-and the built_in function-call counts, 15141 in all, are:
-= -- 1222
-> -- 542
-< -- 26
-+ -- 210
-- -- 176
-* -- 1152
-:= -- 2356
-add.period$ -- 84
-call.type$ -- 27
-change.case$ -- 199
-chr.to.int$ -- 26
-cite$ -- 28
-duplicate$ -- 1127
-empty$ -- 1167
-format.name$ -- 258
-if$ -- 2956
+            794 strings with 9866 characters,
+and the built_in function-call counts, 15536 in all, are:
+= -- 1252
+> -- 552
+< -- 27
++ -- 214
+- -- 179
+* -- 1173
+:= -- 2424
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 204
+chr.to.int$ -- 27
+cite$ -- 29
+duplicate$ -- 1158
+empty$ -- 1205
+format.name$ -- 262
+if$ -- 3036
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 239
-newline$ -- 157
-num.names$ -- 111
-pop$ -- 425
+missing$ -- 246
+newline$ -- 162
+num.names$ -- 115
+pop$ -- 439
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 171
 quote$ -- 0
-skip$ -- 400
+skip$ -- 415
 stack$ -- 0
-substring$ -- 743
-swap$ -- 619
+substring$ -- 754
+swap$ -- 631
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 234
+type$ -- 240
 warning$ -- 1
-while$ -- 110
+while$ -- 113
 width$ -- 0
-write$ -- 372
-(There were 8 error messages)
+write$ -- 384
+(There were 9 error messages)

@@ -1,8 +1,13 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{{A. Richard Thompson}(2004)}]{libroAstro}
+{A. Richard Thompson}, G., {James M. Moran} (2004).
+\newblock {\em Interferometry and Synthesis in Radio Astronomy\/}.
+\newblock Weinheim: WILEY-VCH Verlag GmbH \& Co. KGaA.
 
 \bibitem[{{Ables}(1974)}]{memsan}
 {Ables}, J.~G. (1974).

@@ -31,14 +31,25 @@ A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de ante
 \label{fig:almaarray2}
 \end{figure}
 
-Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. $H$ se mide a partir del punto $Q$ (intersección del meridiano del lugar con el Ecuador) en sentido horario. Su extremo es el punto $A$ (intersección del meridiano que pasa por el objeto a observar con el Ecuador). El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Por otro lado, la declinación es el ángulo medido sobre el meridiano que pasa por la estrella u objeto a observar, entre el Ecuador y la dirección de éste. Es decir, el ángulo correspondiente al arco $AE$. Sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio Norte, y entre cero y $-90°$ para los astros del hemisferio Sur \citep{astroelemental}.
+Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Además, se mide a partir de la intersección del meridiano local con el ecuador. Su extremo es la intersección del meridiano que pasa por el objeto a observar ($S$) con el ecuador. 
 
+Por otra parte, la declinación es el ángulo medido sobre el meridiano que para por la estrella u objeto a observar, entre el ecuador la dirección de éste, sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio norte, y entre cero y $-90°$ para los astros del hemisferio sur \citep{astroelemental}.
+
+En la Figura \ref{fig:ecuatorial2} se muestra el sistema de coordenadas ecuatoriales usado para arreglos de antenas terrestres. Se puede ver un sistema cartesiano donde $X$ e $Y$ están en un plano paralelo al ecuador de la tierra, donde $X$ es parte del plano meridiano (definido como el plano que pasa por los polos de la tierra y el punto de referencia del arreglo de antenas, $Y$ se mide hacia el este, y Z hacia el polo norte \citep{libroAstro}. En términos de ángulo horario $H$ y declinación $\delta$, las coordenadas $(X,Y,Z)$ se miden como lo muestra la Figura \ref{fig:ecuatorial1}.
+%$H$ se mide a partir del punto $Q$ (intersección del meridiano del lugar con el Ecuador) en sentido horario. Su extremo es el punto $A$ (intersección del meridiano que pasa por el objeto a observar con el Ecuador). El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Por otro lado, la declinación es el ángulo medido sobre el meridiano que pasa por la estrella u objeto a observar, entre el Ecuador y la dirección de éste. Es decir, el ángulo correspondiente al arco $AE$. Sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio Norte, y entre cero y $-90°$ para los astros del hemisferio Sur \citep{astroelemental}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{images/ecuatorial1.png}
+\caption{Sistema de coordenadas $(X,Y,Z)$ y la dirección de los ejes en términos de ángulo horario $H$ y declinación $\delta$. Fuente: \citep{libroAstro}}.
+\label{fig:ecuatorial1}
+\end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{images/ecuatorial.png}
-\caption{Coordenadas ecuatoriales horarias}. Fuente: \citep{astroelemental}
-\label{fig:almaarray2}
+\includegraphics[scale=0.3]{images/ecuatorial2.png}
+\caption{%Coordenadas ecuatoriales horarias.
+Relación entre los sistemas de coordenadas $(X,Y,Z)$ y $(u,v,w)$. El sistema $(u,v,w)$ está definido por la observación en la dirección del punto $S$, el cual tiene un ángulo horario $H$ y una declicación $\delta$. Como $S$ está en el la mitad del hemisferio este, $H$ es negativo (sentido anti-horario). Fuente: \citep{libroAstro}}.
+\label{fig:ecuatorial2}
 \end{figure}
 
 Es importante destacar que las estrellas describen en su movimiento diurno aparente, círculos paralelos de la Esfera Celeste y tienen por lo tanto declinación constante. Sin embargo, no sucede lo mismo con el Sol, la Luna o los planetas.
@@ -62,6 +73,7 @@ X\\
 Y\\
 Z
 \end{bmatrix}
+\label{eq:uvw}
 \end{equation}
 
 
@@ -80,14 +92,57 @@ D
 -\cos{d}\sin{h}\\
 \sin{d}
 \end{bmatrix}
+\label{eq:XYZ}
 \end{equation} 
 
-Aquí, $(H, \delta)$ son el ángulo horario y la declinación de la posición de referencia. Por otra parte es importante especificar el vector del \textit{baseline} en términos de su longitud $D$ y el ángulo horario y declinación $(h,d)$ de la intersección de la dirección del \textit{baseline} con el norte celestial.
+Aquí, $(H, \delta)$ son el ángulo horario y la declinación de la posición de fase de referencia. Por otra parte es importante especificar el vector del \textit{baseline} en términos de su longitud $D$ y el ángulo horario y declinación $(h,d)$ de la intersección de la dirección del \textit{baseline} con el norte celestial. Reemplazando la Ecuación \ref{eq:XYZ} en \ref{eq:uvw} y usando identidades trigonométricas se tiene que:
 
+
+\begin{equation}
+\begin{bmatrix}
+u\\
+v\\
+w
+\end{bmatrix}
+=
+D
+\begin{bmatrix}
+\cos{d}\sin{(H-h)}\\
+\sin{d}\cos{\delta}-\cos{d}\sin{\delta}\cos{(H-h)}\\
+\sin{d}\sin{\delta}+\cos{d}\cos{\delta}\cos{(H-h)}
+\end{bmatrix}
+\label{eq:uvw2}
+\end{equation} 
+
+Si bien el sistema $(D,h,d)$ era más usado con instrumentos que sólo consistían en dos antenas. Cuando se tiene dos antenas o más, la práctica usual es utilizar el sistema de coordenadas horizontales para determinar la elevación $\mathcal{E}$, el \textit{azimuth} $\mathcal{A}$ y el largo del baseline $D$.
+
+\begin{equation}
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+=
+D
+\begin{bmatrix}
+\cos{\matcal{L}}\sin{\mathcal{E}}-\sin{\mathcal{L}}\cos{\mathcal{E}}\cos{\mathcal{A}}\\
+\cos{\mathcal{E}}\sin{\mathcal{A}}\\
+\sin{\mathcal{L}}\sin{\mathcal{E}}+\cos{\mathcal{L}}\cos{\mathcal{E}}\cos{\mathcal{A}}
+\end{bmatrix}
+\end{equation}
+
+
+
+Si quisieramos ver proyectar el plano $(u,v)$ en la Figura \ref{fig:ecuatorial2} bastaría que hicieramos $H=0$ en la ecuación \ref{eq:uvw} o \ref{eq:uvw2}, con esto se forma una ecuación de la elipse en el plano $(u,v)$ de la forma:
+
+\begin{equation}
+\frac{u^2}{(\sqrt{X^{2}+Y^{2}})^2}+\frac{(v-Z\cos{\delta})^2}{(\sin{\delta}\sqrt{X^{2}+Y^{2}})^2} = 1
+\label{eq:elipse}
+\end{equation}
+
+Si se analiza la ecuación \ref{eq:elipse} es posible notar que su centro está en $(u,v)=(0,Z\cos{\delta})$, su eje semimayor se encuentra en $\sqrt{X^{2}+Y^{2}}$ y su eje semimenor en $\sin{\delta}\sqrt{X^{2}+Y^{2}}$. Este arco trazado durante la observación depende del \textit{azimuth}, la elevación y la latitud del \textit{baseline}; la declinación de la fuente, y el rango de ángulo horario que se cubre. Además, como una de las propiedades de la transformada de Fourier es la simetría Hermitiana $V(u,v)=V(-u,-v)$, el correlacionador devuelve como salida el valor de la visibilidad en dos puntos en el plano $(u,v)$.
 
 \clearpage
-
-
 
 Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-end}) que permite que las éstas capten información en diez bandas de frecuencia diferentes. Para ello cada antena está equipada con un criostato y su criorefrigerador adjunto. Estos criostatos contienen receptores que están montados y pueden ser reemplazados de forma fácil. En la tabla \ref{tab:bands} se adjuntan los datos de las distintas bandas de frecuencia que ALMA puede cubrir gracias a su front-end.
 
