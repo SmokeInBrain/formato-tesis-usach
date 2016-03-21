@@ -36,6 +36,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{indentfirst}
 \RequirePackage{amsmath}
+\RequirePackage{mathrsfs}
 \RequirePackage{amssymb,latexsym}
 \RequirePackage{amstext}
 \RequirePackage{amsthm}
