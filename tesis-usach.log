@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  16 MAR 2016 19:12
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.8.31)  17 MAR 2016 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1576,7 +1576,7 @@ File: images/HLTau_B6antennasCenter.png Graphic file (type QTm)
 <use  "images/HLTau_B6antennasCenter.png" > [12]
 File: images/ecuatorial.png Graphic file (type QTm)
 
-<use  "images/ecuatorial.png" > [13]
+<use  "images/ecuatorial.png" > [13] [14]
 
 ! LaTeX Error: Command \ra already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -1585,7 +1585,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 ...{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+l.94 ...{\ra}[1]{\renewcommand{\arraystretch}{#1}}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1595,7 +1595,7 @@ File: images/HLTau_B3total.png Graphic file (type QTm)
 <use  "images/HLTau_B3total.png" >
 File: images/HLTau_B6total.png Graphic file (type QTm)
  <use  "images/HLTau_B6total.png" >
-Overfull \hbox (25.17647pt too wide) in paragraph at lines 121--122
+Overfull \hbox (25.17647pt too wide) in paragraph at lines 123--124
  [][][][] 
  []
 
@@ -1605,44 +1605,44 @@ File: images/HLTau_B7total.png Graphic file (type QTm)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 130--131
+Underfull \hbox (badness 1264) in paragraph at lines 132--133
 []\EU1/Arial(0)/m/n/10 Luego de que las ondas milimétricas y submilímetricas so
 n recibidas por las
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 130--131
+Underfull \hbox (badness 1400) in paragraph at lines 132--133
 \EU1/Arial(0)/m/n/10 el \EU1/Arial(0)/m/it/10 Atacama Compact Array\EU1/Arial(0
 )/m/n/10 . Así, ambos correlacionadores funcionan simultáneamente e
  []
 
-[14
+[15
 
-] [15]
+] [16]
 File: images/antenas.png Graphic file (type QTm)
- <use  "images/antenas.png" > [16]
-Overfull \hbox (15.0pt too wide) detected at line 235
+ <use  "images/antenas.png" > [17]
+Overfull \hbox (15.0pt too wide) detected at line 237
 [][] 
  []
 
-[17] [18]
+[18] [19]
 Cap\'itulo 3.
-[19
+[20
 
 ]
 Cap\'itulo 4.
-) [20
+) [21
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (./chapters/3-Conclusiones.tex
 Cap\'itulo 5.
-) [21
+) [22
 
 
 
-] (./tesis-usach.bbl [22
+] (./tesis-usach.bbl [23
 
 
 ]
@@ -1651,12 +1651,12 @@ Underfull \hbox (badness 1127) in paragraph at lines 128--132
 délisation Mathématique et
  []
 
-) [23]
+) [24]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (./anexos/Anexo-1.tex
 Anexo A.
-) [24
+) [25
 
 
 ]
@@ -1684,4 +1684,4 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  53i,12n,50p,10407b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tesis-usach.pdf (34 pages).
+Output written on tesis-usach.pdf (35 pages).
