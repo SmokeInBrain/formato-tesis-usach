@@ -123,6 +123,19 @@ Si bien el sistema $(D,h,d)$ era el más usado con instrumentos que sólo consis
 \label{fig:horizontal}
 \end{figure}
 
+%%%%Explicar el sistema de coordenadas horizontales
+El plano de referencia es el horizonte, perpendicular a la vertical del lugar de observación que pasa por el centro de la Tierra. $Z$ es el \textit{zenith} del observador y es la parte superior (más próximo al polo norte $P$) del plano vertical perpendicular al plano de observación. Por otra parte, el meridiano del lugar que pasa por el \textit{zenith}, corta al horizonte en una recta llamada meridiana que determina la dirección Norte-Sur. En este caso $Q$ indica el la dirección Norte, y luego mirando hacia éste, el Este queda a la derecha y el Oeste a la izquierda. Se llama \textit{azimuth} al ángulo $\mathscr{A}$ medido de Norte a Este en sentido anti-horario. Además, se llama elevación al ángulo $\mathscr{E}$ formado por la dirección de la fuente $S$ con el plano del horizonte.
+
+Las fórmulas de conversión de coordenadas derivan de la aplicación de las reglas de seno y coseno para triángulos esféricos en la Figura \ref{fig:horizontal}. Por lo tanto para un observador a una latitud $\mathscr{L}$ se tiene que:
+
+\begin{align}
+\sin{d} &= \sin{\mathscr{L}}\sin{\mathscr{E}}+\cos{\mathscr{L}}\cos{\mathscr{E}}\cos{\mathscr{A}} \nonumber\\
+\cos{d}\cos{h} &= \cos{\mathscr{L}}\sin{\mathscr{E}} - \sin{\mathscr{L}}\cos{\mathscr{E}}\cos{\mathscr{A}}\\
+\cos{d}\sin{h} &= -\cos{\mathscr{E}}\sin{\mathscr{A}} \nonumber
+\label{eq:transformation}
+\end{align}
+
+Reemplazando en la Ecuación \ref{eq:XYZ} se tiene:
 
 \begin{equation}
 \begin{bmatrix}
@@ -140,8 +153,7 @@ D
 \end{equation}
 
 
-
-Si quisieramos proyectar el plano $(u,v)$ en la Figura \ref{fig:ecuatorial2} bastaría que hicieramos $H=0$ en la ecuación \ref{eq:uvw} o \ref{eq:uvw2}, con esto se forma una ecuación de la elipse en el plano $(u,v)$ de la forma:
+Por otra parte, si se quisiera proyectar el plano $(u,v)$ en la Figura \ref{fig:ecuatorial2} bastaría que hicieramos $H=0$ en la ecuación \ref{eq:uvw} o \ref{eq:uvw2}, con esto se forma una ecuación de la elipse en el plano $(u,v)$ de la forma:
 
 \begin{equation}
 \frac{u^2}{(\sqrt{X^{2}+Y^{2}})^2}+\frac{(v-Z\cos{\delta})^2}{(\sin{\delta}\sqrt{X^{2}+Y^{2}})^2} = 1
@@ -181,10 +193,10 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
  1   && 31 - 45 &&  26\\
  2   && 67 - 90 &&  47\\    
  3  && 84 - 116 &&  60\\
- 4  && 125 - 163 &&  82\\
- 5  && 162 - 211 &&  105\\
- 6  && 211 - 275 &&  136\\
- 7  && 275 - 373 &&  219\\
+ 4  && 125 - 162 &&  82\\
+ 5  && 163 - 211 &&  105\\
+ 6  && 212 - 275 &&  136\\
+ 7  && 276 - 373 &&  219\\
  8  && 385 - 500 &&  292\\
  9  && 602 - 720 &&  261\\
  10  && 787 - 950 &&  344\\
