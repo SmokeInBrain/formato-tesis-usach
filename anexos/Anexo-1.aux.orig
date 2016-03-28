@@ -1,12 +1,22 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusiones}{24}{chapter.5}}
+<<<<<<< HEAD
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Anexo de ejemplo}{25}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cap:conclusiones}{{5}{24}{Conclusiones}{chapter.5}{}}
-\@setckpt{chapters/3-Conclusiones}{
-\setcounter{page}{25}
+\newlabel{apendice:anexo1}{{A}{25}{Anexo de ejemplo}{appendix.A}{}}
+\@setckpt{anexos/Anexo-1}{
+\setcounter{page}{26}
+=======
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Anexo de ejemplo}{26}{appendix.A}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{apendice:anexo1}{{A}{26}{Anexo de ejemplo}{appendix.A}{}}
+\@setckpt{anexos/Anexo-1}{
+\setcounter{page}{27}
+>>>>>>> 0c6837e0b681a091696a72a16116176a6d5289bd
 \setcounter{equation}{0}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
@@ -15,7 +25,7 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{5}
+\setcounter{chapter}{1}
 \setcounter{section}{0}
 \setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
@@ -37,7 +47,7 @@
 \setcounter{Item}{20}
 \setcounter{Hfootnote}{0}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{26}
+\setcounter{bookmark@seq@number}{29}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{@pps}{0}
@@ -52,7 +62,7 @@
 \setcounter{ALC@rem}{0}
 \setcounter{ALC@depth}{0}
 \setcounter{lstnumber}{1}
-\setcounter{NAT@ctr}{0}
+\setcounter{NAT@ctr}{28}
 \setcounter{btxromaniannumeral}{0}
 \setcounter{teorema}{0}
 \setcounter{ejemplo}{0}

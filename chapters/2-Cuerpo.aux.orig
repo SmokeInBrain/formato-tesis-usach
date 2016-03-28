@@ -1,0 +1,148 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Síntesis de imágenes de radiointerferometría}{11}{chapter.2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:imagesynthesisinterferometry}{{2}{11}{Síntesis de imágenes de radiointerferometría}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Atacama Large Millimeter-Submillimeter Array}{11}{section.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.\relax }}{12}{figure.caption.9}}
+\newlabel{fig:almaarray1}{{2.1}{12}{Distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Centro de la distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.\relax }}{12}{figure.caption.10}}
+\newlabel{fig:almaarray2}{{2.2}{12}{Centro de la distribución de antenas para el muestro del objeto HLTauri en banda 6. Fuente: Elaboración propia.\relax }{figure.caption.10}{}}
+\citation{astroelemental}
+\citation{libroAstro}
+\citation{libroAstro}
+\citation{libroAstro}
+\citation{libroAstro}
+\citation{libroAstro}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Sistema de coordenadas $(X,Y,Z)$ y la dirección de los ejes en términos de ángulo horario $H$ y declinación $\delta $. Fuente: \citep  {libroAstro}\relax }}{13}{figure.caption.11}}
+\newlabel{fig:ecuatorial1}{{2.3}{13}{Sistema de coordenadas $(X,Y,Z)$ y la dirección de los ejes en términos de ángulo horario $H$ y declinación $\delta $. Fuente: \citep {libroAstro}\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Relación entre los sistemas de coordenadas $(X,Y,Z)$ y $(u,v,w)$. El sistema $(u,v,w)$ está definido por la observación en la dirección del punto $S$, el cual tiene un ángulo horario $H$ y una declicación $\delta $. Como $S$ está en el la mitad del hemisferio este, $H$ es negativo (sentido anti-horario). Fuente: \citep  {libroAstro}\relax }}{14}{figure.caption.12}}
+\newlabel{fig:ecuatorial2}{{2.4}{14}{Relación entre los sistemas de coordenadas $(X,Y,Z)$ y $(u,v,w)$. El sistema $(u,v,w)$ está definido por la observación en la dirección del punto $S$, el cual tiene un ángulo horario $H$ y una declicación $\delta $. Como $S$ está en el la mitad del hemisferio este, $H$ es negativo (sentido anti-horario). Fuente: \citep {libroAstro}\relax }{figure.caption.12}{}}
+\newlabel{eq:uvw}{{2.1}{14}{Atacama Large Millimeter-Submillimeter Array}{equation.2.1.1}{}}
+\newlabel{eq:XYZ}{{2.2}{14}{Atacama Large Millimeter-Submillimeter Array}{equation.2.1.2}{}}
+\newlabel{eq:uvw2}{{2.3}{14}{Atacama Large Millimeter-Submillimeter Array}{equation.2.1.3}{}}
+\newlabel{eq:elipse}{{2.4}{15}{Atacama Large Millimeter-Submillimeter Array}{equation.2.1.4}{}}
+\citation{alma-handbook}
+<<<<<<< HEAD
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Las 10 Bandas de frecuencia de ALMA\relax }}{15}{table.caption.12}}
+\newlabel{tab:bands}{{2.1}{15}{Las 10 Bandas de frecuencia de ALMA\relax }{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }}{16}{figure.caption.13}}
+\newlabel{fig:HLTau-total}{{2.4}{16}{Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Banda 3}}}{16}{subfigure.4.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Banda 6}}}{16}{subfigure.4.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Banda 7}}}{16}{subfigure.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Principios y conceptos de interferometría}{16}{section.2.2}}
+\citation{zernike}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Dos antenas y su respectivo \textit  {baseline}. $\mathaccentV {vec}17E{x}$ es la posición del objeto estudiado, y por otro lado $\mathaccentV {vec}17E{k}$ es el \textit  {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }}{17}{figure.caption.14}}
+\newlabel{fig:antena}{{2.5}{17}{Dos antenas y su respectivo \textit {baseline}. $\vec {x}$ es la posición del objeto estudiado, y por otro lado $\vec {k}$ es el \textit {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }{figure.caption.14}{}}
+\citation{hogbom}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Métodos existentes de deconvolución}{18}{section.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}CLEAN}{18}{subsection.2.3.1}}
+\newlabel{eq:dirtybeam}{{2.5}{18}{CLEAN}{equation.2.3.5}{}}
+\newlabel{eq:dirtyimage}{{2.6}{18}{CLEAN}{equation.2.3.6}{}}
+\newlabel{eq:fullcoverage}{{2.7}{18}{CLEAN}{equation.2.3.7}{}}
+\newlabel{alg:clean}{{\caption@xref {alg:clean}{ on input line 235}}{19}{CLEAN}{ALC@unique.13}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2.1}{\ignorespaces Algoritmo CLEAN\relax }}{19}{algocf.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}MEM}{19}{subsection.2.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Pruebas}{20}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:pruebas}{{3}{20}{Pruebas}{chapter.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Resultados}{21}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:resultados}{{4}{21}{Resultados}{chapter.4}{}}
+\@setckpt{chapters/2-Cuerpo}{
+\setcounter{page}{22}
+=======
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Las 10 Bandas de frecuencia de ALMA\relax }}{16}{table.caption.13}}
+\newlabel{tab:bands}{{2.1}{16}{Las 10 Bandas de frecuencia de ALMA\relax }{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }}{17}{figure.caption.14}}
+\newlabel{fig:HLTau-total}{{2.5}{17}{Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Banda 3}}}{17}{subfigure.5.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Banda 6}}}{17}{subfigure.5.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Banda 7}}}{17}{subfigure.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Principios y conceptos de interferometría}{17}{section.2.2}}
+\citation{zernike}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Dos antenas y su respectivo \textit  {baseline}. $\mathaccentV {vec}17E{x}$ es la posición del objeto estudiado, y por otro lado $\mathaccentV {vec}17E{k}$ es el \textit  {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }}{18}{figure.caption.15}}
+\newlabel{fig:antena}{{2.6}{18}{Dos antenas y su respectivo \textit {baseline}. $\vec {x}$ es la posición del objeto estudiado, y por otro lado $\vec {k}$ es el \textit {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }{figure.caption.15}{}}
+\citation{hogbom}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Métodos existentes de deconvolución}{19}{section.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}CLEAN}{19}{subsection.2.3.1}}
+\newlabel{eq:dirtybeam}{{2.7}{19}{CLEAN}{equation.2.3.7}{}}
+\newlabel{eq:dirtyimage}{{2.8}{19}{CLEAN}{equation.2.3.8}{}}
+\newlabel{eq:fullcoverage}{{2.9}{19}{CLEAN}{equation.2.3.9}{}}
+\newlabel{alg:clean}{{\caption@xref {alg:clean}{ on input line 275}}{20}{CLEAN}{ALC@unique.13}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2.1}{\ignorespaces Algoritmo CLEAN\relax }}{20}{algocf.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}MEM}{20}{subsection.2.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Pruebas}{21}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:pruebas}{{3}{21}{Pruebas}{chapter.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Resultados}{22}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:resultados}{{4}{22}{Resultados}{chapter.4}{}}
+\@setckpt{chapters/2-Cuerpo}{
+\setcounter{page}{23}
+>>>>>>> 0c6837e0b681a091696a72a16116176a6d5289bd
+\setcounter{equation}{0}
+\setcounter{enumi}{2}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{0}
+\setcounter{subsection}{2}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{float@type}{8}
+\setcounter{parentequation}{0}
+\setcounter{FancyVerbLine}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{KVtest}{0}
+\setcounter{subfigure}{0}
+\setcounter{subfigure@save}{3}
+\setcounter{lofdepth}{1}
+\setcounter{subtable}{0}
+\setcounter{subtable@save}{0}
+\setcounter{lotdepth}{1}
+\setcounter{Item}{20}
+\setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{25}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{AlgoLine}{0}
+\setcounter{algocfline}{1}
+\setcounter{algocfproc}{1}
+\setcounter{algocf}{0}
+\setcounter{ALC@unique}{13}
+\setcounter{ALC@line}{13}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
+\setcounter{lstnumber}{1}
+\setcounter{NAT@ctr}{0}
+\setcounter{btxromaniannumeral}{0}
+\setcounter{teorema}{0}
+\setcounter{ejemplo}{0}
+\setcounter{definicion}{0}
+\setcounter{lema}{0}
+\setcounter{section@level}{0}
+\setcounter{lstlisting}{0}
+}

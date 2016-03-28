@@ -114,24 +114,63 @@ D
 \label{eq:uvw2}
 \end{equation} 
 
-%Si bien el sistema $(D,h,d)$ era más usado con instrumentos que sólo consistían en dos antenas, cuando se tiene dos antenas o más la práctica usual es utilizar el sistema de coordenadas horizontales para determinar la elevación $\mathcal{E}$, el \textit{azimuth} $\mathcal{A}$ y el largo del baseline.
+Si bien el sistema $(D,h,d)$ era el más usado con instrumentos que sólo consistían en dos antenas. Cuando se tiene dos antenas o más, la práctica usual es utilizar el sistema de coordenadas horizontales para determinar la elevación $\mathscr{E}$, el \textit{azimuth} $\mathscr{A}$ y el largo del baseline $D$.
 
-Si quisieramos ver proyectar el plano $(u,v)$ en la Figura \ref{fig:ecuatorial2} bastaría que hicieramos $H=0$, con esto se forma una ecuación de la elipse en el plano $(u,v)$ de la forma:
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/horizontales.png}
+\caption{Relación entre coordenadas horizontales y coordenadas ecuatoriales horarias. Fuente: \citep{libroAstro}}
+\label{fig:horizontal}
+\end{figure}
+
+
+\begin{equation}
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+=
+D
+\begin{bmatrix}
+\cos{\mathscr{L}}\sin{\mathscr{E}}-\sin{\mathscr{L}}\cos{\mathscr{E}}\cos{\mathscr{A}}\\
+\cos{\mathscr{E}}\sin{\mathscr{A}}\\
+\sin{\mathscr{L}}\sin{\mathscr{E}}+\cos{\mathscr{L}}\cos{\mathscr{E}}\cos{\mathscr{A}}
+\end{bmatrix}
+\end{equation}
+
+
+
+Si quisieramos proyectar el plano $(u,v)$ en la Figura \ref{fig:ecuatorial2} bastaría que hicieramos $H=0$ en la ecuación \ref{eq:uvw} o \ref{eq:uvw2}, con esto se forma una ecuación de la elipse en el plano $(u,v)$ de la forma:
 
 \begin{equation}
 \frac{u^2}{(\sqrt{X^{2}+Y^{2}})^2}+\frac{(v-Z\cos{\delta})^2}{(\sin{\delta}\sqrt{X^{2}+Y^{2}})^2} = 1
 \label{eq:elipse}
 \end{equation}
 
-Si se analiza la ecuación \ref{eq:elipse} es posible notar que su centro está en $(u,v)=(0,Z\cos{\delta})$, su eje semimayor se encuentra en $\sqrt{X^{2}+Y^{2}}$ y su eje semimenor en $\sin{\delta}\sqrt{X^{2}+Y^{2}}$. Este arco trazado durante la observación depende del \textit{azimuth}, la elevación y la latitud del \textit{baseline}; la declinación de la fuente, y el rango de ángulo horario que se cubre. Además, como una de las propiedades de la transformada de Fourier es la simetría Hermitiana $V(u,v)=V(-u,-v)$, el correlacionador devuelve como salida el valor de la visibilidad en dos puntos en el plano $(u,v)$.
+Si se analiza la ecuación \ref{eq:elipse} es posible notar que su centro está en $(u,v)=(0,Z\cos{\delta})$, su eje semimayor se encuentra en $\sqrt{X^{2}+Y^{2}}$ y su eje semimenor en $\sin{\delta}\sqrt{X^{2}+Y^{2}}$. Este arco trazado durante la observación depende del \textit{azimuth}, la elevación y la latitud del \textit{baseline}; la declinación de la fuente, y el rango de ángulo horario que se cubre como se muestra en la Figura \ref{fig:uvplane2}. Además, como una de las propiedades de la transformada de Fourier es la simetría Hermitiana $V(u,v)=V(-u,-v)$, el correlacionador devuelve como salida el valor de la visibilidad en dos puntos en el plano $(u,v)$ como se muestra en la Figura \ref{fig:uvplane1}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/uvplane1.png}
+\caption{Centro y eje semimayor de la elipse (Ecuación \ref{eq:elipse}). Fuente: \citep{libroAstro}}
+\label{fig:uvplane1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{images/uvplane2.png}
+\caption{Elipses muestreadas con diferentes parámetros en el plano $(u,v)$. Fuente: \citep{libroAstro}}
+\label{fig:uvplane2}
+\end{figure}
+
+
 
 \clearpage
 
-
-
 Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-end}) que permite que las éstas capten información en diez bandas de frecuencia diferentes. Para ello cada antena está equipada con un criostato y su criorefrigerador adjunto. Estos criostatos contienen receptores que están montados y pueden ser reemplazados de forma fácil. En la tabla \ref{tab:bands} se adjuntan los datos de las distintas bandas de frecuencia que ALMA puede cubrir gracias a su front-end.
 
-\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
 \begin{table}[h!]
 \centering
 \ra{1.2}

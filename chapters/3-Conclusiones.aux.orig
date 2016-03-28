@@ -1,12 +1,22 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusiones}{24}{chapter.5}}
+<<<<<<< HEAD
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusiones}{22}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{cap:conclusiones}{{5}{24}{Conclusiones}{chapter.5}{}}
+\newlabel{cap:conclusiones}{{5}{22}{Conclusiones}{chapter.5}{}}
 \@setckpt{chapters/3-Conclusiones}{
-\setcounter{page}{25}
+\setcounter{page}{23}
+=======
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusiones}{23}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\newlabel{cap:conclusiones}{{5}{23}{Conclusiones}{chapter.5}{}}
+\@setckpt{chapters/3-Conclusiones}{
+\setcounter{page}{24}
+>>>>>>> 0c6837e0b681a091696a72a16116176a6d5289bd
 \setcounter{equation}{0}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
