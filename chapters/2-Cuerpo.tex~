@@ -193,10 +193,10 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
  1   && 31 - 45 &&  26\\
  2   && 67 - 90 &&  47\\    
  3  && 84 - 116 &&  60\\
- 4  && 125 - 163 &&  82\\
- 5  && 162 - 211 &&  105\\
- 6  && 211 - 275 &&  136\\
- 7  && 275 - 373 &&  219\\
+ 4  && 125 - 162 &&  82\\
+ 5  && 163 - 211 &&  105\\
+ 6  && 212 - 275 &&  136\\
+ 7  && 276 - 373 &&  219\\
  8  && 385 - 500 &&  292\\
  9  && 602 - 720 &&  261\\
  10  && 787 - 950 &&  344\\
@@ -206,7 +206,7 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 \label{tab:bands}
 \end{table}
 
-Por ejemplo, la estrella HLTauri ha sido muestreada en las bandas 3, 6 y 7. En la Figura \ref{fig:HLTau-total} es posible apreciar cada uno de los planos $(u,v)$ formados en cada muestreo.
+Por ejemplo, la estrella HLTauri ha sido muestreada en las bandas 3, 6 y 7, en la Figura \ref{fig:HLTau-total} es posible apreciar cada uno de los planos $(u,v)$ formados en cada muestreo.
 
 
 \begin{figure}[h!]
@@ -218,16 +218,6 @@ Por ejemplo, la estrella HLTauri ha sido muestreada en las bandas 3, 6 y 7. En l
 \label{fig:HLTau-total}
 \end{figure}
 
-Es importante destacar que los datos muestreados en una banda se separan en \textit{spectral windows} que son espectros contiguos cuyas frecuencia están uniformemente espaciadas con anchos de banda desde 58.6 MHz hasta 1.875 GHz \citep{alma-handbook}. Asimismo, cada \textit{spectral window} se divide uniformemente en canales. Es posible visualizar esto en la Figura \ref{fig:division}, en donde se ha puesto como ejemplo el muestreo del objeto HL-Tauri.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.15]{images/frecuencias.png}
-\caption{Bandas, \textit{spectral windows} y canales del objeto HL-Tauri. Fuente: Elaboración propia}
-\label{fig:division}
-\end{figure}
-
-   
 
 
 Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}. 
@@ -238,7 +228,7 @@ Es importante destacar que los correlacionadores reciben señales de voltaje des
 
 La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena. 
 
-La resolución angular de un interferómetro, $\delta$, es el ángulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que un solo telescopio de radio $D$.
+La resolución angular de un interferómetro, $\delta$, es el angulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que un solo telescopio de radio $D$.
 
 
 
@@ -340,12 +330,7 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
 
 \subsection{MEM}
 
-
-El método de máxima entropía (MEM) encuentra la imagen que simultáneamente se ajuste mejor a los datos, dentro de un nivel de ruido y que maximice la entropía $S$. Esto se lleva a cabo minimizando la función:
-
-\begin{equation}
-\Phi = \chi^{2}-\lambda S
-\end{equation}
+ 
  
 
 
