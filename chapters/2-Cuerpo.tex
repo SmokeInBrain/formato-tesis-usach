@@ -343,10 +343,52 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
 
 El método de máxima entropía (MEM) encuentra la imagen que simultáneamente se ajuste mejor a los datos, dentro de un nivel de ruido y que maximice la entropía $S$. Esto se lleva a cabo minimizando la función:
 
+En MEM, la imagen y los datos son considerados variables aleatorias con distribuciones de probabilidad conocidas.
+
+Sea $P(V|I)$ la probabilidad de ver las visibilidades $V$ dada la imagen $I$ y sea $P(I)$ un conocimiento \textit{a priori} de la imagen. Entonces mediante el teorema de Bayes se obtiene:
+
 \begin{equation}
-\Phi = \chi^{2}-\lambda S
+P(I|V) = \frac{P(V|I)P(I)}{P(V)}
+\label{eq:bayes}
+\end{equation}	
+
+La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$, la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{O}$ son las visibilidades observadas.
+
+\begin{equation}
+ P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\biggl|\frac{V^m_k(I)-V^o_k}{\sigma_k}}\biggr|^2\biggr\}
+ \label{eq:chi2}
+\end{equation} 
+
+El \textit{prior} $P(I)$ se considera una distribución multinomial de una intensidad total discreta que cubre la imagen completa. Sea $n$ el número de píxeles y sea $N_{i}$ el número de fotones en el píxel $i$, el \textit{prior} puede expresarse de la forma:
+
+\begin{equation}
+P(I) = \frac{N!}{n^N\prod_i{N_i!}} 
+\label{eq:imageProb}
 \end{equation}
- 
+
+Donde $N=\sum_i N_{i}$ y la intensidad de la imagen en el píxel $i$ es interpretado en el modelo como $I_{i} \propto N_{i}$.
+
+El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por lo tanto no forma parte de la ecuación. Usando logaritmo y la aproximación de Stirling para factoriales y además omitiendo constantes aditivas relevantes el problema de reconstrucción de la imagen se convierte en la búsqueda de una imagen que satisfaga la probabilidad Maximum a Posteriori (MAP).
+
+\begin{equation}
+\arg \max_{I} \biggl\{
+            -\frac{1}{2} \sum_k^{Z}{ \biggl| \frac{V^m_k(I)-V^o_k}{\sigma_k}  \biggr|^2 }-
+            \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
+            \biggr\}
+\label{eq:phi}
+\end{equation} 
+
+Se reconoce al primer término de la ecuación \ref{eq:phi} como $\chi^{2}$ y al segundo como la entropía de Shannon $S$. Estos dos parámetros son relevantes en el modelo, así como $\lambda$ que tiene un rol similar a los multiplicadores de Lagrange y actúa como un penalizador.
+
+Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el problema en una minimización.
+
+\begin{align}
+\label{eq:phiFinal}
+ \Phi = \frac{1}{2}\sum_k^{Z}{{|\frac{V^m_k(I)-V^o_k}{\sigma_k}|^2} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
+\end{align}
+
+
+Como se dijo anteriormente, esta $\Phi$ es no lineal, por lo que debe ser minimizada con los algoritmos apropiados, en el caso de la solución que se propone, el método usado es el del gradiente conjugado Polak-Ribiere \citep{polak}. En el Anexo \ref{apendice:dphi} se adjunta el cálculo del gradiente de esta función.
 
 
 
@@ -367,6 +409,7 @@ El método de máxima entropía (MEM) encuentra la imagen que simultáneamente s
 %\subsection{Acceso virtual unificado}
 %\subsection{GPUVMEM}
 
+\chapter{MEM Multi-frecuencia}
 \chapter{Pruebas}
 \label{cap:pruebas}
 
