@@ -338,7 +338,7 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
 \end{algorithm}
 
 
-\subsection{MEM}
+\subsection{MEM Mono-frecuencia}
 
 
 El método de máxima entropía (MEM) encuentra la imagen que simultáneamente se ajuste mejor a los datos, dentro de un nivel de ruido y que maximice la entropía $S$. Esto se lleva a cabo minimizando la función:
@@ -388,7 +388,10 @@ Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el pro
 \end{align}
 
 
-Como se dijo anteriormente, esta $\Phi$ es no lineal, por lo que debe ser minimizada con los algoritmos apropiados, en el caso de la solución que se propone, el método usado es el del gradiente conjugado Polak-Ribiere \citep{polak}. En el Anexo \ref{apendice:dphi} se adjunta el cálculo del gradiente de esta función.
+Note que la Ecuación \ref{eq:phiFinal} es no lineal, por lo que debe ser minimizada con los algoritmos apropiados, en el caso de la solución que se propone, el método usado es el del gradiente conjugado Polak-Ribiere \citep{polak}. Además, es importante destacar que esta ecuación asume la existencia de un \textit{spectral window} y un solo canal.
+
+En el Anexo \ref{apendice:dphi} se adjunta el cálculo del gradiente de esta función.
+\subsection{MEM Multi-frecuencia}
 
 
 
@@ -409,7 +412,7 @@ Como se dijo anteriormente, esta $\Phi$ es no lineal, por lo que debe ser minimi
 %\subsection{Acceso virtual unificado}
 %\subsection{GPUVMEM}
 
-\chapter{MEM Multi-frecuencia}
+%\chapter{MEM Multi-frecuencia}
 \chapter{Pruebas}
 \label{cap:pruebas}
 
