@@ -1,11 +1,11 @@
 \chapter{Cálculo del gradiente de la función objetivo}
 \label{apendice:dphi}
 \begin{equation}
-\Phi = \chi^2 + \lambda S(I)
+\Phi = \chi^2 + \lambda S
 \end{equation}
 con
 \begin{eqnarray}
-\chi^2 & = & \frac{1}{2}\sum^{N-1}_{j=0}{\frac{|V_{j} - V_{j}^{O}|^{2}}{\sigma_j^{2}}} \\
+\chi^2 & = & \frac{1}{2}\sum^{N-1}_{j=0}{\frac{|V^{m}_{j} - V_{j}^{o}|^{2}}{\sigma_j^{2}}} \\
 S & = & \sum^{M-1}_{k=0}{I_{k}\log{(I_{k}/G)}}
 \end{eqnarray}
 con $0 \leq \lambda < \infty$.
@@ -13,7 +13,7 @@ con $0 \leq \lambda < \infty$.
 Calculando el gradiente de la función $\Phi$, es decir, derivando parcialmente con respecto a $I_{k}$:
 
 \begin{equation}
-[\nabla\Phi]_k = \frac{\partial \Phi}{\partial I_{k}} = \frac{\partial}{\partial I_{k}} \chi^{2} + \lambda \frac{\partial}{\partial I_{k}}S(I)
+[\nabla\Phi]_k = \frac{\partial \Phi}{\partial I_{k}} = \frac{\partial}{\partial I_{k}} \chi^{2} + \lambda \frac{\partial}{\partial I_{k}}S
 \label{eq:fina}
 \end{equation}
 
@@ -21,22 +21,22 @@ Calculando el gradiente de la función $\Phi$, es decir, derivando parcialmente 
 
 Primero derivamos la derivada de $\chi^2$.
 \begin{eqnarray}
-\frac{\partial\chi^{2}}{\partial I_{k}} & = & \frac{\partial}{\partial I_{k}}\frac{1}{2}\sum\limits_{j}\frac{(V_{j} - V_{j}^{O})^{*}\cdot(V_{j} - V_{j}^{O})}{\sigma_{j}^{2}}\\
+\frac{\partial\chi^{2}}{\partial I_{k}} & = & \frac{\partial}{\partial I_{k}}\frac{1}{2}\sum\limits_{j}\frac{(V^{m}_{j} - V_{j}^{o})^{*}\cdot(V^{m}_{j} - V_{j}^{o})}{\sigma_{j}^{2}}\\
                                         & = & \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\bigg(\frac{\partial
-                                         V_{j}^*}{\partial I_{k}}\Bigl( V_{j} - V_{j}^{O}\Bigr)+\frac{\partial V_{j}}{\partial I_{k}}\Bigl(V_{j} - V_{j}^{O}\Bigr)^{*}\biggr)
+                                         V^{m*}_{j}}{\partial I_{k}}\Bigl( V_{j}^{m} - V_{j}^{o}\Bigr)+\frac{\partial V_{j}^{m}}{\partial I_{k}}\Bigl(V_{j}^{m}- V_{j}^{o}\Bigr)^{*}\biggr)
 \end{eqnarray}
 
-Note que $V_j^O$ es constante y por lo tanto su derivada respecto a $I_k$ es cero.
+Note que $V_j^{o}$ es constante y por lo tanto su derivada respecto a $I_k$ es cero.
 Donde la transformada de Fourier de la imagen ($I$) es igual a :
 
 \begin{equation}
-V_{j}=\sum^{M-1}_{m=0}I_{m}e^{-2\pi i<X_m,Z_j>}
+V_{j}^{m}=\sum^{M-1}_{k=0}I_{k}e^{-2\pi i<X_k,Z_j>}
 \end{equation}
 
 Donde $Z_j=(u_j,v_j)$, $X_k=(x_k,y_k)$, y el producto interno $<(a,b),(c,d)>=ac+bd$. Luego el conjugado es:
 
 \begin{equation}
-V_{j}^{*}=\sum^{M-1}_{m=0}I_{m}e^{2\pi i<X_m,Z_j>}
+V_{j}^{m*}=\sum^{M-1}_{k=0}I_{k}e^{2\pi i<X_k,Z_j>}
 \end{equation}
 
 Derivando ambas visibilidades por separado con respecto a $I_{k}$ se tiene que:
@@ -49,13 +49,13 @@ Derivando ambas visibilidades por separado con respecto a $I_{k}$ se tiene que:
 Definiedo el residuo de las visibilidades como:
 
 \begin{equation}
-V_{j}^{R} = V_{j}-V_{j}^{O} = \text{Re}(V_{j}^{R}) + i\cdot \text{Im}(V_{j}^{R})
+V_{j}^{R} = V_{j}^{m}-V_{j}^{o} = \text{Re}(V_{j}^{R}) + i\cdot \text{Im}(V_{j}^{R})
 \end{equation}
 
 Y
 
 \begin{equation}
-V_{j}^{R*} = (V_{j}-V_{j}^{O})^{*}=\text{Re}(V_{j}^{R})-i\cdot \text{Im}(V_{j}^{R})
+V_{j}^{R*} = (V_{j}^{m}-V_{j}^{o})^{*}=\text{Re}(V_{j}^{R})-i\cdot \text{Im}(V_{j}^{R})
 \end{equation}
 
 Reemplazando estos términos se tiene:

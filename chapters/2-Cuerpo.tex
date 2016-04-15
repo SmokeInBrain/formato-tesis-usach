@@ -355,7 +355,7 @@ P(I|V) = \frac{P(V|I)P(I)}{P(V)}
 La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$, la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{O}$ son las visibilidades observadas.
 
 \begin{equation}
- P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\biggl|\frac{V^m_k(I)-V^o_k}{\sigma_k}}\biggr|^2\biggr\}
+ P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\frac{|V^m_k(I)-V^o_k|^{2}}{\sigma_k^{2}}}\biggr\}
  \label{eq:chi2}
 \end{equation} 
 
@@ -372,7 +372,7 @@ El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por l
 
 \begin{equation}
 \arg \max_{I} \biggl\{
-            -\frac{1}{2} \sum_k^{Z}{ \biggl| \frac{V^m_k(I)-V^o_k}{\sigma_k}  \biggr|^2 }-
+            -\frac{1}{2} \sum_k^{Z}{ \frac{|V^m_k(I)-V^o_k|^{2}}{\sigma_k^2} }-
             \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
             \biggr\}
 \label{eq:phi}
@@ -384,7 +384,7 @@ Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el pro
 
 \begin{align}
 \label{eq:phiFinal}
- \Phi = \frac{1}{2}\sum_k^{Z}{{|\frac{V^m_k(I)-V^o_k}{\sigma_k}|^2} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
+ \Phi = \frac{1}{2}\sum_k^{Z}{{\frac{|V^m_k(I)-V^o_k|^2}{\sigma_k^2}} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
 \end{align}
 
 
