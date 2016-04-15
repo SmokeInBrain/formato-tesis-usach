@@ -52,45 +52,46 @@ Repeated entry---line 925 of file bibliografia.bib
  :               ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in pablo
-You've used 28 entries,
+Warning--there's a number but no volume in skilling1984
+You've used 29 entries,
             2804 wiz_defined-function locations,
-            794 strings with 9866 characters,
-and the built_in function-call counts, 15536 in all, are:
-= -- 1252
-> -- 552
-< -- 27
-+ -- 214
-- -- 179
-* -- 1173
-:= -- 2424
-add.period$ -- 87
-call.type$ -- 28
-change.case$ -- 204
-chr.to.int$ -- 27
-cite$ -- 29
-duplicate$ -- 1158
-empty$ -- 1205
-format.name$ -- 262
-if$ -- 3036
+            801 strings with 10015 characters,
+and the built_in function-call counts, 16119 in all, are:
+= -- 1303
+> -- 571
+< -- 28
++ -- 221
+- -- 185
+* -- 1219
+:= -- 2512
+add.period$ -- 90
+call.type$ -- 29
+change.case$ -- 211
+chr.to.int$ -- 28
+cite$ -- 31
+duplicate$ -- 1200
+empty$ -- 1250
+format.name$ -- 273
+if$ -- 3149
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 246
-newline$ -- 162
-num.names$ -- 115
-pop$ -- 439
+missing$ -- 254
+newline$ -- 167
+num.names$ -- 119
+pop$ -- 455
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 177
 quote$ -- 0
-skip$ -- 415
+skip$ -- 429
 stack$ -- 0
-substring$ -- 754
-swap$ -- 631
+substring$ -- 790
+swap$ -- 654
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 240
-warning$ -- 1
-while$ -- 113
+type$ -- 249
+warning$ -- 2
+while$ -- 118
 width$ -- 0
-write$ -- 384
+write$ -- 397
 (There were 9 error messages)

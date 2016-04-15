@@ -30,11 +30,13 @@ Sin embargo, este método posee tanto deficiencias técnicas como matemáticas. 
  
 Otra técnica de deconvolución importante es el método de máxima entropía (MEM), que consiste en seleccionar una imagen que se ajuste a las visibilidades observadas dentro de un nivel de ruido y cuyos píxeles satisfagan la restricción de máxima entropía.
 
-Esta técnica ha sido modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Estas formas fueron propuestas en \citep{FRIEDEN:72, themaxen, memsan, daddario}. Por ejemplo, \citep{FRIEDEN:72} y \citep{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en este trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$. En \citep{memsan} y \citep{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$.
+Las primeras presentaciones de MEM fueron hechas por \citep{FRIEDEN:72, mem2, daddario, themaxen, skilling1984} en donde la técnica fue modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Por ejemplo, \citep{FRIEDEN:72} y \citep{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en estos trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$, y en donde además \citep{FRIEDEN:72} usa el método de Newton-Raphson para llevar acabo la maximización del problema, sin embargo queda claro que es sólo exitoso en problemas pequeños. Por otra parte, \citep{mem2} y \citep{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$. Finalmente, en \citep{skilling1984} se resume el método y se nombran distintos tipos de algoritmos de optimización, concluyendo con un método que propone deshacerse del uso del penalizador explícito $\lambda$ construyendo así un enfoque general del método.
 
-Por otro lado, tomando en cuenta que MEM es un problema no lineal, Cornwell y Evans \citep{smemda} modifican el algoritmo de minimización de MEM usando Newton-Raphson.
+%Acá faltan las contribuciones de MEM
 
-Si bien MEM produce una imagen positiva en un rango definido de píxeles haciendo que la imagen final sea suave y que tenga una super-resolución en brillos y objetos aislados, al ser un problema no lineal, su costo en tiempo computacional es muy alto \citep{libroAstro2}.
+%Por otro lado, tomando en cuenta que MEM es un problema no lineal, Cornwell y Evans \citep{smemda} modifican el algoritmo de minimización de MEM usando Newton-Raphson.
+
+
 
 %En ese sentido, esto es un problema, puesto que los astrónomos desean tener los datos en un tiempo acotado para poder observarlos, si bien CLEAN cumple con esto, se llega a la pregunta de ¿Qué tan cierto es lo que se está observando? Esto puede responderse sólo con un enfoque matemático y estadístico que puede ser llevado a cabo por el algoritmo iterativo MEM.
 
@@ -122,11 +124,12 @@ Donde en el caso de que los datos provengan de un interferómetro, se tiene que:
 
 Donde la sumatoria recorre todas las visibilidades y el numerador de la fracción representa la diferencia entre las visibilidades modelo, creadas luego de realizar una transformada de Fourier a la imagen, llevar las visibilidades observadas a una grilla regular y luego realizar una interpolación bilineal; y las visibilidades observadas. Así, esta diferencia es llamada visibilidad residuo y se debe calcular el módulo del complejo para luego elevarlo al cuadrado. Por otra parte, $\sigma_{k}$ es la varianza de cada visibilidad en función del ruido termal de las antenas.
 
-La entropía $S$ es un término regularizador en un problema inverso, donde se tienen más parámetros libres que datos. Si bien existen distintas formulaciones para $S$, la solución a presentar usa una entropía de forma $S = \sum_{i}^{n} I_{i}log(\frac{I_{i}}{G})$ donde $\{I_{i}\}_{i=1}^{n}$ es el valor de intensidad de la imagen en el píxel $i$ y $G$ es el menor valor de intensidad que puede tomar la imagen. 
- 
-Es importante destacar que la Ecuación \ref{eq:firstchi} es no lineal y se debe minimizar con algoritmos apropiados, como por ejemplo, el método de gradiente conjugado Polak-Ribiere \citep{polak}.
+La entropía $S$ es un término regularizador en un problema inverso, donde se tienen más parámetros libres que datos. Si bien existen distintas formulaciones para $S$, la solución a presentar usa una entropía de forma $S = \sum_{i}^{n} I_{i}log(\frac{I_{i}}{G})$ donde $\{I_{i}\}_{i=1}^{n}$ es el valor de intensidad de la imagen en el píxel $i$ y $G$ es el menor valor de intensidad que puede tomar la imagen. Además, $\lambda$ actúa como un penalizador y tiene un rol similar a los multiplicadores de Lagrange.
 
-Cabe destacar, que este cálculo debe ser llevado a cabo para cada frecuencia, es por ello que una o muchas GPUs calcularán $\Phi$ y $\nabla\Phi$ para cada frecuencia, para luego hacer una reducción en una única GPU si es que se utilizan múltiples GPU. Para ello, se hace necesario usar estructuras de datos apropiadas para almacenar valores complejos e imágenes.
+ 
+Es importante destacar que la Ecuación \ref{eq:firstchi} es no lineal y se debe minimizar con algoritmos apropiados agregando una restricción de positividad, como por ejemplo, el método de gradiente conjugado Polak-Ribiere \citep{polak}.
+
+Así, MEM produce una imagen positiva en un rango definido de píxeles haciendo que la imagen final sea suave y que tenga una super-resolución en brillos y objetos aislados, sin embargo, al ser un problema no lineal su costo en tiempo computacional es muy alto \citep{libroAstro2}, es por ello que una o muchas GPUs calcularán $\Phi$ y $\nabla\Phi$ para cada frecuencia, para luego hacer una reducción en una única GPU si es que se utilizan múltiples GPU. Para ello, se hace necesario usar estructuras de datos apropiadas para almacenar valores complejos e imágenes.
 
 \subsection{Propósitos de la solución}
 El propósito de la solución es caracterizar el algoritmo MEM a nivel de calidad de imagen con el fin de darle a conocer a la comunidad astronómica sus propiedades, de manera que se transforme en una alternativa real para obtener imágenes de gran resolución y poco ruido en un tiempo acotado y de manera práctica.

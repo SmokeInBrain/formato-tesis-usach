@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -9,10 +9,10 @@
 \newblock {\em Interferometry and Synthesis in Radio Astronomy\/}.
 \newblock Weinheim: WILEY-VCH Verlag GmbH \& Co. KGaA.
 
-\bibitem[{{Ables}(1974)}]{memsan}
+\bibitem[{{Ables}(1974)}]{mem2}
 {Ables}, J.~G. (1974).
 \newblock {Maximum Entropy Spectral Analysis}.
-\newblock {\em AAPS\/}, {\em 15\/}, 383.
+\newblock {\em \aaps\/}, {\em 15\/}, 383.
 
 \bibitem[{ALMA(2009{\natexlab{a}})}]{alma}
 ALMA (2009{\natexlab{a}}).
@@ -147,6 +147,11 @@ Román, P.~E. (2012).
   resolución mediante métodos variacionales.
 \newblock {\em Revista del Instituto Chileno de Investigación Operativa\/},
   (2), 13--19.
+
+\bibitem[{Skilling \& Bryan(1984)}]{skilling1984}
+Skilling, J., \& Bryan, R.~K. (1984).
+\newblock Maximum entropy image reconstruction: general algorithm.
+\newblock {\em Montly Notices Royal Astronomical Society\/}, (211), 111--124.
 
 \bibitem[{Taylor et~al.(1999)Taylor, Carilli, \& Perley}]{libroAstro2}
 Taylor, G.~B., Carilli, C.~L., \& Perley, R.~A. (Eds.)  (1999).
