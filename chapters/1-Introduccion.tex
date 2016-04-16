@@ -1,3 +1,6 @@
+% !TEX root = ./../tesis-usach.tex
+% !TEX program = xelatex
+% !BIB program = bibtex
 \chapter{Introducci\'on}
 \label{cap:introduccion}
 
@@ -20,14 +23,14 @@ Estos últimos tienen una base matemática sólida, pero fueron dejados de lado 
 
 La reconstrucción de imágenes usando radiointerferómetros que captan una señal del cielo a medida que rota la tierra es llamado un problema \textit{ill-posed} \citep{chen}, debido a la irregularidad de los muestreos Nyquist en el dominio de Fourier. Estos muestreos resultan en \textit{aliasing} o sobreposición de ondas en la imagen debido a los altos lóbulos laterales en la respuesta del \textit{array} de antenas. Es importante entender que obtener imágenes de alta calidad depende tanto de contar con los mejores equipos como con las mejores técnicas de reconstrucción. En ese sentido, cada generación de radiotelescopios involucra un esfuerzo en el desarrollo de \textit{hardware}. Sin embargo, para explotar las capacidades de ese \textit{hardware} se requiere una constante mejora en los enfoques de reconstrucción de imágenes para poder igualar la sensibilidad del receptor.
 
-Durante los últimos 40 años, múltiples técnicas de deconvolución han sido desarrolladas para resolver el problema mencionado anteriormente. 
+Durante los últimos 40 años, múltiples técnicas de deconvolución han sido desarrolladas para resolver el problema mencionado anteriormente.
 
-La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \citep{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina como \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada de Fourier inversa sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada. 
+La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \citep{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina como \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada de Fourier inversa sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada.
 
 Por lo tanto, CLEAN asume que la imagen es una colección de fuentes puntuales e iterativamente remueve fuentes puntuales para crear una imagen de residuos.
 
 Sin embargo, este método posee tanto deficiencias técnicas como matemáticas. Esto debido a que CLEAN no ofrece una alternativa de regularización del problema y tampoco una interpretación estadística del resultado que entrega \citep{libroAstro2}. Además, CLEAN no tiene una convergencia definida por lo que debe iterarse según la apreciación que el usuario tiene de la imagen. Además, el problema de la reconstrucción de una imagen consiste en seleccionar una solución de muchas posibles y CLEAN sólo selecciona una probable imagen de un conjunto de soluciones factibles.
- 
+
 Otra técnica de deconvolución importante es el método de máxima entropía (MEM), que consiste en seleccionar una imagen que se ajuste a las visibilidades observadas dentro de un nivel de ruido y cuyos píxeles satisfagan la restricción de máxima entropía.
 
 Esta técnica ha sido modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Estas formas fueron propuestas en \citep{FRIEDEN:72, themaxen, memsan, daddario}. Por ejemplo, \citep{FRIEDEN:72} y \citep{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en este trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$. En \citep{memsan} y \citep{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$.
@@ -48,7 +51,7 @@ Por otro lado, las tarjetas gráficas, o GPU, son \textit{hardware} que durante 
 Recientemente, se propuso un enfoque que busca realizar inferencias Bayesianas para observaciones radioastronómicas (BIRO) \citep{BIRO}. Este enfoque lleva a cabo una inferencia Bayesiana para muestrear un conjunto de parámetros representando un modelo del cielo para proponer las visibilidades que mejor se ajusten a éste. Este trabajo parametriza la imagen en un conjunto reducido de parámetros, y no reconstruye la imagen en sí, sino un modelo de imagen, restringido a puntos y funciones Gaussianas. Además se ha propuesto Montblanc \citep{montblanc}, una implementación en GPU en apoyo a BIRO y que permite paralelizar la proposición de visibilidades.
 
 \subsection{Definición del problema}
-El radio observatorio ALMA \citep{alma2} entrega  datos observacionales  en  el  espectro  de  radio  frecuencias con  una  resolución  nunca  antes  lograda.  Para  una 
+El radio observatorio ALMA \citep{alma2} entrega  datos observacionales  en  el  espectro  de  radio  frecuencias con  una  resolución  nunca  antes  lograda.  Para  una
 observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disperso (no regular) de  la  transformada  de  Fourier  de  la imagen. La cantidad de muestras (visibilidades) depende del objeto que se esté observando y del tiempo de observación. La Tabla \ref{tab:data} muestra el número de visibilidades observadas de el set de datos HLTau muestrado en la banda de frecuencia 6 y su respectivo valor en bytes. Este último número es calculado multiplicando el número de visibilidades observadas por la suma bytes de las variables utilizadas, tal como, las coordenadas de las visibilidades en el plano de Fourier, las visibilidades que contienen una parte real e imaginaria y la varianza asociada a éstas. Cada una de estas variables es considerada un \textit{double} por lo cual cada una tiene un valor de 8 bytes. Cabe destacar que si bien el número de bytes no es tan alto, para cada objeto observado se muestrean diferentes características como las moléculas de monóxido de carbono, las moléculas de bicarbonato, entre otras. Además, también es importante tomar en cuenta que los objetos se muestrean en distintas bandas de frecuencias. Sin embargo, el problema de reconstruir la imagen no pasa simplemente por usar la transformada inversa del conjunto de puntos. Pues como se dijo anteriormente, los puntos recolectados no coiciden con una grilla regular. Este problema es conocido en matemáticas como \textit{“Fourier Synthesis”} \citep{marechal} y sorprendentemente aún se encuentra como una floreciente línea de investigación en el campo del análisis armónico \citep{pablo}.
 
 
@@ -58,7 +61,7 @@ observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disp
 %\label{tab:data}
 %\begin{tabular}{|l|l|l|}
 %\hline
-%\rowcolor[HTML]{EFEFEF} 
+%\rowcolor[HTML]{EFEFEF}
 %Set de datos   & Número de visibilidades & Bytes       \\ \hline
 %HD142527       & 78.375                  & 3.135.000   \\ \hline
 %CO(6-5)        & 120.982                 & 4.839.280   \\ \hline
@@ -72,12 +75,12 @@ observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disp
 \ra{1.2}
 \caption{Datos HLTau}
 \label{tab:data}
-\begin{tabular}{@{}rcrrcr@{}} 
+\begin{tabular}{@{}rcrrcr@{}}
 \toprule
  \multicolumn{1}{c}{{\bf Set de datos}} & \phantom{a} & \multicolumn{2}{c}{{\bf Número de visibilidades}}  & \multicolumn{1}{c}{{\bf Bytes}} \\
  \midrule
  Band 3   && - &&  -\\
- Band 6   && 5.343.914 &&  213.756.560\\    
+ Band 6   && 5.343.914 &&  213.756.560\\
  Band 7   && - &&  -\\
  \toprule
 \end{tabular}
@@ -89,7 +92,7 @@ observación  dada,  este  instrumento  recoge  un  subconjunto  discreto y disp
 Son variados los métodos que permiten reconstruir una imagen a partir de muestras dispersas y no regulares en el espacio Fourier. Entre ellos se encuentran los conocidos métodos CLEAN \citep{CLEAN} y MEM \citep{MEM}, en donde el primero es un algoritmo basado en transformaciones lineales y el segundo basado en la teoría Bayesiana. Ambos son conocidos particularmente en el campo de la astronomía.
 
 
-El algoritmo CLEAN provee una solución basada en representar la imagen mediante un conjunto de fuentes puntuales. La imagen final, mejor conocida como la imagen CLEAN, es la suma de todos los componentes de los puntos convolucionados con el \textit{CLEAN beam}, esto es, la imagen de una función Gaussiana, con el fin de restar importancia a las frecuencias espaciales más altas que suelen ser falsamente extrapoladas \citep{libroAstro2}. Finalmente, CLEAN es un procedimiento cuyo objetivo es generar una imagen de residuos con variaciones homogéneas y similares al ruido térmico presente en los datos. 
+El algoritmo CLEAN provee una solución basada en representar la imagen mediante un conjunto de fuentes puntuales. La imagen final, mejor conocida como la imagen CLEAN, es la suma de todos los componentes de los puntos convolucionados con el \textit{CLEAN beam}, esto es, la imagen de una función Gaussiana, con el fin de restar importancia a las frecuencias espaciales más altas que suelen ser falsamente extrapoladas \citep{libroAstro2}. Finalmente, CLEAN es un procedimiento cuyo objetivo es generar una imagen de residuos con variaciones homogéneas y similares al ruido térmico presente en los datos.
 
 Como se menciona en la sección \ref{sec:estadodelarte}, CLEAN posee deficiencias técnicas y matemáticas, a pesar de su éxito y su uso actual en ALMA.
 
@@ -114,19 +117,19 @@ Sea $P(V|I)$ la probabilidad de ver las visibilidades $V$ dada la imagen $I$ y s
 \begin{equation}
 P(I|V) = \frac{P(V|I)P(I)}{P(V)}
 \label{eq:bayes}
-\end{equation}	
+\end{equation}
 
 La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$ la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{O}$ son las visibilidades observadas.
 
 \begin{equation}
  P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\biggl|\frac{V^m_k(I)-V^o_k}{\sigma_k}}\biggr|^2\biggr\}
  \label{eq:chi2}
-\end{equation} 
+\end{equation}
 
 El \textit{prior} $P(I)$ se considera una distribución multinomial de una intensidad total discreta que cubre la imagen completa. Sea $n$ el número de píxeles y sea $N_{i}$ el número de fotones en el píxel $i$, el \textit{prior} puede expresarse de la forma:
 
 \begin{equation}
-P(I) = \frac{N!}{n^N\prod_i{N_i!}} 
+P(I) = \frac{N!}{n^N\prod_i{N_i!}}
 \label{eq:imageProb}
 \end{equation}
 
@@ -140,7 +143,7 @@ El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por l
             \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
             \biggr\}
 \label{eq:phi}
-\end{equation} 
+\end{equation}
 
 Se reconoce al primer término de la ecuación \ref{eq:phi} como $\chi^{2}$ y al segundo como la entropía de Shannon $S$. Estos dos parámetros son relevantes en el modelo, así como $\lambda$ que tiene un rol similar a los multiplicadores de Lagrange y actúa como un penalizador.
 
@@ -178,7 +181,7 @@ El objetivo general del proyecto es diseñar y caracterizar un algoritmo de alto
 \end{enumerate}
 
 \subsection{Alcances}
-La solución adoptada es implementada sólo mediante la plataforma de computación paralela CUDA y el lenguaje de programación C. Además, solo se adopta una estrategia de paralelización  para el algoritmo MEM y las pruebas de rendimiento computacional sólo son realizadas en un cluster de GPUs. Por otra parte, los resultados obtenidos serán comparados solamente con el método de reconstrucción de imágenes llamado CLEAN, esto debido a que es el método más utilizado por los astrónomos actualmente. Por último, el formato de la imagen de salida debe ser en formato FITS. 
+La solución adoptada es implementada sólo mediante la plataforma de computación paralela CUDA y el lenguaje de programación C. Además, solo se adopta una estrategia de paralelización  para el algoritmo MEM y las pruebas de rendimiento computacional sólo son realizadas en un cluster de GPUs. Por otra parte, los resultados obtenidos serán comparados solamente con el método de reconstrucción de imágenes llamado CLEAN, esto debido a que es el método más utilizado por los astrónomos actualmente. Por último, el formato de la imagen de salida debe ser en formato FITS.
 
 
 \section{Metodolog\'ia y herramientas utilizadas}
@@ -242,7 +245,7 @@ Además son utilizados los recursos computacionales personales del estudiante, l
 \item Un computador de escritorio con:
 \begin{itemize}
 \item 8 GB de RAM.
-\item Procesador Intel i7-3770 3.40GHz x 8. 
+\item Procesador Intel i7-3770 3.40GHz x 8.
 \item Tarjeta de video NVIDIA GeForce GTX 750 (1 GB).
 \end{itemize}
 \item Un computador portátil ASUS 450LN con:

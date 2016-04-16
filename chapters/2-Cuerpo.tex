@@ -1,3 +1,6 @@
+% !TEX root = ./../tesis-usach.tex
+% !TEX program = xelatex
+% !BIB program = bibtex
 \chapter{Síntesis de imágenes de radiointerferometría}
 \label{cap:imagesynthesisinterferometry}
 
@@ -31,7 +34,7 @@ A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de ante
 \label{fig:almaarray2}
 \end{figure}
 
-Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Además, se mide a partir de la intersección del meridiano local con el ecuador. Su extremo es la intersección del meridiano que pasa por el objeto a observar ($S$) con el ecuador. 
+Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Además, se mide a partir de la intersección del meridiano local con el ecuador. Su extremo es la intersección del meridiano que pasa por el objeto a observar ($S$) con el ecuador.
 
 Por otra parte, la declinación es el ángulo medido sobre el meridiano que para por la estrella u objeto a observar, entre el ecuador la dirección de éste, sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio norte, y entre cero y $-90°$ para los astros del hemisferio sur \citep{astroelemental}.
 
@@ -93,7 +96,7 @@ D
 \sin{d}
 \end{bmatrix}
 \label{eq:XYZ}
-\end{equation} 
+\end{equation}
 
 Aquí, $(H, \delta)$ son el ángulo horario y la declinación de la posición de fase de referencia. Por otra parte es importante especificar el vector del \textit{baseline} en términos de su longitud $D$ y el ángulo horario y declinación $(h,d)$ de la intersección de la dirección del \textit{baseline} con el norte celestial. Reemplazando la Ecuación \ref{eq:XYZ} en \ref{eq:uvw} y usando identidades trigonométricas se tiene que:
 
@@ -112,7 +115,7 @@ D
 \sin{d}\sin{\delta}+\cos{d}\cos{\delta}\cos{(H-h)}
 \end{bmatrix}
 \label{eq:uvw2}
-\end{equation} 
+\end{equation}
 
 Si bien el sistema $(D,h,d)$ era el más usado con instrumentos que sólo consistían en dos antenas. Cuando se tiene dos antenas o más, la práctica usual es utilizar el sistema de coordenadas horizontales para determinar la elevación $\mathscr{E}$, el \textit{azimuth} $\mathscr{A}$ y el largo del baseline $D$.
 
@@ -174,12 +177,12 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 \begin{table}[h!]
 \centering
 \ra{1.2}
-\begin{tabular}{@{}rcrrcr@{}} 
+\begin{tabular}{@{}rcrrcr@{}}
 \toprule
  \multicolumn{1}{c}{{\bf Banda}} & \phantom{a} & \multicolumn{2}{c}{{\bf Rango de frecuencia (GHz)}}  & \multicolumn{1}{c}{{\bf Temperatura (K)}} \\
  \midrule
  1   && 31 - 45 &&  26\\
- 2   && 67 - 90 &&  47\\    
+ 2   && 67 - 90 &&  47\\
  3  && 84 - 116 &&  60\\
  4  && 125 - 163 &&  82\\
  5  && 162 - 211 &&  105\\
@@ -208,13 +211,13 @@ Por ejemplo, la estrella HLTauri ha sido muestreada en las bandas 3, 6 y 7, en l
 
 
 
-Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}. 
+Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}.
 
 Es importante destacar que los correlacionadores reciben señales de voltaje desde cada antena, calculan la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y producen las visibilidades de valores complejos que los astrónomos reciben para sintetizar imágenes. Para entender de mejor forma qué son las visibilidades y cual es la implicancia que tienen en la síntesis de imágenes es necesario conocer los conceptos esenciales de interferometría.
 
 \section{Principios y conceptos de interferometría}
 
-La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena. 
+La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena.
 
 La resolución angular de un interferómetro, $\delta$, es el angulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que un solo telescopio de radio $D$.
 
@@ -231,7 +234,7 @@ V(\vec{k}) &= \int\int A(\vec{x})I(\vec{x})e^{-2\pi i\vec{k}\vec{x}}dxdy \\
 A(\vec{x})I(\vec{x}) &= \int\int V(\vec{k})e^{2\pi i\vec{k}\vec{x}}dudv
 \end{align}
 
-Donde $\vec{x} = (x,y)$ son las coordenadas del objeto a observar y estudiar, $A(\vec{x})$ es el \textit{primary beam}, $I(\vec{x})$ es la intensidad del objeto en $\vec{x}$, y $\vec{k}$ es el vector que se forma por cada par de antenas. 
+Donde $\vec{x} = (x,y)$ son las coordenadas del objeto a observar y estudiar, $A(\vec{x})$ es el \textit{primary beam}, $I(\vec{x})$ es la intensidad del objeto en $\vec{x}$, y $\vec{k}$ es el vector que se forma por cada par de antenas.
 
 \begin{figure}[h!]
 \centering
@@ -246,9 +249,9 @@ Esto quiere decir que la imagen de la distribución del brillo del cielo puede r
 
 %\begin{equation}
 %I_{D} = I_{sky} \ast B
-%\end{equation}  
+%\end{equation}
 
-%El \textit{beam} $B$ para un interferómetro con un conjunto de \textit{baselines} $\{\vec{k}_{k}\}$ puede ser representado por la transformada inversa de Fourier de una suma de diferencias en estos puntos en el plano $(u,v)$. 
+%El \textit{beam} $B$ para un interferómetro con un conjunto de \textit{baselines} $\{\vec{k}_{k}\}$ puede ser representado por la transformada inversa de Fourier de una suma de diferencias en estos puntos en el plano $(u,v)$.
 
 %\begin{align}
 %B(\vec{x}) &= \int_{-\infty}^{+\infty}\sum_{k}\delta(\vec{k}-\vec{k}_{k})e^{2 \pi i \vec{k}_{k}\vec{x}}dudv \\
@@ -257,10 +260,10 @@ Esto quiere decir que la imagen de la distribución del brillo del cielo puede r
 %\end{align}
 
 
-Los datos astronómicos resultan desde la adición de el ruido instrumental hasta la convolución de la imagen del cielo con la respuesta instrumental. Debido al muestreo incompleto en el plano $(u,v)$, la obtención de una imagen del cielo se convierte en un problema inverso que requiere algoritmos de síntesis de imágenes. 
+Los datos astronómicos resultan desde la adición de el ruido instrumental hasta la convolución de la imagen del cielo con la respuesta instrumental. Debido al muestreo incompleto en el plano $(u,v)$, la obtención de una imagen del cielo se convierte en un problema inverso que requiere algoritmos de síntesis de imágenes.
 
 
-\section{Métodos existentes de deconvolución} 
+\section{Métodos existentes de deconvolución}
 
 \subsection{CLEAN}
 
@@ -283,7 +286,7 @@ Donde,
 \begin{equation}
 I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
 \label{eq:fullcoverage}
-\end{equation} 
+\end{equation}
 
 Y luego por el teorema de la convolución se tiene que:
 
@@ -318,8 +321,8 @@ Finalmente se calcula la imagen reconstruida convolucionando la lista de fuentes
 
 \subsection{MEM}
 
- 
- 
+
+
 
 
 
