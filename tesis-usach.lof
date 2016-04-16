@@ -8,12 +8,13 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Relación entre los sistemas de coordenadas $(X,Y,Z)$ y $(u,v,w)$. El sistema $(u,v,w)$ está definido por la observación en la dirección del punto $S$, el cual tiene un ángulo horario $H$ y una declicación $\delta $. Como $S$ está en el la mitad del hemisferio este, $H$ es negativo (sentido anti-horario). Fuente: \citep {libroAstro}\relax }}{14}{figure.caption.12}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Relación entre coordenadas horizontales y coordenadas ecuatoriales horarias. Fuente: \citep {libroAstro}\relax }}{15}{figure.caption.13}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Centro y eje semimayor de la elipse (Ecuación \ref {eq:elipse}). Fuente: \citep {libroAstro}\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Elipses muestreadas con diferentes parámetros en el plano $(u,v)$. Fuente: \citep {libroAstro}\relax }}{16}{figure.caption.15}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }}{18}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Banda 3}}}{18}{subfigure.8.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Banda 6}}}{18}{subfigure.8.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Banda 7}}}{18}{subfigure.8.3}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Dos antenas y su respectivo \textit {baseline}. $\mathaccentV {vec}17E{x}$ es la posición del objeto estudiado, y por otro lado $\mathaccentV {vec}17E{k}$ es el \textit {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }}{19}{figure.caption.18}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Elipses muestreadas con diferentes parámetros en el plano $(u,v)$. Fuente: \citep {libroAstro}\relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Plano $(u,v)$ del objeto HLTauri (HLTau) en diferentes bandas. Fuente: Elaboración propia\relax }}{19}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Banda 3}}}{19}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Banda 6}}}{19}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Banda 7}}}{19}{subfigure.8.3}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Bandas, \textit {spectral windows} y canales del objeto HL-Tauri. Fuente: Elaboración propia\relax }}{19}{figure.caption.18}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Dos antenas y su respectivo \textit {baseline}. $\mathaccentV {vec}17E{x}$ es la posición del objeto estudiado, y por otro lado $\mathaccentV {vec}17E{k}$ es el \textit {baseline} correspondiente a las dos antenas. Fuente: Elaboración propia.\relax }}{21}{figure.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

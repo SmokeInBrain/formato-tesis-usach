@@ -9,10 +9,10 @@
 \newblock {\em Interferometry and Synthesis in Radio Astronomy\/}.
 \newblock Weinheim: WILEY-VCH Verlag GmbH \& Co. KGaA.
 
-\bibitem[{{Ables}(1974)}]{memsan}
+\bibitem[{{Ables}(1974)}]{mem2}
 {Ables}, J.~G. (1974).
 \newblock {Maximum Entropy Spectral Analysis}.
-\newblock {\em AAPS\/}, {\em 15\/}, 383.
+\newblock {\em Astronomy and Astrophysicss\/}, {\em 15\/}, 383.
 
 \bibitem[{ALMA(2009{\natexlab{a}})}]{alma}
 ALMA (2009{\natexlab{a}}).
@@ -48,11 +48,6 @@ Chen, W. (2011).
 Cornwell, T.~J. (2009).
 \newblock Hogbom's clean algorithm. impact on astronomy and beyond.
 \newblock {\em Astronomy and Astrophysics\/}, {\em 500\/}(1), 65--66.
-
-\bibitem[{{Cornwell} \& {Evans}(1985)}]{smemda}
-{Cornwell}, T.~J., \& {Evans}, K.~F. (1985).
-\newblock {A simple maximum entropy deconvolution algorithm}.
-\newblock {\em AAP\/}, {\em 143\/}, 77--83.
 
 \bibitem[{Frieden(1972)}]{FRIEDEN:72}
 Frieden, B.~R. (1972).
@@ -147,6 +142,11 @@ Román, P.~E. (2012).
   resolución mediante métodos variacionales.
 \newblock {\em Revista del Instituto Chileno de Investigación Operativa\/},
   (2), 13--19.
+
+\bibitem[{Skilling \& Bryan(1984)}]{skilling1984}
+Skilling, J., \& Bryan, R.~K. (1984).
+\newblock Maximum entropy image reconstruction: general algorithm.
+\newblock {\em Montly Notices Royal Astronomical Society\/}, (211), 111--124.
 
 \bibitem[{Taylor et~al.(1999)Taylor, Carilli, \& Perley}]{libroAstro2}
 Taylor, G.~B., Carilli, C.~L., \& Perley, R.~A. (Eds.)  (1999).

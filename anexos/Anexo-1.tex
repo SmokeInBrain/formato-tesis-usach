@@ -1,4 +1,122 @@
-\chapter{Anexo de ejemplo}
-\label{apendice:anexo1}
+\chapter{Cálculo del gradiente de la función objetivo}
+\label{apendice:dphi}
+\begin{equation}
+\Phi = \chi^2 + \lambda S
+\end{equation}
+con
+\begin{eqnarray}
+\chi^2 & = & \frac{1}{2}\sum^{N-1}_{j=0}{\frac{|V^{m}_{j} - V_{j}^{o}|^{2}}{\sigma_j^{2}}} \\
+S & = & \sum^{M-1}_{k=0}{I_{k}\log{(I_{k}/G)}}
+\end{eqnarray}
+con $0 \leq \lambda < \infty$.
 
-Lorem ipsum dolor sit cuchufl\'i barquillo bac\'an jote gamba listeilor po cahu\'in, luca mel\'on con vino pichanga coscacho ni ah\'i peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huev\'on el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ah\'i.
+Calculando el gradiente de la función $\Phi$, es decir, derivando parcialmente con respecto a $I_{k}$:
+
+\begin{equation}
+[\nabla\Phi]_k = \frac{\partial \Phi}{\partial I_{k}} = \frac{\partial}{\partial I_{k}} \chi^{2} + \lambda \frac{\partial}{\partial I_{k}}S
+\label{eq:fina}
+\end{equation}
+
+
+
+Primero derivamos la derivada de $\chi^2$.
+\begin{eqnarray}
+\frac{\partial\chi^{2}}{\partial I_{k}} & = & \frac{\partial}{\partial I_{k}}\frac{1}{2}\sum\limits_{j}\frac{(V^{m}_{j} - V_{j}^{o})^{*}\cdot(V^{m}_{j} - V_{j}^{o})}{\sigma_{j}^{2}}\\
+                                        & = & \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\bigg(\frac{\partial
+                                         V^{m*}_{j}}{\partial I_{k}}\Bigl( V_{j}^{m} - V_{j}^{o}\Bigr)+\frac{\partial V_{j}^{m}}{\partial I_{k}}\Bigl(V_{j}^{m}- V_{j}^{o}\Bigr)^{*}\biggr)
+\end{eqnarray}
+
+Note que $V_j^{o}$ es constante y por lo tanto su derivada respecto a $I_k$ es cero.
+Donde la transformada de Fourier de la imagen ($I$) es igual a :
+
+\begin{equation}
+V_{j}^{m}=\sum^{M-1}_{k=0}I_{k}e^{-2\pi i<X_k,Z_j>}
+\end{equation}
+
+Donde $Z_j=(u_j,v_j)$, $X_k=(x_k,y_k)$, y el producto interno $<(a,b),(c,d)>=ac+bd$. Luego el conjugado es:
+
+\begin{equation}
+V_{j}^{m*}=\sum^{M-1}_{k=0}I_{k}e^{2\pi i<X_k,Z_j>}
+\end{equation}
+
+Derivando ambas visibilidades por separado con respecto a $I_{k}$ se tiene que:
+
+\begin{eqnarray}
+\frac{\partial V_{j}}{\partial I_{k}} & = & \exp\{-2\pi i<X_k,Z_j>\} \\
+\frac{\partial V_{j}^{*}}{\partial I_{k}} & = & \exp\{+2\pi i<X_k,Z_j>\}
+\end{eqnarray}
+
+Definiedo el residuo de las visibilidades como:
+
+\begin{equation}
+V_{j}^{R} = V_{j}^{m}-V_{j}^{o} = \text{Re}(V_{j}^{R}) + i\cdot \text{Im}(V_{j}^{R})
+\end{equation}
+
+Y
+
+\begin{equation}
+V_{j}^{R*} = (V_{j}^{m}-V_{j}^{o})^{*}=\text{Re}(V_{j}^{R})-i\cdot \text{Im}(V_{j}^{R})
+\end{equation}
+
+Reemplazando estos términos se tiene:
+
+
+\begin{equation}
+\frac{\partial\chi^{2}}{\partial I_{k}} = \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\Bigl[\exp\{2\pi i<X_k,Z_j>\}\Bigl(\text{Re}(V_{j}^{R})+i\text{Im}(V_{j}^{R})\Bigr)+
+              \exp\{-2\pi i<X_k,Z_j>\}\Bigl(\text{Re}(V_{j}^{R})-i\text{Im}(V_{j}^{R})\Bigr)\Bigr]
+\end{equation}
+
+Multiplicando distributivamente:
+%\begin{equation}
+\begin{multline}
+\frac{\partial\chi^{2}}{\partial I_{k}} = \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\biggl[\exp\{2\pi i<X_k,Z_j>\}\text{Re}(V_{j}^{R})+i\exp\{2\pi i<X_k,Z_j>\}\text{Im}(V_{j}^{R})-\\
+\exp\{-2\pi i \langle X_k,Z_j \rangle\}\text{Re}(V_{j}^{R})-i\exp\{-2\pi i\langle X_k,Z_j \rangle\}\text{Im}(V_{j}^{R})\biggr]
+\end{multline}
+%\end{equation}
+
+
+Factorizando por la partes reales e imaginarias de $V_{j}^{R}$:
+
+\begin{multline}
+\frac{\partial\chi^{2}}{\partial I_{k}} = \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\biggl[\text{Re}(V_{j}^{R})\Bigl(\exp\{2\pi i<X_k,Z_j>\}+\exp\{-2\pi i<X_k,Z_j>\}\Bigr)+ \\ i\text{Im}(V_{j}^{R})\Bigl(\exp\{2\pi i<X_k,Z_j>\}-\exp\{-2\pi i<X_k,Z_j>\}\Bigr)\biggr]
+\end{multline}
+
+Usando las propiedades trigonométricas del seno y coseno se tiene que:
+
+\begin{eqnarray}
+\frac{\partial\chi^{2}}{\partial I_{k}} & = & \frac{1}{2}\sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\biggl[2\text{Re}(V_{j}^{R})\cos(2\pi <X_k,Z_j>)+2i^{2}\text{Im}(V_{j}^{R})\sin(2\pi \langle X_k,Z_j\rangle )\biggr] \\
+                                      & = & \sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\biggl[\text{Re}(V_{j}^{R}) \cos(2\pi\langle X_k,Z_j\rangle) - \text{Im}(V_{j}^{R})\sin(2\pi \langle X_k,Z_j\rangle)\biggr]
+\end{eqnarray}
+
+Definiendo 
+
+\begin{equation}
+W_{j} = \frac{1}{\sigma_{j}^{2}}
+\end{equation}
+
+tenemos finalmente que
+
+\begin{equation}
+\frac{\partial\chi^{2}}{\partial I_{k}} = \sum\limits_{j}W_{j}\biggl[Re(V_{j}^{R})\cos\bigl(2\pi \langle X_k,Z_j\rangle\bigr)-\text{Im}(V_{j}^{R})\sin\bigl(2\pi \langle X_k,Z_j\rangle\bigr)\biggr]
+\end{equation}
+
+Continuando con $\frac{\partial}{\partial I_{k}}S$
+
+\begin{equation}
+\frac{\partial S}{\partial I_{k}} = \frac{\partial}{\partial I_{k}}\sum\limits_{k}I_{k}\log(I_{k}/G)
+\end{equation}
+
+Esto es igual a:
+
+
+\begin{equation}
+\frac{\partial S}{\partial I_{k}} = 1+\log(I_{k}/G)
+\end{equation}
+
+
+Por tanto la coordenada $k$ de $\nabla\Phi$:
+
+\begin{multline}
+[\nabla \Phi]_k = \sum\limits_{j}W_{j}\biggl[\text{Re}(V_{j}^{R})\cos\bigl(2\pi \langle X_k,Z_j \rangle\bigr)-\text{Im}(V_{j}^{R})\sin\bigl(2\pi \langle X_k,Z_j \rangle\bigr)\biggr] + 
+\lambda(1 + \log(I_{k}/G))
+\end{multline}

@@ -25,7 +25,7 @@ La reconstrucción de imágenes usando radiointerferómetros que captan una señ
 
 Durante los últimos 40 años, múltiples técnicas de deconvolución han sido desarrolladas para resolver el problema mencionado anteriormente.
 
-La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \citep{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina como \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada de Fourier inversa sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada.
+La idea básica detrás de un algoritmo de deconvolución es explotar un conocimiento \textit{a-priori} de la imagen. El primer algoritmo, y la más popular de estas técnicas en el campo de la astronomía, es el método CLEAN propuesto por Högbom \citep{CLEAN}. Este método se basa en aproximar la imagen usando lo que se denomina \textit{dirty image}. La \textit{dirty image} se muestra en la ecuación \ref{eq:dirtyimage} y es la imagen obtenida luego de aplicar la transformada inversa de Fourier sobre el conjunto de visibilidades $V$ multiplicada por la función de muestreo $S(u,v)$, tal que $S(u,v)=1$ donde exista una visibilidad y $S(u,v)=0$ si no existe. Las coordenadas $(u,v)$ representan las coordenadas de las mediciones en el plano de Fourier esparcidos de forma irregular. Por otra parte los puntos $(x,y)$ representan las coordenadas planas en la imagen escalada.
 
 Por lo tanto, CLEAN asume que la imagen es una colección de fuentes puntuales e iterativamente remueve fuentes puntuales para crear una imagen de residuos.
 
@@ -33,11 +33,13 @@ Sin embargo, este método posee tanto deficiencias técnicas como matemáticas. 
 
 Otra técnica de deconvolución importante es el método de máxima entropía (MEM), que consiste en seleccionar una imagen que se ajuste a las visibilidades observadas dentro de un nivel de ruido y cuyos píxeles satisfagan la restricción de máxima entropía.
 
-Esta técnica ha sido modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Estas formas fueron propuestas en \citep{FRIEDEN:72, themaxen, memsan, daddario}. Por ejemplo, \citep{FRIEDEN:72} y \citep{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en este trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$. En \citep{memsan} y \citep{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$.
+Las primeras presentaciones de MEM fueron hechas por \citep{FRIEDEN:72, mem2, daddario, themaxen, skilling1984} en donde la técnica fue modificada a lo largo de los años de tal forma de probar diversas funciones y formas de entropía. Por ejemplo, \citep{FRIEDEN:72} y \citep{themaxen} consideran distribuciones de intensidad dispersas aleatoriamente en el cielo. Es por ello que la entropía que se utiliza en estos trabajo es de la forma: $\sum_{i}\frac{I_{i}}{I_{s}}\log(\frac{I_{i}}{I_{s}})$, donde $I_{i}=I(x_{i}, y_{i})$ e $I_{s}=\sum_{i}I_{i}$, y en donde además \citep{FRIEDEN:72} usa el método de Newton-Raphson para llevar acabo la maximización del problema, sin embargo, queda claro que es sólo exitoso en problemas pequeños. Por otra parte, \citep{mem2} y \citep{daddario} se utiliza una entropía de la forma $\sum_{i}\log I_{i}$. Finalmente, en \citep{skilling1984} se resume el método y se nombran distintos tipos de algoritmos de optimización, concluyendo con un método que propone deshacerse del uso del penalizador explícito $\lambda$ construyendo así un enfoque general del método.
 
-Por otro lado, tomando en cuenta que MEM es un problema no lineal, Cornwell y Evans \citep{smemda} modifican el algoritmo de minimización de MEM usando Newton-Raphson.
+%Acá faltan las contribuciones de MEM
 
-Si bien MEM produce una imagen positiva en un rango definido de píxeles haciendo que la imagen final sea suave y que tenga una super-resolución en brillos y objetos aislados, al ser un problema no lineal, su costo en tiempo computacional es muy alto \citep{libroAstro2}.
+%Por otro lado, tomando en cuenta que MEM es un problema no lineal, Cornwell y Evans \citep{smemda} modifican el algoritmo de minimización de MEM usando Newton-Raphson.
+
+
 
 %En ese sentido, esto es un problema, puesto que los astrónomos desean tener los datos en un tiempo acotado para poder observarlos, si bien CLEAN cumple con esto, se llega a la pregunta de ¿Qué tan cierto es lo que se está observando? Esto puede responderse sólo con un enfoque matemático y estadístico que puede ser llevado a cabo por el algoritmo iterativo MEM.
 
@@ -110,54 +112,27 @@ También es importante mencionar que MEM tiene un enfoque Bayesiano que tiene co
 \label{subsec:caracteristicas}
 Se pretende llevar a cabo el desarrollo de un algoritmo de reconstrucción basado en el principio de máxima entropía, aplicando una estrategia de paralelización en múltiples GPU y usando la plataforma de computación paralela CUDA, para luego caracterizar el algoritmo a nivel de calidad de imagen.
 
-En MEM, la imagen y los datos son considerados variables aleatorias con distribuciones de probabilidad conocidas.
-
-Sea $P(V|I)$ la probabilidad de ver las visibilidades $V$ dada la imagen $I$ y sea $P(I)$ un conocimiento \textit{a priori} de la imagen. Entonces mediante el teorema de Bayes se obtiene:
+El método de máxima entropía (MEM) encuentra la imagen que mejor se ajusta a los datos, dentro de un nivel de ruido y que maximiza la entropía $S$. Esto es llevado a cabo minimizando la función:
 
 \begin{equation}
-P(I|V) = \frac{P(V|I)P(I)}{P(V)}
-\label{eq:bayes}
+\Phi = \chi^{2} + \lambda S
+\label{eq:firstchi}
 \end{equation}
 
-La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$ la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{O}$ son las visibilidades observadas.
+Donde en el caso de que los datos provengan de un interferómetro, se tiene que:
 
 \begin{equation}
- P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\biggl|\frac{V^m_k(I)-V^o_k}{\sigma_k}}\biggr|^2\biggr\}
- \label{eq:chi2}
+\chi^{2} = \sum_{k=1}^{Z} \frac{|V^m_{k}-V^o_{k}|^{2}}{\sigma^{2}_{k}}
 \end{equation}
 
-El \textit{prior} $P(I)$ se considera una distribución multinomial de una intensidad total discreta que cubre la imagen completa. Sea $n$ el número de píxeles y sea $N_{i}$ el número de fotones en el píxel $i$, el \textit{prior} puede expresarse de la forma:
+Donde la sumatoria recorre todas las visibilidades y el numerador de la fracción representa la diferencia entre las visibilidades modelo, creadas luego de realizar una transformada de Fourier a la imagen, llevar las visibilidades observadas a una grilla regular y luego realizar una interpolación bilineal; y las visibilidades observadas. Así, esta diferencia es llamada visibilidad residuo y se debe calcular el módulo del complejo para luego elevarlo al cuadrado. Por otra parte, $\sigma_{k}$ es la varianza de cada visibilidad en función del ruido termal de las antenas.
 
-\begin{equation}
-P(I) = \frac{N!}{n^N\prod_i{N_i!}}
-\label{eq:imageProb}
-\end{equation}
-
-Donde $N=\sum_i N_{i}$ y la intensidad de la imagen en el píxel $i$ es interpretado en el modelo como $I_{i} \propto N_{i}$.
-
-El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por lo tanto no forma parte de la ecuación. Usando logaritmo y la aproximación de Stirling para factoriales y además omitiendo constantes aditivas relevantes el problema de reconstrucción de la imagen se convierte en la búsqueda de una imagen que satisfaga la probabilidad Maximum a Posteriori (MAP).
-
-\begin{equation}
-\arg \max_{I} \biggl\{
-            -\frac{1}{2} \sum_k^{Z}{ \biggl| \frac{V^m_k(I)-V^o_k}{\sigma_k}  \biggr|^2 }-
-            \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
-            \biggr\}
-\label{eq:phi}
-\end{equation}
-
-Se reconoce al primer término de la ecuación \ref{eq:phi} como $\chi^{2}$ y al segundo como la entropía de Shannon $S$. Estos dos parámetros son relevantes en el modelo, así como $\lambda$ que tiene un rol similar a los multiplicadores de Lagrange y actúa como un penalizador.
-
-Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el problema en una minimización.
-
-\begin{align}
-\label{eq:phiFinal}
- \Phi = \frac{1}{2}\sum_k^{Z}{{|\frac{V^m_k(I)-V^o_k}{\sigma_k}|^2} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
-\end{align}
+La entropía $S$ es un término regularizador en un problema inverso, donde se tienen más parámetros libres que datos. Si bien existen distintas formulaciones para $S$, la solución a presentar usa una entropía de forma $S = \sum_{i}^{n} I_{i}log(\frac{I_{i}}{G})$ donde $\{I_{i}\}_{i=1}^{n}$ es el valor de intensidad de la imagen en el píxel $i$ y $G$ es el menor valor de intensidad que puede tomar la imagen. Además, $\lambda$ actúa como un penalizador y tiene un rol similar a los multiplicadores de Lagrange.
 
 
-La Ecuación \ref{eq:phiFinal} es no lineal y se debe minimizar con algoritmos apropiados, como por ejemplo, el método de gradiente conjugado Polak-Ribiere \citep{polak}.
+Es importante destacar que la Ecuación \ref{eq:firstchi} es no lineal y se debe minimizar con algoritmos apropiados agregando una restricción de positividad, como por ejemplo, el método de gradiente conjugado Polak-Ribiere \citep{polak}.
 
-Cabe destacar, que este cálculo debe ser llevado a cabo para cada frecuencia, es por ello que cada GPU calculará $\Phi$ y $\nabla\Phi$ para cada frecuencia, para luego hacer una reducción en una única GPU.
+Así, MEM produce una imagen positiva en un rango definido de píxeles haciendo que la imagen final sea suave y que tenga una super-resolución en brillos y objetos aislados, sin embargo, al ser un problema no lineal su costo en tiempo computacional es muy alto \citep{libroAstro2}, es por ello que una o muchas GPUs calcularán $\Phi$ y $\nabla\Phi$ para cada frecuencia, para luego hacer una reducción en una única GPU si es que se utilizan múltiples GPU. Para ello, se hace necesario usar estructuras de datos apropiadas para almacenar valores complejos e imágenes.
 
 \subsection{Propósitos de la solución}
 El propósito de la solución es caracterizar el algoritmo MEM a nivel de calidad de imagen con el fin de darle a conocer a la comunidad astronómica sus propiedades, de manera que se transforme en una alternativa real para obtener imágenes de gran resolución y poco ruido en un tiempo acotado y de manera práctica.
