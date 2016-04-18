@@ -1,3 +1,6 @@
+% !TEX root = ./../tesis-usach.tex
+% !TEX program = xelatex
+% !BIB program = bibtex
 \chapter{Cálculo del gradiente de la función objetivo}
 \label{apendice:dphi}
 \begin{equation}
@@ -5,8 +8,8 @@
 \end{equation}
 con
 \begin{eqnarray}
-\chi^2 & = & \frac{1}{2}\sum^{N-1}_{j=0}{\frac{|V^{m}_{j} - V_{j}^{o}|^{2}}{\sigma_j^{2}}} \\
-S & = & \sum^{M-1}_{k=0}{I_{k}\log{(I_{k}/G)}}
+\chi^2 & = & \frac{1}{2}\sum^{Z}_{j=1}{\frac{|V^{m}_{j} - V_{j}^{o}|^{2}}{\sigma_j^{2}}} \\
+S & = & \sum^{n}_{k=1}{I_{k}\log{(I_{k}/G)}}
 \end{eqnarray}
 con $0 \leq \lambda < \infty$.
 
@@ -30,13 +33,13 @@ Note que $V_j^{o}$ es constante y por lo tanto su derivada respecto a $I_k$ es c
 Donde la transformada de Fourier de la imagen ($I$) es igual a :
 
 \begin{equation}
-V_{j}^{m}=\sum^{M-1}_{k=0}I_{k}e^{-2\pi i<X_k,Z_j>}
+V_{j}^{m}=\sum^{n}_{k=1}I_{k}e^{-2\pi i<X_k,Z_j>}
 \end{equation}
 
 Donde $Z_j=(u_j,v_j)$, $X_k=(x_k,y_k)$, y el producto interno $<(a,b),(c,d)>=ac+bd$. Luego el conjugado es:
 
 \begin{equation}
-V_{j}^{m*}=\sum^{M-1}_{k=0}I_{k}e^{2\pi i<X_k,Z_j>}
+V_{j}^{m*}=\sum^{n}_{k=1}I_{k}e^{2\pi i<X_k,Z_j>}
 \end{equation}
 
 Derivando ambas visibilidades por separado con respecto a $I_{k}$ se tiene que:
@@ -88,7 +91,7 @@ Usando las propiedades trigonométricas del seno y coseno se tiene que:
                                       & = & \sum\limits_{j}\frac{1}{\sigma_{j}^{2}}\biggl[\text{Re}(V_{j}^{R}) \cos(2\pi\langle X_k,Z_j\rangle) - \text{Im}(V_{j}^{R})\sin(2\pi \langle X_k,Z_j\rangle)\biggr]
 \end{eqnarray}
 
-Definiendo 
+Definiendo
 
 \begin{equation}
 W_{j} = \frac{1}{\sigma_{j}^{2}}
@@ -98,6 +101,7 @@ tenemos finalmente que
 
 \begin{equation}
 \frac{\partial\chi^{2}}{\partial I_{k}} = \sum\limits_{j}W_{j}\biggl[Re(V_{j}^{R})\cos\bigl(2\pi \langle X_k,Z_j\rangle\bigr)-\text{Im}(V_{j}^{R})\sin\bigl(2\pi \langle X_k,Z_j\rangle\bigr)\biggr]
+\label{eq:dchi2}
 \end{equation}
 
 Continuando con $\frac{\partial}{\partial I_{k}}S$
@@ -117,6 +121,7 @@ Esto es igual a:
 Por tanto la coordenada $k$ de $\nabla\Phi$:
 
 \begin{multline}
-[\nabla \Phi]_k = \sum\limits_{j}W_{j}\biggl[\text{Re}(V_{j}^{R})\cos\bigl(2\pi \langle X_k,Z_j \rangle\bigr)-\text{Im}(V_{j}^{R})\sin\bigl(2\pi \langle X_k,Z_j \rangle\bigr)\biggr] + 
+[\nabla \Phi]_k = \sum\limits_{j}W_{j}\biggl[\text{Re}(V_{j}^{R})\cos\bigl(2\pi \langle X_k,Z_j \rangle\bigr)-\text{Im}(V_{j}^{R})\sin\bigl(2\pi \langle X_k,Z_j \rangle\bigr)\biggr] +
 \lambda(1 + \log(I_{k}/G))
+\label{eq:dphifinal}
 \end{multline}

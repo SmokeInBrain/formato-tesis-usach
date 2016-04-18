@@ -15,83 +15,84 @@ Warning--entry type for "alma" isn't style-file defined
 --line 16 of file bibliografia.bib
 Warning--entry type for "howalma" isn't style-file defined
 --line 24 of file bibliografia.bib
-Repeated entry---line 550 of file bibliografia.bib
+Repeated entry---line 553 of file bibliografia.bib
  : @article{alma
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 562 of file bibliografia.bib
+Repeated entry---line 565 of file bibliografia.bib
  : @article{pablo
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 571 of file bibliografia.bib
+Repeated entry---line 574 of file bibliografia.bib
  : @article{MEM
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 580 of file bibliografia.bib
+Repeated entry---line 583 of file bibliografia.bib
  : @book{libroAstro
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 588 of file bibliografia.bib
+Repeated entry---line 591 of file bibliografia.bib
  : @book{libroAstro2
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 596 of file bibliografia.bib
+Repeated entry---line 599 of file bibliografia.bib
  : @article{CLEAN
  :               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 888 of file bibliografia.bib
+Repeated entry---line 891 of file bibliografia.bib
  : @article{marechal
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 908 of file bibliografia.bib
+Repeated entry---line 911 of file bibliografia.bib
  : @article{chen
  :              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 925 of file bibliografia.bib
+Repeated entry---line 928 of file bibliografia.bib
  : @article{polak
  :               ,
 I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in pablo
 Warning--there's a number but no volume in skilling1984
-You've used 28 entries,
+Warning--can't use both author and editor fields in skilling1991
+You've used 31 entries,
             2804 wiz_defined-function locations,
-            794 strings with 9930 characters,
-and the built_in function-call counts, 15567 in all, are:
-= -- 1257
-> -- 552
-< -- 27
-+ -- 214
-- -- 179
-* -- 1177
-:= -- 2427
-add.period$ -- 87
-call.type$ -- 28
-change.case$ -- 204
-chr.to.int$ -- 27
-cite$ -- 30
-duplicate$ -- 1158
-empty$ -- 1208
-format.name$ -- 262
-if$ -- 3040
+            819 strings with 10591 characters,
+and the built_in function-call counts, 17601 in all, are:
+= -- 1415
+> -- 641
+< -- 31
++ -- 247
+- -- 209
+* -- 1350
+:= -- 2726
+add.period$ -- 96
+call.type$ -- 31
+change.case$ -- 228
+chr.to.int$ -- 30
+cite$ -- 34
+duplicate$ -- 1307
+empty$ -- 1355
+format.name$ -- 305
+if$ -- 3442
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 245
-newline$ -- 162
-num.names$ -- 115
-pop$ -- 439
+missing$ -- 278
+newline$ -- 179
+num.names$ -- 127
+pop$ -- 500
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 193
 quote$ -- 0
-skip$ -- 414
+skip$ -- 466
 stack$ -- 0
-substring$ -- 764
-swap$ -- 632
-text.length$ -- 4
+substring$ -- 853
+swap$ -- 727
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 240
-warning$ -- 2
-while$ -- 114
+type$ -- 264
+warning$ -- 3
+while$ -- 128
 width$ -- 0
-write$ -- 384
+write$ -- 426
 (There were 9 error messages)

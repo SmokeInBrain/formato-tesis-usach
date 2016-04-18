@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  16 APR 2016 18:24
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.2.18)  18 APR 2016 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1515,7 +1515,7 @@ Cap\'itulo 5.
 
 
 ]
-Underfull \hbox (badness 1127) in paragraph at lines 128--132
+Underfull \hbox (badness 1127) in paragraph at lines 142--146
 \EU1/Arial(0)/m/it/10 ESAIM: Mathematical Modelling and Numerical Analysis - Modélisation Mathématique et
  []
 
@@ -1528,7 +1528,7 @@ Anexo A.
 
 
 ]
-Overfull \hbox (36.22789pt too wide) detected at line 67
+Overfull \hbox (36.22789pt too wide) detected at line 70
 [][] \OT1/cmr/m/n/10 = [] [] [][][]\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[] + []\OMS/cmsy/m/n/10 f^^@\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[][]
  []
 
@@ -1541,10 +1541,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 61.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 30356 strings out of 495563
- 518284 string characters out of 6185554
- 639073 words of memory out of 5000000
- 33044 multiletter control sequences out of 15000+600000
+ 30370 strings out of 495563
+ 518532 string characters out of 6185554
+ 639561 words of memory out of 5000000
+ 33058 multiletter control sequences out of 15000+600000
  9435 words of font info for 56 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  53i,12n,50p,10407b,749s stack positions out of 5000i,500n,10000p,200000b,80000s

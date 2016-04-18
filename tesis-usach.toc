@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {1.4.3}Alcances}{7}{subsection.1.4.3}
 \contentsline {section}{\numberline {1.5}Metodolog\'ia y herramientas utilizadas}{8}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Metodolog\'ia}{8}{subsection.1.5.1}
-\contentsline {subsection}{\numberline {1.5.2}Herramientas de desarrollo}{8}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.2}Herramientas de desarrollo}{9}{subsection.1.5.2}
 \contentsline {subsection}{\numberline {1.5.3}Ambiente de desarrollo}{9}{subsection.1.5.3}
 \contentsline {section}{\numberline {1.6}Organizaci\'on del documento}{10}{section.1.6}
 \contentsline {chapter}{\numberline {2}Síntesis de imágenes de radiointerferometría}{11}{chapter.2}

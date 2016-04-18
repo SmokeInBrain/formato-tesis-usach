@@ -34,7 +34,7 @@ A continuación, la Figura \ref{fig:almaarray1} muestra la distribución de ante
 \label{fig:almaarray2}
 \end{figure}
 
-Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Además, se mide a partir de la intersección del meridiano local con el ecuador. Su extremo es la intersección del meridiano que pasa por el objeto a observar ($S$) con el ecuador. 
+Variados sistemas de coordenadas son usados para especificar la posiciones de las antenas en un \textit{array}. Uno de los sistemas usa coordenadas ecuatoriales horarias, es decir un ángulo horario $H$ y la declinación $\delta$. El ángulo $H$ se mide entre cero y 360 grados o entre cero y 24 horas sidéreas. Por lo tanto, a cada hora le corresponden $360°/24 = 15°$. Además, se mide a partir de la intersección del meridiano local con el ecuador. Su extremo es la intersección del meridiano que pasa por el objeto a observar ($S$) con el ecuador.
 
 Por otra parte, la declinación es el ángulo medido sobre el meridiano que para por la estrella u objeto a observar, entre el ecuador la dirección de éste, sus valores están comprendidos entre cero y $+90°$ para los astros del hemisferio norte, y entre cero y $-90°$ para los astros del hemisferio sur \citep{astroelemental}.
 
@@ -96,7 +96,7 @@ D
 \sin{d}
 \end{bmatrix}
 \label{eq:XYZ}
-\end{equation} 
+\end{equation}
 
 Aquí, $(H, \delta)$ son el ángulo horario y la declinación de la posición de fase de referencia. Por otra parte es importante especificar el vector del \textit{baseline} en términos de su longitud $D$ y el ángulo horario y declinación $(h,d)$ de la intersección de la dirección del \textit{baseline} con el norte celestial. Reemplazando la Ecuación \ref{eq:XYZ} en \ref{eq:uvw} y usando identidades trigonométricas se tiene que:
 
@@ -115,7 +115,7 @@ D
 \sin{d}\sin{\delta}+\cos{d}\cos{\delta}\cos{(H-h)}
 \end{bmatrix}
 \label{eq:uvw2}
-\end{equation} 
+\end{equation}
 
 Si bien el sistema $(D,h,d)$ era el más usado con instrumentos que sólo consistían en dos antenas. Cuando se tiene dos antenas o más, la práctica usual es utilizar el sistema de coordenadas horizontales para determinar la elevación $\mathscr{E}$, el \textit{azimuth} $\mathscr{A}$ y el largo del baseline $D$.
 
@@ -189,12 +189,12 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 \begin{table}[h!]
 \centering
 \ra{1.2}
-\begin{tabular}{@{}rcrrcr@{}} 
+\begin{tabular}{@{}rcrrcr@{}}
 \toprule
  \multicolumn{1}{c}{{\bf Banda}} & \phantom{a} & \multicolumn{2}{c}{{\bf Rango de frecuencia (GHz)}}  & \multicolumn{1}{c}{{\bf Temperatura (K)}} \\
  \midrule
  1   && 31 - 45 &&  26\\
- 2   && 67 - 90 &&  47\\    
+ 2   && 67 - 90 &&  47\\
  3  && 84 - 116 &&  60\\
  4  && 125 - 163 &&  82\\
  5  && 162 - 211 &&  105\\
@@ -230,16 +230,16 @@ Es importante destacar que los datos muestreados en una banda se separan en \tex
 \label{fig:division}
 \end{figure}
 
-   
 
 
-Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}. 
+
+Luego de que las ondas milimétricas y submilímetricas son recibidas por las antenas, éstas deben ser discretizadas y procesadas en uno de los dos correlacionadores. El correlacionador \textit{64-input} es usado principalmente por los conjuntos de antena de 12 metros, mientras que el correlacionador ACA es usado por las antenas de 7 metros que componen el \textit{Atacama Compact Array}. Así, ambos correlacionadores funcionan simultáneamente e independientemente, por lo que mientras las antenas de 12 metros pueden estar observando un objeto y usan el correlacionador \textit{64-input}, las antenas de 7 metros pueden estar observando el mismo y otro objeto, y además, usando el correlacionador ACA \citep{alma-handbook}.
 
 Es importante destacar que los correlacionadores reciben señales de voltaje desde cada antena, calculan la correlación cruzada y autocorrelación para éstas por cada par de antenas (\textit{baselines}), y producen las visibilidades de valores complejos que los astrónomos reciben para sintetizar imágenes. Para entender de mejor forma qué son las visibilidades y cual es la implicancia que tienen en la síntesis de imágenes es necesario conocer los conceptos esenciales de interferometría.
 
 \section{Principios y conceptos de interferometría}
 
-La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena. 
+La interferometría es una técnica usada para obtener imágenes de alta resolución angular de un fenómeno astronómico particular. Esta implica la combinación de señales recibidas desde el cielo por dos antenas separadas físicamente. Estas señales contienen ruido, permitiendo así que la distribución del brillo del cielo sea muestreada en una escala angular más pequeña que la de una sola antena.
 
 La resolución angular de un interferómetro, $\delta$, es el ángulo más pequeño en el que dos objetos pueden ser separados en orden de distinguirlos como objetos diferentes. Usando la teoría de la difracción, se puede demostrar que que para un interferómetro circular en particular de diámetro $D$, y una radiación de longitud de onda $\lambda$, este valor es $\delta \propto \frac{\lambda}{D}$. Esto quiere decir, que para grandes longitudes de onda (pequeñas frecuencias), se necesita un gran telescopio para obtener una buena resolución. Sin embargo, existen límites prácticos para construir un telescopio de un gran tamaño. Es por ello que haciendo uso de un conjunto de interferómetros situados a una distancia $D$, es posible obtener la misma resolución que un solo telescopio de radio $D$.
 
@@ -256,7 +256,7 @@ V(\vec{k}) &= \int\int A(\vec{x})I(\vec{x})e^{-2\pi i\vec{k}\vec{x}}dxdy \\
 A(\vec{x})I(\vec{x}) &= \int\int V(\vec{k})e^{2\pi i\vec{k}\vec{x}}dudv
 \end{align}
 
-Donde $\vec{x} = (x,y)$ son las coordenadas del objeto a observar y estudiar, $A(\vec{x})$ es el \textit{primary beam}, $I(\vec{x})$ es la intensidad del objeto en $\vec{x}$, y $\vec{k}$ es el vector que se forma por cada par de antenas. 
+Donde $\vec{x} = (x,y)$ son las coordenadas del objeto a observar y estudiar, $A(\vec{x})$ es el \textit{primary beam}, $I(\vec{x})$ es la intensidad del objeto en $\vec{x}$, y $\vec{k}$ es el vector que se forma por cada par de antenas.
 
 \begin{figure}[h!]
 \centering
@@ -271,9 +271,9 @@ Esto quiere decir que la imagen de la distribución del brillo del cielo puede r
 
 %\begin{equation}
 %I_{D} = I_{sky} \ast B
-%\end{equation}  
+%\end{equation}
 
-%El \textit{beam} $B$ para un interferómetro con un conjunto de \textit{baselines} $\{\vec{k}_{k}\}$ puede ser representado por la transformada inversa de Fourier de una suma de diferencias en estos puntos en el plano $(u,v)$. 
+%El \textit{beam} $B$ para un interferómetro con un conjunto de \textit{baselines} $\{\vec{k}_{k}\}$ puede ser representado por la transformada inversa de Fourier de una suma de diferencias en estos puntos en el plano $(u,v)$.
 
 %\begin{align}
 %B(\vec{x}) &= \int_{-\infty}^{+\infty}\sum_{k}\delta(\vec{k}-\vec{k}_{k})e^{2 \pi i \vec{k}_{k}\vec{x}}dudv \\
@@ -282,10 +282,10 @@ Esto quiere decir que la imagen de la distribución del brillo del cielo puede r
 %\end{align}
 
 
-Los datos astronómicos resultan desde la adición de el ruido instrumental hasta la convolución de la imagen del cielo con la respuesta instrumental. Debido al muestreo incompleto en el plano $(u,v)$, la obtención de una imagen del cielo se convierte en un problema inverso que requiere algoritmos de síntesis de imágenes. 
+Los datos astronómicos resultan desde la adición de el ruido instrumental hasta la convolución de la imagen del cielo con la respuesta instrumental. Debido al muestreo incompleto en el plano $(u,v)$, la obtención de una imagen del cielo se convierte en un problema inverso que requiere algoritmos de síntesis de imágenes.
 
 
-\section{Métodos existentes de deconvolución} 
+\section{Métodos existentes de deconvolución}
 
 \subsection{CLEAN}
 
@@ -308,7 +308,7 @@ Donde,
 \begin{equation}
 I^{T}(x,y) = \int\int V(u,v)e^{2\pi i(ux+vy)}\;du\,dv
 \label{eq:fullcoverage}
-\end{equation} 
+\end{equation}
 
 Y luego por el teorema de la convolución se tiene que:
 
@@ -353,19 +353,19 @@ Sea $P(V|I)$ la probabilidad de ver las visibilidades $V$ dada la imagen $I$ y s
 \begin{equation}
 P(I|V) = \frac{P(V|I)P(I)}{P(V)}
 \label{eq:bayes}
-\end{equation}	
+\end{equation}
 
 La probabilidad $P(V|I)$ puede ser aproximada mediante el hecho de que las visibilidades están corruptas por un ruido Gaussiano. Entonces dada la función modelo de visibilidades $V_{k}^{m}(I)$ y las varianzas observadas $\sigma_k$, la probabilidad puede modelarse como lo muestra la ecuación \ref{eq:chi2}, donde $V_{k}^{o}$ son las visibilidades observadas.
 
 \begin{equation}
- P(V|I) \propto \exp\biggl\{-\sum_k^{Z}{\frac{|V^m_k(I)-V^o_k|^{2}}{\sigma_k^{2}}}\biggr\}
+ P(V|I) \propto \exp\biggl\{-\sum_j^{Z}{\frac{|V^m_j(I)-V^o_j|^{2}}{\sigma_j^{2}}}\biggr\}
  \label{eq:chi2}
-\end{equation} 
+\end{equation}
 
 El \textit{prior} $P(I)$ se considera una distribución multinomial de una intensidad total discreta que cubre la imagen completa. Sea $n$ el número de píxeles y sea $N_{i}$ el número de fotones en el píxel $i$, el \textit{prior} puede expresarse de la forma:
 
 \begin{equation}
-P(I) = \frac{N!}{n^N\prod_i{N_i!}} 
+P(I) = \frac{N!}{n^N\prod_i{N_i!}}
 \label{eq:imageProb}
 \end{equation}
 
@@ -375,11 +375,11 @@ El término $P(V)$ en la ecuación \ref{eq:bayes} es independiente de $I$, por l
 
 \begin{equation}
 \arg \max_{I} \biggl\{
-            -\frac{1}{2} \sum_k^{Z}{ \frac{|V^m_k(I)-V^o_k|^{2}}{\sigma_k^2} }-
-            \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}
+            -\frac{1}{2} \sum_j^{Z}{ \frac{|V^m_j(I)-V^o_j|^{2}}{\sigma_j^2} }-
+            \lambda \sum_k^{n}{I_k \log{\frac{I_k}{G}}}
             \biggr\}
 \label{eq:phi}
-\end{equation} 
+\end{equation}
 
 Se reconoce al primer término de la ecuación \ref{eq:phi} como $\chi^{2}$ y al segundo como la entropía de Shannon $S$. Estos dos parámetros son relevantes en el modelo, así como $\lambda$ que tiene un rol similar a los multiplicadores de Lagrange y actúa como un penalizador.
 
@@ -387,17 +387,33 @@ Finalmente, se cambia el signo de la ecuación \ref{eq:phi}, convirtiendo el pro
 
 \begin{align}
 \label{eq:phiFinal}
- \Phi = \frac{1}{2}\sum_k^{Z}{{\frac{|V^m_k(I)-V^o_k|^2}{\sigma_k^2}} + \lambda \sum_i^{n}{I_i \log{\frac{I_i}{G}}}}
+ \Phi = \frac{1}{2}\sum_j^{Z}{{\frac{|V^m_j(I)-V^o_j|^2}{\sigma_j^2}} + \lambda \sum_k^{n}{I_k \log{\frac{I_k}{G}}}}
 \end{align}
 
 
 Note que la Ecuación \ref{eq:phiFinal} es no lineal, por lo que debe ser minimizada con los algoritmos apropiados, en el caso de la solución que se propone, el método usado es el del gradiente conjugado Polak-Ribiere \citep{polak}. Además, es importante destacar que esta ecuación asume la existencia de un \textit{spectral window} y un solo canal.
 
 En el Anexo \ref{apendice:dphi} se adjunta el cálculo del gradiente de esta función.
+
 \subsection{MEM Multi-frecuencia}
 
+En la práctica las visibilidades son muestreadas como lo indica la Figura \ref{fig:division}, por lo que las ecuaciones de $\chi^{2}$ (Ecuación \ref{eq:realchi2}), $\nabla \chi^{2}$ (Ecuación \ref{eq:dchi2}) y por ende $\Phi$ (Ecuación \ref{eq:phiFinal}) y $\nabla \Phi$ (Ecuación \ref{eq:dphifinal}) deben ser modificadas. Al estar los datos agrupados por \textit{spectral windows} y canales es necesario agregar operandos de sumatoria tanto a $\chi^{2}$ como $\nabla \chi^{2}$ quedando entonces como:
 
+\begin{equation}
+  \chi^{2} = \frac{1}{2}\sum_{s}^{I}\sum_{c}^{C}\sum_{j}^{Z}\frac{|V^m_{scj}(I)-V^o_{scj}|^2}{\sigma_{scj}^2}
+  \label{eq:chi2-multi}
+\end{equation}
 
+En donde $I$ es el número total de \textit{spectral windows} del set de datos, $C$ el número total de canales de la \textit{spectral window} $s$ y $Z$ el número total de visibilidades en el canal $c$.
+
+Asimismo, $\nabla \chi^{2}$ se modifica de la misma forma, quedando:
+
+\begin{equation}
+\frac{\partial\chi^{2}}{\partial I_{k}} = \sum_{s}^{I}\sum_{c}^{C}\sum_{j}^{Z} W_{scj}\biggl[Re(V_{scj}^{R})\cos\bigl(2\pi \langle X_k,Z_{scj}\rangle\bigr)-\text{Im}(V_{scj}^{R})\sin\bigl(2\pi \langle X_k,Z_{scj}\rangle\bigr)\biggr]
+\label{eq:dchi2-multi}
+\end{equation}
+
+Finalmente, estas dos variables deben ser reemplazadas en $\Phi$ y $\nabla \Phi$ respectivamente.
 
 
 

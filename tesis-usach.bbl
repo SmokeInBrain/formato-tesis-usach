@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{31}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -37,6 +37,15 @@ Briggs, D. (1995).
 \newblock D. Briggs.
 \newline\urlprefix\url{http://books.google.cl/books?id=JTU1GwAACAAJ}
 
+\bibitem[{Casassus et~al.(2006)Casassus, Cabrera, Förster, Pearson, Readhead,
+  \& Dickinson}]{casassus2006}
+Casassus, S., Cabrera, G.~F., Förster, F., Pearson, T.~J., Readhead, A. C.~S.,
+  \& Dickinson, C. (2006).
+\newblock Morphological analysis of the centimeter-wave continuum in the dark
+  cloud ldn 1622.
+\newblock {\em The Astrophysical Journal\/}, {\em 639\/}(2), 951.
+\newline\urlprefix\url{http://stacks.iop.org/0004-637X/639/i=2/a=951}
+
 \bibitem[{Chen(2011)}]{chen}
 Chen, W. (2011).
 \newblock The ill-posedness of the sampling problem and regularized sampling
@@ -48,6 +57,11 @@ Chen, W. (2011).
 Cornwell, T.~J. (2009).
 \newblock Hogbom's clean algorithm. impact on astronomy and beyond.
 \newblock {\em Astronomy and Astrophysics\/}, {\em 500\/}(1), 65--66.
+
+\bibitem[{{Cornwell} \& {Evans}(1985)}]{cornwell1985}
+{Cornwell}, T.~J., \& {Evans}, K.~F. (1985).
+\newblock {A simple maximum entropy deconvolution algorithm}.
+\newblock {\em Astronomy and Astrophysics\/}, {\em 143\/}, 77--83.
 
 \bibitem[{Frieden(1972)}]{FRIEDEN:72}
 Frieden, B.~R. (1972).
@@ -147,6 +161,13 @@ Román, P.~E. (2012).
 Skilling, J., \& Bryan, R.~K. (1984).
 \newblock Maximum entropy image reconstruction: general algorithm.
 \newblock {\em Montly Notices Royal Astronomical Society\/}, (211), 111--124.
+
+\bibitem[{Skilling \& Gull(1991)}]{skilling1991}
+Skilling, J., \& Gull, S.~F. (1991).
+\newblock {\em Bayesian maximum entropy image reconstruction\/}, vol. Volume 20
+  of {\em Lecture Notes--Monograph Series\/}, (pp. 341--367).
+\newblock Hayward, CA: Institute of Mathematical Statistics.
+\newline\urlprefix\url{http://dx.doi.org/10.1214/lnms/1215460511}
 
 \bibitem[{Taylor et~al.(1999)Taylor, Carilli, \& Perley}]{libroAstro2}
 Taylor, G.~B., Carilli, C.~L., \& Perley, R.~A. (Eds.)  (1999).
