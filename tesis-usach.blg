@@ -10,6 +10,11 @@ A level-1 auxiliary file: chapters/2-Cuerpo.aux
 A level-1 auxiliary file: chapters/3-Conclusiones.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: anexos/Anexo-1.aux
+Already encountered file anexos/Anexo-1.aux
+---line 75 of file tesis-usach.aux
+ : \@input{anexos/Anexo-1.aux
+ :                           }
+I'm skipping whatever remains of this command
 Database file #1: bibliografia.bib
 Warning--entry type for "alma" isn't style-file defined
 --line 16 of file bibliografia.bib
@@ -54,45 +59,45 @@ I'm skipping whatever remains of this entry
 Warning--there's a number but no volume in pablo
 Warning--there's a number but no volume in skilling1984
 Warning--can't use both author and editor fields in skilling1991
-You've used 31 entries,
+You've used 32 entries,
             2804 wiz_defined-function locations,
-            819 strings with 10591 characters,
-and the built_in function-call counts, 17601 in all, are:
-= -- 1415
-> -- 641
+            825 strings with 10809 characters,
+and the built_in function-call counts, 18179 in all, are:
+= -- 1455
+> -- 676
 < -- 31
-+ -- 247
-- -- 209
-* -- 1350
-:= -- 2726
-add.period$ -- 96
-call.type$ -- 31
-change.case$ -- 228
-chr.to.int$ -- 30
-cite$ -- 34
-duplicate$ -- 1307
-empty$ -- 1355
-format.name$ -- 305
-if$ -- 3442
++ -- 260
+- -- 221
+* -- 1398
+:= -- 2821
+add.period$ -- 99
+call.type$ -- 32
+change.case$ -- 236
+chr.to.int$ -- 31
+cite$ -- 35
+duplicate$ -- 1346
+empty$ -- 1396
+format.name$ -- 320
+if$ -- 3553
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 278
-newline$ -- 179
-num.names$ -- 127
-pop$ -- 500
+missing$ -- 288
+newline$ -- 184
+num.names$ -- 131
+pop$ -- 522
 preamble$ -- 1
-purify$ -- 193
+purify$ -- 201
 quote$ -- 0
-skip$ -- 466
+skip$ -- 480
 stack$ -- 0
-substring$ -- 853
-swap$ -- 727
+substring$ -- 864
+swap$ -- 747
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 264
+type$ -- 270
 warning$ -- 3
-while$ -- 128
+while$ -- 131
 width$ -- 0
-write$ -- 426
-(There were 9 error messages)
+write$ -- 438
+(There were 10 error messages)

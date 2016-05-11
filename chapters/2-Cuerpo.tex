@@ -416,14 +416,49 @@ Asimismo, $\nabla \chi^{2}$ se modifica de la misma forma, quedando:
 Finalmente, estas dos variables deben ser reemplazadas en $\Phi$ y $\nabla \Phi$ respectivamente.
 
 
+\chapter{Optimización}
+\label{cap:opti}
+
+En este capítulo se aborda el uso de método de gradiente conjugado para la minimización de la función no lineal \ref{eq:phiFinal}, destacando su funcionamiento y como esto se aplica a el problema abordado.
+
+\section{Métodos de gradiente conjugado en múltiples dimensiones}
+
+Los dos métodos de gradiente conjugado más importantes son el método de Fletcher-Reeves y el método de Polak-Ribiere. Estos métodos están relacionados puesto que sólo un paso de su algoritmo los diferencia. Estos algoritmos convergen al mínimo de una función en un número finito de iteraciones, para ello se localiza el intervalo donde se encuentra el mínimo, y luego se reduce.
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+    \STATE{Select $I_{0} \in \Re^{n}$}
+    \STATE{$d_{0} = -\nabla \Phi(I_{0})$}
+    \FOR{i=0 \TO MAX ITERATIONS}
+        \STATE{Compute $\alpha_{i}$ such that $\Phi(I_{i}+\alpha_{i}d_{i}) = \min_{\alpha}\Phi(I_{i}+\alpha_{i}d_{i})$}
+        \STATE {Set $I_{i+1} = I_{i}+ \alpha_{i}d_{i}$}
+        \IF{$\left|\left|\nabla \Phi(I_{i+1})\right|\right| = 0$}
+            \STATE{Stop.}
+        \ELSE
+            \STATE{$g_{i+1} = - \nabla \Phi(I_{i+1}) $}
+            \STATE{$\beta_{i}=\frac{g_{i+1}^{T}g_{i+1}}{d_{i}^{T}d_{i}}$} \COMMENT{Fletcher-Reeves}
+            \STATE{$\beta_{i}=\frac{g_{i+1}^{T}(g_{i+1}-d_{i})}{d_{i}^{T}d_{i}}$} \COMMENT{Polak-Ribiere}
+            \STATE{$d_{i+1} = g_{i+1} + \beta_{i}d_{i}$}
+        \ENDIF
+    \ENDFOR
+\end{algorithmic}
+\caption{Algoritmo de Fletcher-Reeves/Polak-Ribiere}
+\label{alg:polakribiere}
+\end{algorithm}
+
+En el algoritmo \ref{alg:polakribiere} las líneas 1 y 2 muestran que el algoritmo comienza con una imagen positiva plana y que luego se calcula la dirección de búsqueda inicial. En la línea 3 comienza el ciclo para encontrar el mínimo. Para calcular la siguiente imagen se debe encontrar un valor $\alpha$ que minimice la función objetivo siguiente la dirección de búsqueda y sujeta a la restricción de positividad. En la línea 6, el algoritmo valida si se ha encontrado el mínimo, si se encuentra, entonces el algoritmo se detiene, de lo contrario se calcula un nueva dirección de búsqueda usando el valor de $\beta$ según Fletcher-Reeves (línea 10) o Polak-Ribiere (línea 11). Este último punto es importante, debido a que estas dos formas funcionan de la misma manera para ecuaciones de forma cuadrática. Sin embargo, en la realidad las funciones no son exactamente cuadráticas, y llegando al mínimo de la forma cuadrática se hace necesario llevar a cabo otro conjunto de iteraciones. En ese sentido, la fórmula de Polak-Ribiere funciona mejor cuando se hace necesario llevar a cabo más iteraciones \citep{numericalrecipes}.
 
 
 
+\chapter{GPUVMEM}
+%\label{cap:gpuvmem}
+
+%\section{Primary Beam}
+%\section{cuFFT}
+%\section{Interpolación Bilineal}
 
 
-\chapter{GPGPU}
-\label{cap:gpgpu}
-
+%\chapter{GPGPU}
 %\section{Arquitectura Unificada de Dispositivos de Cómputo}
 %\subsection{Arquitectura}
 %\subsection{cuFFT}
@@ -431,7 +466,6 @@ Finalmente, estas dos variables deben ser reemplazadas en $\Phi$ y $\nabla \Phi$
 %\subsection{Acceso virtual unificado}
 %\subsection{GPUVMEM}
 
-%\chapter{MEM Multi-frecuencia}
 
 \chapter{Pruebas}
 \label{cap:pruebas}
