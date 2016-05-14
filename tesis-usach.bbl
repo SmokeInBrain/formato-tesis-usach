@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -143,6 +143,13 @@ Polak, E., \& Ribiere, G. (1969).
 \newblock Note sur la convergence de méthodes de directions conjuguées.
 \newblock {\em ESAIM: Mathematical Modelling and Numerical Analysis -
   Modélisation Mathématique et Analyse Numérique\/}, (pp. 35--43).
+
+\bibitem[{Press et~al.(1992)Press, Teukolsky, Vetterling, \&
+  Flannery}]{numericalrecipes}
+Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., \& Flannery, B.~P. (1992).
+\newblock {\em Numerical Recipes in C (2Nd Ed.): The Art of Scientific
+  Computing\/}.
+\newblock New York, NY, USA: Cambridge University Press.
 
 \bibitem[{Remijan et~al.(2015)Remijan, Adams, \& Warmels}]{alma-handbook}
 Remijan, A., Adams, M., \& Warmels, R. (2015).

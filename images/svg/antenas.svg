@@ -1,0 +1,144 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw"
+    version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="triangle" id="id1535414897" latexdraw:points="260.0 400.0 300.00000000000006 400.0 300.00000000000006 440.0 300.00000000000006 440.0">
+            <polygon
+                points="280.0,402.2360679774998 298.58578643762695,439.0 261.4142135623731,439.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="arc" id="id1612738432" transform="rotate(270.06470934771954) translate(-659.672240657022 -79.58231030528322)">
+            <path
+                d="M 319.73181984868586 374.00236036424616 A 29.99999999999997 29.99999999999997 0.0 1 0 290.0 400.0 "
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="arc" id="id1413539503" transform="rotate(270.06470934771954) translate(-659.672240657022 -79.58231030528322)">
+            <path
+                d="M 315.0000000000001 370.0 A 25.000000000000085 25.000000000000085 0.0 1 0 285.20974173524456 394.53677700426334 "
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1491730369">
+            <polyline
+                points="290.02823477336005,344.99482154144926 295.03387853922175,340.0 295.03387853922175,340.0 "
+                stroke-width="2.0" stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1744740913">
+            <polyline
+                points="314.9943371012742,375.0258731580724 319.99988520281386,370.0310516166206 319.99988520281386,370.0310516166206 "
+                stroke-width="2.0" stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="triangle" id="id1324751058" latexdraw:points="700.0 400.0 740.0 400.0 740.0 440.0 740.0 440.0">
+            <polygon
+                points="720.0,402.2360679774998 738.5857864376269,439.0 701.4142135623731,439.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="arc" id="id1511843857" transform="rotate(270.06470934771954) translate(-1099.1753086458732 360.4174090793731)">
+            <path
+                d="M 759.7318198486859 374.00236036424616 A 30.0 30.0 0.0 1 0 730.0 400.0 "
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="arc" id="id288630498" transform="rotate(270.06470934771954) translate(-1099.1753086458732 360.4174090793731)">
+            <path
+                d="M 755.0000000000001 370.0 A 25.000000000000114 25.000000000000114 0.0 1 0 725.2097417352446 394.5367770042634 "
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1029786748">
+            <polyline
+                points="730.0282347733602,344.99482154144926 735.0338785392217,340.0 735.0338785392217,340.0 "
+                stroke-width="2.0" stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id906569007">
+            <polyline
+                points="754.9943371012743,375.0258731580724 759.9998852028139,370.0310516166206 759.9998852028139,370.0310516166206 "
+                stroke-width="2.0" stroke="black" fill="none" latexdraw:rotationAngle="4.713518371559213"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id533409947">
+            <polyline points="280.0,460.0 720.0,460.0 720.0,460.0 "
+                stroke-width="2.0" stroke="black" fill="none"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-533409947)"/>
+        </g>
+        <g latexdraw:type="text" id="id605358748" fill="black" latexdraw:position="bl">
+            <text x="440.00000000000006" y="500.0"><![CDATA[$\vec{k}=(u,v)$]]></text>
+        </g>
+        <g latexdraw:type="akinPoints" id="id1844011009"
+            latexdraw:pathType="CURVES" latexdraw:interval="5" latexdraw:points="660.0 100.0 640.0 160.0 ">
+            <path d="M 660.0 100.0 " stroke-width="2.0" stroke="black"
+                fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="akinPoints" id="id858511930"
+            latexdraw:pathType="CURVES" latexdraw:interval="5" latexdraw:points="660.0 60.0 640.0 140.0 ">
+            <path d="M 660.0 60.0 " stroke-width="2.0" stroke="black"
+                fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="akinPoints" id="id866287781"
+            latexdraw:pathType="CURVES" latexdraw:interval="5" latexdraw:points="780.0 60.0 ">
+            <path d="M 780.0 60.0 " stroke-width="2.0" stroke="black"
+                fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="triangle" id="id1667180236" latexdraw:points="720.0 60.0 780.0 60.0 780.0 111.42857142857156 780.0 111.42857142857156">
+            <polygon
+                points="750.0,61.98463485563569 778.4634092571179,110.42857142857156 721.5365907428821,110.42857142857156"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="triangle" id="id341616949"
+            latexdraw:points="720.0 77.14285714285711 780.0 77.14285714285711 780.0 120.0 780.0 120.0" transform="rotate(180.61143372411004) translate(-1501.009182963683 -189.1337476386508)">
+            <polygon
+                points="750.0,78.88665080224764 778.2795349465915,119.0 721.7204650534085,119.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1628411756">
+            <polyline points="500.0,340.0 700.0,140.0 "
+                stroke-width="2.0" stroke="black"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-1628411756)"/>
+        </g>
+        <g latexdraw:type="text" id="id216250679" fill="black" latexdraw:position="bl">
+            <text x="620.0" y="240.0"><![CDATA[$\vec{x}$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id221336090" fill="black" latexdraw:position="bl">
+            <text x="760.0" y="140.0"><![CDATA[Objeto a estudiar]]></text>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" orient="auto" id="arrow1-533409947">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+        <marker overflow="visible" orient="auto" id="arrow1-1628411756">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:latexIncludes><![CDATA[
+]]></latexdraw:latexIncludes>
+            <latexdraw:displayXScale>true</latexdraw:displayXScale>
+            <latexdraw:displayYScale>true</latexdraw:displayYScale>
+            <latexdraw:unit>CM</latexdraw:unit>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:magneticGridStyle>CUSTOMISED</latexdraw:magneticGridStyle>
+            <latexdraw:gridGap>20</latexdraw:gridGap>
+            <latexdraw:magneticGrid>true</latexdraw:magneticGrid>
+            <latexdraw:version>3.3.1</latexdraw:version>
+            <latexdraw:size>
+                <latexdraw:width>1920</latexdraw:width>
+                <latexdraw:height>1056</latexdraw:height>
+            </latexdraw:size>
+            <latexdraw:position>
+                <latexdraw:x>0.0</latexdraw:x>
+                <latexdraw:y>24.0</latexdraw:y>
+            </latexdraw:position>
+        </latexdraw:metadata>
+    </metadata>
+</svg>

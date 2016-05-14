@@ -376,8 +376,10 @@ INPUT images/uvplane2.png
 INPUT images/HLTau_B3total.png
 INPUT images/HLTau_B6total.png
 INPUT images/HLTau_B7total.png
-INPUT images/frecuencias.png
-INPUT images/antenas.png
+INPUT images/frecuencias.eps
+INPUT images/frecuencias.eps
+INPUT images/antenas.eps
+INPUT images/antenas.eps
 OUTPUT chapters/3-Conclusiones.aux
 INPUT chapters/3-Conclusiones.tex
 INPUT chapters/3-Conclusiones.tex

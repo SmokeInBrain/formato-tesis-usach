@@ -23,10 +23,11 @@
 \BOOKMARK [2][]{subsection.2.3.2}{2.3.2\040MEM\040Mono-frecuencia}{section.2.3}% 23
 \BOOKMARK [2][]{subsection.2.3.3}{2.3.3\040MEM\040Multi-frecuencia}{section.2.3}% 24
 \BOOKMARK [0][]{chapter.3}{3 Optimización}{}% 25
-\BOOKMARK [0][]{chapter.4}{4\040GPGPU}{}% 26
-\BOOKMARK [0][]{chapter.5}{5\040Pruebas}{}% 27
-\BOOKMARK [0][]{chapter.6}{6\040Resultados}{}% 28
-\BOOKMARK [0][]{chapter.7}{7\040Conclusiones}{}% 29
-\BOOKMARK [0][]{chapter*.20}{Referencias bibliográficas}{}% 30
-\BOOKMARK [0][]{section*.21}{Anexos}{}% 31
-\BOOKMARK [0][]{appendix.A}{A Cálculo del gradiente de la función objetivo}{}% 32
+\BOOKMARK [1][]{section.3.1}{3.1 Métodos de gradiente conjugado en múltiples dimensiones}{chapter.3}% 26
+\BOOKMARK [0][]{chapter.4}{4\040GPUVMEM}{}% 27
+\BOOKMARK [0][]{chapter.5}{5\040Pruebas}{}% 28
+\BOOKMARK [0][]{chapter.6}{6\040Resultados}{}% 29
+\BOOKMARK [0][]{chapter.7}{7\040Conclusiones}{}% 30
+\BOOKMARK [0][]{chapter*.20}{Referencias bibliográficas}{}% 31
+\BOOKMARK [0][]{section*.21}{Anexos}{}% 32
+\BOOKMARK [0][]{appendix.A}{A Cálculo del gradiente de la función objetivo}{}% 33

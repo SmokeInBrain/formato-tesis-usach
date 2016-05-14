@@ -24,11 +24,12 @@
 \contentsline {subsection}{\numberline {2.3.1}CLEAN}{21}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}MEM Mono-frecuencia}{22}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}MEM Multi-frecuencia}{24}{subsection.2.3.3}
-\contentsline {chapter}{\numberline {3}Optimización}{25}{chapter.3}
-\contentsline {chapter}{\numberline {4}GPGPU}{26}{chapter.4}
-\contentsline {chapter}{\numberline {5}Pruebas}{27}{chapter.5}
-\contentsline {chapter}{\numberline {6}Resultados}{28}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusiones}{29}{chapter.7}
-\contentsline {chapter}{Referencias bibliogr\'aficas}{31}{chapter*.20}
-\contentsline {chapter}{Anexos}{31}{section*.21}
-\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{32}{appendix.A}
+\contentsline {chapter}{\numberline {3}Optimización}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}Métodos de gradiente conjugado en múltiples dimensiones}{26}{section.3.1}
+\contentsline {chapter}{\numberline {4}GPUVMEM}{28}{chapter.4}
+\contentsline {chapter}{\numberline {5}Pruebas}{29}{chapter.5}
+\contentsline {chapter}{\numberline {6}Resultados}{30}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{31}{chapter.7}
+\contentsline {chapter}{Referencias bibliogr\'aficas}{33}{chapter*.20}
+\contentsline {chapter}{Anexos}{33}{section*.21}
+\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{34}{appendix.A}
