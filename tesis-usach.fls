@@ -380,6 +380,8 @@ INPUT images/frecuencias.eps
 INPUT images/frecuencias.eps
 INPUT images/antenas.eps
 INPUT images/antenas.eps
+INPUT ./images/matrixandvector.eps
+INPUT ./images/matrixandvector.eps
 OUTPUT chapters/3-Conclusiones.aux
 INPUT chapters/3-Conclusiones.tex
 INPUT chapters/3-Conclusiones.tex
