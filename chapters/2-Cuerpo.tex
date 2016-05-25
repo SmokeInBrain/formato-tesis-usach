@@ -397,7 +397,7 @@ En el Anexo \ref{apendice:dphi} se adjunta el cálculo del gradiente de esta fun
 
 \subsection{MEM Multi-frecuencia}
 
-En la práctica las visibilidades son muestreadas como lo indica la Figura \ref{fig:division}, por lo que las ecuaciones de $\chi^{2}$ (Ecuación \ref{eq:realchi2}), $\nabla \chi^{2}$ (Ecuación \ref{eq:dchi2}) y por ende $\Phi$ (Ecuación \ref{eq:phiFinal}) y $\nabla \Phi$ (Ecuación \ref{eq:dphifinal}) deben ser modificadas. Al estar los datos agrupados por \textit{spectral windows} y canales es necesario agregar operandos de sumatoria tanto a $\chi^{2}$ como $\nabla \chi^{2}$ quedando entonces como:
+En la práctica las visibilidades podrían ser muestreadas como lo indica la Figura \ref{fig:division}, por lo que las ecuaciones de $\chi^{2}$ (Ecuación \ref{eq:realchi2}), $\nabla \chi^{2}$ (Ecuación \ref{eq:dchi2}) y por ende $\Phi$ (Ecuación \ref{eq:phiFinal}) y $\nabla \Phi$ (Ecuación \ref{eq:dphifinal}) deben ser modificadas. Al estar los datos agrupados por \textit{spectral windows} y canales es necesario agregar operandos de sumatoria tanto a $\chi^{2}$ como $\nabla \chi^{2}$ quedando entonces como:
 
 \begin{equation}
   \chi^{2} = \frac{1}{2}\sum_{s}^{I}\sum_{c}^{C}\sum_{j}^{Z}\frac{|V^m_{scj}(I)-V^o_{scj}|^2}{\sigma_{scj}^2}
@@ -427,11 +427,13 @@ Sin embargo, como el número de canales de cada \textit{spectral window} es el m
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.65]{./images/matrixandvector.eps}
-    \caption{asd}
+    \includegraphics[scale=0.75]{./images/matrixandvector.eps}
+    \caption{Ilustración del cálculo de $\chi^{2}$ y $\nabla \chi^{2}$ con conjuntos de datos multi-frecuencia. Fuente: Elaboración propia}
     \label{fig:matrixandvector}
 \end{figure}
-%Finalmente, estas dos variables deben ser reemplazadas en $\Phi$ y $\nabla \Phi$ respectivamente.
+
+
+
 
 
 \chapter{Optimización}
