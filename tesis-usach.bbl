@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{33}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -100,6 +100,12 @@ Leshem, A., \& jan Van Der~Veen, A. (2000).
 \newblock {\em Monthly Notices of the Royal Astronomical Society\/}, {\em
   450\/}, 1308--1319.
 
+\bibitem[{Mangum \& Warmels(2015)}]{alma-handbook}
+Mangum, J., \& Warmels, R. (2015).
+\newblock {ALMA Cycle 4 Technical Handbook}.
+\newblock Tech. rep., ALMA.
+\newblock Version 1.0.
+
 \bibitem[{Maréchal \& Wallach(2009)}]{marechal}
 Maréchal, P., \& Wallach, D. (2009).
 \newblock Fourier synthesis via partially finite convex programming.
@@ -114,6 +120,13 @@ Maréchal, P., \& Wallach, D. (2009).
 \newblock {Maximum entropy image restoration in astronomy}.
 \newblock {\em Annual Review of Astronomy and Astrophysics\/}, {\em 24\/},
   127--170.
+
+\bibitem[{{NVIDIA Corporation}(2015)}]{cuda}
+{NVIDIA Corporation} (2015).
+\newblock {\em NVIDIA CUDA Compute Unified Device Architecture Programming
+  Guide\/}.
+\newblock NVIDIA Corporation.
+\newblock Version 7.5.
 
 \bibitem[{Owens et~al.(2007)Owens, Luebke, Govindaraju, Harris, Krüger,
   Lefohn, \& Purcell}]{Owens:2007:ASO}
@@ -150,12 +163,6 @@ Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., \& Flannery, B.~P. (1992).
 \newblock {\em Numerical Recipes in C (2Nd Ed.): The Art of Scientific
   Computing\/}.
 \newblock New York, NY, USA: Cambridge University Press.
-
-\bibitem[{Remijan et~al.(2015)Remijan, Adams, \& Warmels}]{alma-handbook}
-Remijan, A., Adams, M., \& Warmels, R. (2015).
-\newblock {ALMA Cycle 3 Technical Handbook}.
-\newblock Tech. rep., ALMA.
-\newblock Version 1.0.
 
 \bibitem[{Román(2012)}]{pablo}
 Román, P.~E. (2012).

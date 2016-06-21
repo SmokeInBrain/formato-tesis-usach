@@ -466,31 +466,38 @@ Los dos métodos de gradiente conjugado más importantes son el método de Fletc
 \label{alg:polakribiere}
 \end{algorithm}
 
-En el algoritmo \ref{alg:polakribiere} las líneas 1 y 2 muestran que el algoritmo comienza con una imagen positiva plana y que luego se calcula la dirección de búsqueda inicial. En la línea 3 comienza el ciclo para encontrar el mínimo. Para calcular la siguiente imagen se debe encontrar un valor $\alpha$ que minimice la función objetivo siguiente la dirección de búsqueda y sujeta a la restricción de positividad. En la línea 6, el algoritmo valida si se ha encontrado el mínimo, si se encuentra, entonces el algoritmo se detiene, de lo contrario se calcula un nueva dirección de búsqueda usando el valor de $\beta$ según Fletcher-Reeves (línea 10) o Polak-Ribiere (línea 11). Este último punto es importante, debido a que estas dos formas funcionan de la misma manera para ecuaciones de forma cuadrática. Sin embargo, en la realidad las funciones no son exactamente cuadráticas, y llegando al mínimo de la forma cuadrática se hace necesario llevar a cabo otro conjunto de iteraciones. En ese sentido, la fórmula de Polak-Ribiere funciona mejor cuando se hace necesario llevar a cabo más iteraciones \citep{numericalrecipes}.
+En el algoritmo \ref{alg:polakribiere} las líneas 1 y 2 muestran que el algoritmo comienza con una imagen positiva plana y que luego se calcula la dirección de búsqueda inicial. En la línea 3 comienza el ciclo para encontrar el mínimo. Para calcular la siguiente imagen se debe encontrar un valor $\alpha$ que minimice la función objetivo siguiendo la dirección de búsqueda y sujeta a la restricción de positividad. En la línea 6, el algoritmo valida si se ha encontrado el mínimo, si se encuentra, entonces el algoritmo se detiene, de lo contrario se calcula un nueva dirección de búsqueda usando el valor de $\beta$ según Fletcher-Reeves (línea 10) o Polak-Ribiere (línea 11). Este último punto es importante, debido a que estas dos formas funcionan de la misma manera para ecuaciones de forma cuadrática. Sin embargo, en la realidad las funciones no son exactamente cuadráticas, y llegando al mínimo de la forma cuadrática se hace necesario llevar a cabo otro conjunto de iteraciones. En ese sentido, la fórmula de Polak-Ribiere funciona mejor cuando se hace necesario llegar hasta estos puntos \citep{numericalrecipes}.
 
 
 
-\chapter{GPUVMEM}
-\label{cap:gpuvmem}
+\chapter{Multi-GPU}
+\label{cap:multigpu}
+La tarjeta Tesla K80 es una GPU que contiene dos tarjetas en una sola. Junto a ello, un sistema puede tener múltiples tarjetas GPU de alto cómputo. Por lo que se han querido aprovechar estas características para construir una solución que pueda ser usada tanto en una sola GPU como en múltiples, permitiendo así conseguir un mayor \textit{speedup}. A continuación se especifican las características de la solución para múltiples GPU.
 
-%\section{Primary Beam}
-%\section{cuFFT}
-%\section{Interpolación Bilineal}
+\section{Comunicación Peer-to-Peer}
+Una tarjeta puede comunicarse con la memoria de otra si es que la aplicación es ejecutada como un proceso de 64-bit y si la capacidad de cómputo de las tarjetas es 2.0 o más. Por ejemplo, una función que se ejecuta en GPU (\textit{kernel}) puede ejecutarse en una tarjeta y referenciar a un puntero cuya memoria haya sido almacenado en otra. Esto permite que la comunicación entre tarjetas sea más rápida debido a que si el acceso \textit{peer-to-peer} se habilita por medio de \texttt{cudaDeviceEnablePeerAccess()} ya no es necesario que los datos pasen por la memoria del sistema \citep{cuda}.
 
+\section{Direccionamiento Virtual Unificado}
 
-%\chapter{GPGPU}
-%\section{Arquitectura Unificada de Dispositivos de Cómputo}
-%\subsection{Arquitectura}
-%\subsection{cuFFT}
-%\subsection{Peer-to-Peer}
-%\subsection{Acceso virtual unificado}
-%\subsection{GPUVMEM}
+Es posible que todos los dispositivos GPU y la CPU, utilicen un único espacio de memoria si todos los dispositivos tienen una capacidad de cómputo mayor o igual a 2.0. Como consecuencia, cuando se copia memoria a un dispositivo que está usando un espacio de direcciones unificado el parámetro \texttt{cudaMemcpyKind} de \texttt{cudaMemcpy()}, puede ser seteado a \texttt{cudaMemcpyDefault} para que CUDA automáticamente determine donde se encuentra almacenada la memoria de los punteros \citep{cuda}.
+
+Cualquier puntero de memoria en algún dispositivo puede ser creado por un \textit{thread} del host y puede ser directamente referenciado dentro del mismo proceso. Sin embargo, esto no es posible fuera del proceso, por lo tanto, no se puede referenciar directamente a un puntero de memoria que pertenezca a un proceso distinto. Es por ello que para paralelizar el uso de múltiples GPU, y debido a que los threads que se crean pertenecen al mismo proceso se ha optado por usar OpenMP \citep{cuda}.
+
+\section{OpenMP}
 
 
 \chapter{Pruebas}
 \label{cap:pruebas}
 
+Para validar la solución se hace necesario enfocar las pruebas en dos aspectos del algoritmo implementado. Por un lado, se tienen las pruebas de aceleración, es decir, saber cuánto más rápido es MEM implementado en GPU, comparado con la solución \textit{multi-thread}. Por otra parte, se tienen las pruebas de caracterización que consisten en encontrar distintas características del algoritmo, tales como la resolución, nivel de ruido, entre otras.
+
+A continuación, se presentarán con más detalle cada uno de estos aspectos.
+
 \section{Benchmarks}
+Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM.
+
+Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con un set de datos que contenga más de un canal y así comparar los speed-ups, tanto con la solución multi-hebra como con la solución implementada en GPU usando una única tarjeta.
+
 \section{Caracterización de MEM}
 
 \chapter{Resultados}
