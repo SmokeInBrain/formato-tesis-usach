@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis-usach.aux
 A level-1 auxiliary file: preliminares/cubierta.aux
@@ -11,88 +11,50 @@ A level-1 auxiliary file: chapters/3-Conclusiones.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: anexos/Anexo-1.aux
 Database file #1: bibliografia.bib
-Warning--entry type for "alma" isn't style-file defined
---line 16 of file bibliografia.bib
 Warning--entry type for "howalma" isn't style-file defined
---line 24 of file bibliografia.bib
-Repeated entry---line 553 of file bibliografia.bib
- : @article{alma
- :              ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 565 of file bibliografia.bib
- : @article{pablo
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 574 of file bibliografia.bib
- : @article{MEM
- :             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 583 of file bibliografia.bib
- : @book{libroAstro
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 591 of file bibliografia.bib
- : @book{libroAstro2
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 599 of file bibliografia.bib
- : @article{CLEAN
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 891 of file bibliografia.bib
- : @article{marechal
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 911 of file bibliografia.bib
- : @article{chen
- :              ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 928 of file bibliografia.bib
- : @article{polak
- :               ,
-I'm skipping whatever remains of this entry
+--line 17 of file bibliografia.bib
 Warning--there's a number but no volume in pablo
 Warning--there's a number but no volume in skilling1984
 Warning--can't use both author and editor fields in skilling1991
-You've used 32 entries,
+You've used 33 entries,
             2804 wiz_defined-function locations,
-            825 strings with 10809 characters,
-and the built_in function-call counts, 18179 in all, are:
-= -- 1455
-> -- 676
-< -- 31
-+ -- 260
-- -- 221
-* -- 1398
-:= -- 2821
-add.period$ -- 99
-call.type$ -- 32
-change.case$ -- 236
-chr.to.int$ -- 31
-cite$ -- 35
-duplicate$ -- 1346
-empty$ -- 1396
-format.name$ -- 320
-if$ -- 3553
+            828 strings with 10848 characters,
+and the built_in function-call counts, 18775 in all, are:
+= -- 1502
+> -- 687
+< -- 33
++ -- 264
+- -- 224
+* -- 1442
+:= -- 2902
+add.period$ -- 103
+call.type$ -- 33
+change.case$ -- 242
+chr.to.int$ -- 32
+cite$ -- 36
+duplicate$ -- 1396
+empty$ -- 1453
+format.name$ -- 330
+if$ -- 3676
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 288
-newline$ -- 184
-num.names$ -- 131
-pop$ -- 522
+missing$ -- 300
+newline$ -- 191
+num.names$ -- 135
+pop$ -- 542
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 206
 quote$ -- 0
-skip$ -- 480
+skip$ -- 498
 stack$ -- 0
-substring$ -- 864
-swap$ -- 747
+substring$ -- 895
+swap$ -- 775
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 270
+type$ -- 276
 warning$ -- 3
-while$ -- 131
+while$ -- 135
 width$ -- 0
-write$ -- 438
-(There were 9 error messages)
+write$ -- 454
+(There were 4 warnings)

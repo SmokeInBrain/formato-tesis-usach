@@ -342,6 +342,10 @@ INPUT /home/miguel/Documents/formato-tesis-usach/images/antenas.eps
 INPUT /home/miguel/Documents/formato-tesis-usach/images/antenas.eps
 INPUT /home/miguel/Documents/formato-tesis-usach/./images/matrixandvector.eps
 INPUT /home/miguel/Documents/formato-tesis-usach/./images/matrixandvector.eps
+INPUT /home/miguel/Documents/formato-tesis-usach/./images/p2p.eps
+INPUT /home/miguel/Documents/formato-tesis-usach/./images/p2p.eps
+INPUT /home/miguel/Documents/formato-tesis-usach/./images/openmp.eps
+INPUT /home/miguel/Documents/formato-tesis-usach/./images/openmp.eps
 OUTPUT /home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.aux
 INPUT /home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.tex
 INPUT /home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.tex

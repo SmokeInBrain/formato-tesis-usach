@@ -1,13 +1,24 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  25 JUN 2016 22:50
+<<<<<<< HEAD
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  16 MAY 2016 20:25
+=======
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.5.18)  22 JUN 2016 15:12
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **tesis-usach.tex
+<<<<<<< HEAD
 (/home/miguel/Documents/formato-tesis-usach/tesis-usach.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 8 language(s) loaded.
 (/home/miguel/Documents/formato-tesis-usach/tesis-usach.cls
+=======
+(./tesis-usach.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(./tesis-usach.cls
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8
 Document Class: tesis-usach 2015/12/30 Template Thesis USACH
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
@@ -1489,40 +1500,35 @@ Overfull \hbox (15.0pt too wide) detected at line 467
 
 ] [27]
 Cap\'itulo 4.
-
-Overfull \hbox (2.63716pt too wide) in paragraph at lines 486--498
- [][] 
- []
-
 [28
 
 ]
-File: ./images/p2p.eps Graphic file (type eps)
- <./images/p2p.eps>
-Underfull \hbox (badness 1253) in paragraph at lines 515--516
+Underfull \hbox (badness 1253) in paragraph at lines 506--507
 \EU1/Arial(0)/m/n/10 de memoria si todos los dispositivos tienen una capacidad de cómputo mayor o igual a
  []
 
 [29]
-File: ./images/openmp.eps Graphic file (type eps)
- <./images/openmp.eps> [30]
 Cap\'itulo 5.
-[31
+[30
 
 ]
 Cap\'itulo 6.
-) [32
+) [31
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.tex
 Cap\'itulo 7.
-) [33
+) [32
 
 
 
-] (/home/miguel/Documents/formato-tesis-usach/tesis-usach.bbl [34
+<<<<<<< HEAD
+] (/home/miguel/Documents/formato-tesis-usach/tesis-usach.bbl [32
+=======
+] (./tesis-usach.bbl [33
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8
 
 
 ]
@@ -1530,20 +1536,29 @@ Underfull \hbox (badness 1127) in paragraph at lines 157--161
 \EU1/Arial(0)/m/it/10 ESAIM: Mathematical Modelling and Numerical Analysis - Modélisation Mathématique et
  []
 
-[35]) [36]
+[34]) [35]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.tex
 Anexo A.
+<<<<<<< HEAD
+=======
+[36
+
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8
 
 Overfull \hbox (36.22789pt too wide) detected at line 70
 [][] \OT1/cmr/m/n/10 = [] [] [][][]\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[] + []\OMS/cmsy/m/n/10 f^^@\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[][]
  []
 
-[37
+<<<<<<< HEAD
+[34
 
 
-]) [38]
+]) [35]
+=======
+[37]) [38]
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (/home/miguel/Documents/formato-tesis-usach/tesis-usach.aux (/home/miguel/Documents/formato-tesis-usach/preliminares/cubierta.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/dedicatoria.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/agradecimiento.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/abstract.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/1-Introduccion.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/2-Cuerpo.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.aux) (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.aux))
@@ -1556,12 +1571,24 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 30503 strings out of 495484
- 516604 string characters out of 6184925
- 585703 words of memory out of 5000000
- 33317 multiletter control sequences out of 15000+600000
+<<<<<<< HEAD
+ 30492 strings out of 495484
+ 516464 string characters out of 6184925
+ 586056 words of memory out of 5000000
+ 33308 multiletter control sequences out of 15000+600000
  9467 words of font info for 60 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  55i,12n,63p,10371b,796s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (48 pages).
+Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (45 pages).
+=======
+ 30387 strings out of 493918
+ 518801 string characters out of 6150563
+ 644933 words of memory out of 5000000
+ 33187 multiletter control sequences out of 15000+600000
+ 9435 words of font info for 56 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 53i,12n,50p,10407b,767s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on tesis-usach.pdf (48 pages).
+>>>>>>> 1ff95574a7d49c458e1c79eced1725905357e9d8

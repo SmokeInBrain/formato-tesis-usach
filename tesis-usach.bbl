@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{33}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -14,13 +14,8 @@
 \newblock {Maximum Entropy Spectral Analysis}.
 \newblock {\em Astronomy and Astrophysicss\/}, {\em 15\/}, 383.
 
-\bibitem[{ALMA(2009{\natexlab{a}})}]{alma}
-ALMA (2009{\natexlab{a}}).
-\newblock About alma.
-\newblock \url{http://www.almaobservatory.org/en/about-alma}.
-
-\bibitem[{ALMA(2009{\natexlab{b}})}]{howalma}
-ALMA (2009{\natexlab{b}}).
+\bibitem[{ALMA(2009)}]{howalma}
+ALMA (2009).
 \newblock How does alma work.
 \newblock
   \url{http://www.almaobservatory.org/en/about-alma/how-does-alma-work}.
@@ -42,7 +37,7 @@ Briggs, D. (1995).
 Casassus, S., Cabrera, G.~F., Förster, F., Pearson, T.~J., Readhead, A. C.~S.,
   \& Dickinson, C. (2006).
 \newblock Morphological analysis of the centimeter-wave continuum in the dark
-  cloud ldn 1622.
+  cloud ldn 1622.
 \newblock {\em The Astrophysical Journal\/}, {\em 639\/}(2), 951.
 \newline\urlprefix\url{http://stacks.iop.org/0004-637X/639/i=2/a=951}
 
@@ -100,6 +95,12 @@ Leshem, A., \& jan Van Der~Veen, A. (2000).
 \newblock {\em Monthly Notices of the Royal Astronomical Society\/}, {\em
   450\/}, 1308--1319.
 
+\bibitem[{Mangum \& Warmels(2015)}]{alma-handbook}
+Mangum, J., \& Warmels, R. (2015).
+\newblock {ALMA Cycle 4 Technical Handbook}.
+\newblock Tech. rep., ALMA.
+\newblock Version 1.0.
+
 \bibitem[{Maréchal \& Wallach(2009)}]{marechal}
 Maréchal, P., \& Wallach, D. (2009).
 \newblock Fourier synthesis via partially finite convex programming.
@@ -115,6 +116,13 @@ Maréchal, P., \& Wallach, D. (2009).
 \newblock {\em Annual Review of Astronomy and Astrophysics\/}, {\em 24\/},
   127--170.
 
+\bibitem[{{NVIDIA Corporation}(2015)}]{cuda}
+{NVIDIA Corporation} (2015).
+\newblock {\em NVIDIA CUDA Compute Unified Device Architecture Programming
+  Guide\/}.
+\newblock NVIDIA Corporation.
+\newblock Version 7.5.
+
 \bibitem[{Owens et~al.(2007)Owens, Luebke, Govindaraju, Harris, Krüger,
   Lefohn, \& Purcell}]{Owens:2007:ASO}
 Owens, J.~D., Luebke, D., Govindaraju, N., Harris, M., Krüger, J., Lefohn, A.,
@@ -123,8 +131,15 @@ Owens, J.~D., Luebke, D., Govindaraju, N., Harris, M., Krüger, J., Lefohn, A.,
 \newblock {\em Computer Graphics Forum\/}, {\em 26\/}(1), 80--113.
 \newline\urlprefix\url{http://www.blackwell-synergy.com/doi/pdf/10.1111/j.1467-8659.2007.01012.x}
 
-\bibitem[{Peck \& Beasley(2008)}]{alma2}
-Peck, A.~B., \& Beasley, A.~J. (2008).
+\bibitem[{Peck \& Beasley(2008{\natexlab{a}})}]{alma}
+Peck, A.~B., \& Beasley, A.~J. (2008{\natexlab{a}}).
+\newblock {High resolution sub-millimeter imaging with ALMA}.
+\newblock {\em Journal of Physics: Conference Series\/}, {\em 131\/}(1),
+  012049.
+\newline\urlprefix\url{http://stacks.iop.org/1742-6596/131/i=1/a=012049}
+
+\bibitem[{Peck \& Beasley(2008{\natexlab{b}})}]{alma2}
+Peck, A.~B., \& Beasley, A.~J. (2008{\natexlab{b}}).
 \newblock {High resolution sub-millimeter imaging with ALMA}.
 \newblock {\em Journal of Physics: Conference Series\/}, {\em 131\/}(1),
   012049.
@@ -151,14 +166,8 @@ Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., \& Flannery, B.~P. (1992).
   Computing\/}.
 \newblock New York, NY, USA: Cambridge University Press.
 
-\bibitem[{Remijan et~al.(2015)Remijan, Adams, \& Warmels}]{alma-handbook}
-Remijan, A., Adams, M., \& Warmels, R. (2015).
-\newblock {ALMA Cycle 3 Technical Handbook}.
-\newblock Tech. rep., ALMA.
-\newblock Version 1.0.
-
-\bibitem[{Román(2012)}]{pablo}
-Román, P.~E. (2012).
+\bibitem[{Roman(2012)}]{pablo}
+Roman, P.~E. (2012).
 \newblock El problema de síntesis de fourier en radio-astronomía y su
   resolución mediante métodos variacionales.
 \newblock {\em Revista del Instituto Chileno de Investigación Operativa\/},

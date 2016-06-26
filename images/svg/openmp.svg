@@ -1,0 +1,215 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw"
+    version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="square" id="id1990646472">
+            <rect x="126.0" y="461.0" width="273.0" height="273.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="#048434"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1938642970">
+            <polyline points="260.0,460.0 260.0,735.0 "
+                stroke-width="2.0" stroke="black" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="text" id="id1351429965" fill="black" latexdraw:position="bl">
+            <text x="105.0" y="300.0"><![CDATA[$SPW 0$, $C 0$]]></text>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1230627022">
+            <polyline points="350.0,200.0 350.0,450.0 "
+                stroke-width="2.0" stroke="black"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-1230627022)"/>
+        </g>
+        <g latexdraw:type="text" id="id930022786" fill="black" latexdraw:position="bl">
+            <text x="255.0" y="300.0"><![CDATA[$SPW 0$, $C 1$]]></text>
+        </g>
+        <g latexdraw:type="joinedLines" id="id825678897">
+            <polyline points="450.0,100.0 450.0,200.0 "
+                stroke-width="2.0" stroke="black" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id907919552">
+            <polyline points="450.0,200.0 700.0,200.0 700.0,450.0 "
+                stroke-width="2.0" stroke="black" fill="none"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-907919552)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id2118192323">
+            <polyline points="550.0,200.0 550.0,450.0 "
+                stroke-width="2.0" stroke="black"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-2118192323)"/>
+        </g>
+        <g latexdraw:type="text" id="id237611269" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="300.0"><![CDATA[$SPW 0$, $C 2$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id166129461" fill="black" latexdraw:position="bl">
+            <text x="605.0" y="300.0"><![CDATA[$SPW 0$, $C 3$]]></text>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1049000450">
+            <polyline points="450.0,200.0 200.0,200.0 200.0,450.0 "
+                stroke-width="2.0" stroke="black" fill="none"
+                latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-1049000450)"/>
+        </g>
+        <g latexdraw:type="text" id="id2132361619" fill="black" latexdraw:position="bl">
+            <text x="105.0" y="350.0"><![CDATA[$SPW 1$, $C 0$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id726998827" fill="black" latexdraw:position="bl">
+            <text x="255.0" y="350.0"><![CDATA[$SPW 1$, $C 1$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id457626656" fill="black" latexdraw:position="bl">
+            <text x="460.0" y="195.0"><![CDATA[\texttt{\# pragma omp parallel for schedule(static,1)}]]></text>
+        </g>
+        <g latexdraw:type="text" id="id2044351440" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="350.0"><![CDATA[$SPW 1$, $C 2$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id1241859565" fill="black" latexdraw:position="bl">
+            <text x="605.0" y="350.0"><![CDATA[$SPW 1$, $C 3$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id922166616" fill="black" latexdraw:position="bl">
+            <text x="105.0" y="400.0"><![CDATA[$SPW 2$, $C 0$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id1253655426" fill="black" latexdraw:position="bl">
+            <text x="105.0" y="450.0"><![CDATA[$SPW 3$, $C 0$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id497288751" fill="black" latexdraw:position="bl">
+            <text x="255.0" y="400.0"><![CDATA[$SPW 2$, $C 1$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id759839834" fill="black" latexdraw:position="bl">
+            <text x="255.0" y="450.0"><![CDATA[$SPW 3$, $C 1$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id860950397" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="400.0"><![CDATA[$SPW 2$, $C 2$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id482355434" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="450.0"><![CDATA[$SPW 3$, $C 2$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id1724307020" fill="black" latexdraw:position="bl">
+            <text x="605.0" y="400.0"><![CDATA[$SPW 2$, $C 3$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id940128250" fill="black" latexdraw:position="bl">
+            <text x="605.0" y="450.0"><![CDATA[$SPW 3$, $C 3$]]></text>
+        </g>
+        <g latexdraw:type="text" id="id228379946" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="115.0"><![CDATA[\textbf{Master Thread}]]></text>
+        </g>
+        <g latexdraw:type="text" id="id1201005192" fill="black" latexdraw:position="bl">
+            <text x="115.0" y="220.0"><![CDATA[\textbf{Thread 0}]]></text>
+        </g>
+        <g latexdraw:type="text" id="id831340100" fill="black" latexdraw:position="bl">
+            <text x="265.0" y="220.0"><![CDATA[\textbf{Thread 1}]]></text>
+        </g>
+        <g latexdraw:type="text" id="id2050964615" fill="black" latexdraw:position="bl">
+            <text x="465.0" y="220.0"><![CDATA[\textbf{Thread 2}]]></text>
+        </g>
+        <g latexdraw:type="text" id="id1655107246" fill="black" latexdraw:position="bl">
+            <text x="615.0" y="220.0"><![CDATA[\textbf{Thread 3}]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id1086193192">
+            <rect x="136.0" y="471.0" width="113.0" height="253.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="url(#linearGradient1086193192)"/>
+        </g>
+        <g latexdraw:type="text" id="id546381534" fill="#f3f6fd" latexdraw:position="bl">
+            <text x="155.0" y="595.0"><![CDATA[\textbf{GPU 0}]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id267581530">
+            <rect x="271.0" y="471.0" width="113.0" height="253.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="url(#linearGradient267581530)"/>
+        </g>
+        <g latexdraw:type="text" id="id38619366" fill="#fafafa" latexdraw:position="bl">
+            <text x="295.0" y="595.0"><![CDATA[\textbf{GPU 1}]]></text>
+        </g>
+        <g latexdraw:type="square" id="id442847453">
+            <rect x="496.0" y="461.0" width="273.0" height="273.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="#048434"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1131178060">
+            <polyline points="630.0,460.0 630.0,735.0 "
+                stroke-width="2.0" stroke="black" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id467487931">
+            <rect x="506.0" y="471.0" width="113.0" height="253.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="url(#linearGradient467487931)"/>
+        </g>
+        <g latexdraw:type="text" id="id771880357" fill="#f3f6fd" latexdraw:position="bl">
+            <text x="525.0" y="595.0"><![CDATA[\textbf{GPU 2}]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id1598606410">
+            <rect x="641.0" y="471.0" width="113.0" height="253.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="url(#linearGradient1598606410)"/>
+        </g>
+        <g latexdraw:type="text" id="id805147855" fill="#fafafa" latexdraw:position="bl">
+            <text x="665.0" y="595.0"><![CDATA[\textbf{GPU 3}]]></text>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" orient="auto" id="arrow1-1230627022">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+        <marker overflow="visible" orient="auto" id="arrow1-907919552">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+        <marker overflow="visible" orient="auto" id="arrow1-2118192323">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+        <marker overflow="visible" orient="auto" id="arrow1-1049000450">
+            <path
+                d="M 0.0 0.0 L -4.652083333333334 1.6614583333333335 L -4.652083333333334 0.0 L -4.652083333333334 -1.6614583333333335 z "
+                latexdraw:arrSizeNum="2.0" fill="black"/>
+        </marker>
+        <linearGradient id="linearGradient1086193192" x1="192.5"
+            y1="470.0" x2="192.5" y2="725.0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="black"/>
+            <stop offset="0.9" stop-color="#736c6c"/>
+            <stop offset="1" stop-color="black"/>
+        </linearGradient>
+        <linearGradient id="linearGradient267581530" x1="327.5"
+            y1="470.0" x2="327.5" y2="725.0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="black"/>
+            <stop offset="0.9" stop-color="#736c6c"/>
+            <stop offset="1" stop-color="black"/>
+        </linearGradient>
+        <linearGradient id="linearGradient467487931" x1="562.5"
+            y1="470.0" x2="562.5" y2="725.0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="black"/>
+            <stop offset="0.9" stop-color="#736c6c"/>
+            <stop offset="1" stop-color="black"/>
+        </linearGradient>
+        <linearGradient id="linearGradient1598606410" x1="697.5"
+            y1="470.0" x2="697.5" y2="725.0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="black"/>
+            <stop offset="0.9" stop-color="#736c6c"/>
+            <stop offset="1" stop-color="black"/>
+        </linearGradient>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:latexIncludes><![CDATA[\usepackage{pst-solides3d}
+]]></latexdraw:latexIncludes>
+            <latexdraw:displayXScale>true</latexdraw:displayXScale>
+            <latexdraw:displayYScale>true</latexdraw:displayYScale>
+            <latexdraw:unit>CM</latexdraw:unit>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:magneticGridStyle>STANDARD</latexdraw:magneticGridStyle>
+            <latexdraw:gridGap>20</latexdraw:gridGap>
+            <latexdraw:magneticGrid>true</latexdraw:magneticGrid>
+            <latexdraw:version>3.3.1</latexdraw:version>
+            <latexdraw:size>
+                <latexdraw:width>1920</latexdraw:width>
+                <latexdraw:height>1056</latexdraw:height>
+            </latexdraw:size>
+            <latexdraw:position>
+                <latexdraw:x>0.0</latexdraw:x>
+                <latexdraw:y>24.0</latexdraw:y>
+            </latexdraw:position>
+        </latexdraw:metadata>
+    </metadata>
+</svg>
