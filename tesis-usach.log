@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  25 JUN 2016 22:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  26 JUN 2016 16:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1505,24 +1505,24 @@ Underfull \hbox (badness 1253) in paragraph at lines 515--516
 
 [29]
 File: ./images/openmp.eps Graphic file (type eps)
- <./images/openmp.eps> [30]
+ <./images/openmp.eps> [30] [31]
 Cap\'itulo 5.
-[31
+[32
 
 ]
 Cap\'itulo 6.
-) [32
+) [33
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.tex
 Cap\'itulo 7.
-) [33
+) [34
 
 
 
-] (/home/miguel/Documents/formato-tesis-usach/tesis-usach.bbl [34
+] (/home/miguel/Documents/formato-tesis-usach/tesis-usach.bbl [35
 
 
 ]
@@ -1530,7 +1530,7 @@ Underfull \hbox (badness 1127) in paragraph at lines 157--161
 \EU1/Arial(0)/m/it/10 ESAIM: Mathematical Modelling and Numerical Analysis - Modélisation Mathématique et
  []
 
-[35]) [36]
+[36]) [37]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.tex
@@ -1540,10 +1540,54 @@ Overfull \hbox (36.22789pt too wide) detected at line 70
 [][] \OT1/cmr/m/n/10 = [] [] [][][]\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[] + []\OMS/cmsy/m/n/10 f^^@\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[][]
  []
 
-[37
+[38
 
 
-]) [38]
+] [39]
+Anexo B.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 129.
+
+[40
+
+]
+Anexo C.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 131.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nabla' on input line 131.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 131.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 131.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 131.
+
+) [41
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (/home/miguel/Documents/formato-tesis-usach/tesis-usach.aux (/home/miguel/Documents/formato-tesis-usach/preliminares/cubierta.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/dedicatoria.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/agradecimiento.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/abstract.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/1-Introduccion.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/2-Cuerpo.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.aux) (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.aux))
@@ -1556,12 +1600,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 30503 strings out of 495484
- 516604 string characters out of 6184925
- 585703 words of memory out of 5000000
- 33317 multiletter control sequences out of 15000+600000
- 9467 words of font info for 60 fonts, out of 8000000 for 9000
+ 30519 strings out of 495484
+ 516841 string characters out of 6184925
+ 585878 words of memory out of 5000000
+ 33329 multiletter control sequences out of 15000+600000
+ 12119 words of font info for 72 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  55i,12n,63p,10371b,796s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (48 pages).
+Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (51 pages).

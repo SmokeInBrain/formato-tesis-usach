@@ -518,7 +518,7 @@ Cualquier puntero de memoria en algún dispositivo puede ser creado por un \text
 
 \section{OpenMP}
 
-Para acelerar el cálculo de $\chi^{2}$ y $\nabla \chi^{2}$ es necesario que el uso de las múltiples tarjetas sea de forma paralela. Para ello, hay que tener en cuenta que cualquier thread del proceso ejecutado puede ejecutar la instrucción \texttt{cudaSetDevice(x)} que cambia la GPU con la cual se trabajará, por lo que los \textit{kernels} que sean ejecutados desde ese punto en adelante serán ejecutados en la GPU $x$. Es posible usar esta instrucción de forma paralela y así hacer que cada thread invoque \textit{kernels} en una GPU distinta y de forma concurrente. Por ejemplo, supongamos que se trabaja con el set de datos de HLTau en banda seis. Este set de datos tiene cuatro \textit{spectral windows} y cuatro canales por cada una de éstas. Además el usuario puede ingresar como argumento el número de GPUs que desea utilizar, siendo el número total de canales la máxima cantidad de GPUs a utilizar. Asimismo, se usa la claúsula \texttt{\# pragma omp parallel for schedule(static,1)} de OpenMP para recorrer los canales de todas las \textit{spectral windows} de forma paralela planificando las hebras de forma Round Robin.
+Para acelerar el cálculo de $\chi^{2}$ y $\nabla \chi^{2}$ es necesario que el uso de las múltiples tarjetas sea de forma paralela. Para ello, hay que tener en cuenta que cualquier thread del proceso ejecutado puede ejecutar la instrucción \texttt{cudaSetDevice(x)} que cambia la GPU con la cual se trabajará, por lo que los \textit{kernels} que sean ejecutados desde ese punto en adelante serán ejecutados en la GPU $x$. Es posible usar esta instrucción de forma paralela y así hacer que cada thread invoque \textit{kernels} en una GPU distinta y de forma concurrente. Por ejemplo, supongamos que se trabaja con el set de datos de HLTau en banda seis. Este set de datos tiene cuatro \textit{spectral windows} y cuatro canales por cada una de éstas. Además el usuario puede ingresar como argumento el número de GPUs que desea utilizar, siendo el número total de canales la máxima cantidad de GPUs a utilizar. Asimismo, se usa la claúsula \texttt{\# pragma omp parallel for schedule(static,1)} de OpenMP para recorrer los canales de todas las \textit{spectral windows} de forma paralela planificando las hebras de forma Round Robin como se muestra en la Figura \ref{fig:openmp}.
 
 \begin{figure}[h!]
 	\centering
@@ -526,6 +526,10 @@ Para acelerar el cálculo de $\chi^{2}$ y $\nabla \chi^{2}$ es necesario que el 
 	\caption{Uso de OpenMP en múltiples GPUs. Fuente: Elaboración propia}
 	\label{fig:openmp}
 \end{figure}
+
+Debido a que tanto para el cálculo de $\chi^{2}$ y $\nabla \chi^{2}$ se necesitan sumar los valores tanto de la función objetivo como del gradiente calculados en cada GPU respectivamente, se hace necesario crear  secciones críticas, es decir, regiones en donde sólo un thread del \textit{host} pueda ingresar a la vez, con el fin de que no existan condiciones de carrera entre ellos. Para ello, se utiliza la claúsula \texttt{\# pragma omp critical} de OpenMP. De esta forma se asegura que los cálculos de $\chi^{2}$ y $\nabla \chi^{2}$ en múltiples frecuencias sean los correctos. Cabe destacar que para el cálculo de $\nabla \chi^{2}$ en estos casos, se necesita un \textit{kernel} ubicado en la sección crítica que sume los valores de todos los dispositivos GPU. 
+
+
 
 \chapter{Pruebas}
 \label{cap:pruebas}

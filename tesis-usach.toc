@@ -30,11 +30,13 @@
 \contentsline {section}{\numberline {4.1}Comunicación Peer-to-Peer}{28}{section.4.1}
 \contentsline {section}{\numberline {4.2}Direccionamiento Virtual Unificado}{29}{section.4.2}
 \contentsline {section}{\numberline {4.3}OpenMP}{30}{section.4.3}
-\contentsline {chapter}{\numberline {5}Pruebas}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Benchmarks}{31}{section.5.1}
-\contentsline {section}{\numberline {5.2}Caracterización de MEM}{31}{section.5.2}
-\contentsline {chapter}{\numberline {6}Resultados}{32}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusiones}{33}{chapter.7}
-\contentsline {chapter}{Referencias bibliogr\'aficas}{36}{chapter*.24}
-\contentsline {chapter}{Anexos}{36}{section*.25}
-\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{37}{appendix.A}
+\contentsline {chapter}{\numberline {5}Pruebas}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}Benchmarks}{32}{section.5.1}
+\contentsline {section}{\numberline {5.2}Caracterización de MEM}{32}{section.5.2}
+\contentsline {chapter}{\numberline {6}Resultados}{33}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{34}{chapter.7}
+\contentsline {chapter}{Referencias bibliogr\'aficas}{37}{chapter*.24}
+\contentsline {chapter}{Anexos}{37}{section*.25}
+\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{38}{appendix.A}
+\contentsline {chapter}{\numberline {B}Algoritmo para el cálculo de $\chi ^{2}$}{40}{appendix.B}
+\contentsline {chapter}{\numberline {C}Algoritmo para el cálculo de $\nabla \chi ^{2}$}{41}{appendix.C}
