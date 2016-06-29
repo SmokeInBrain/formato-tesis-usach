@@ -382,6 +382,10 @@ INPUT images/antenas.eps
 INPUT images/antenas.eps
 INPUT ./images/matrixandvector.eps
 INPUT ./images/matrixandvector.eps
+INPUT ./images/p2p.eps
+INPUT ./images/p2p.eps
+INPUT ./images/openmp.eps
+INPUT ./images/openmp.eps
 OUTPUT chapters/3-Conclusiones.aux
 INPUT chapters/3-Conclusiones.tex
 INPUT chapters/3-Conclusiones.tex

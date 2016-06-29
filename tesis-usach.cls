@@ -99,7 +99,7 @@
 
 % Listing de código
 \RequirePackage{listings} % For insert code in the paper
-\lstset{ 
+\lstset{
     frame=Ltb,
     framerule=0pt,
     aboveskip=0.2cm,			%0.5cm
@@ -132,7 +132,7 @@
     {\lstset{#1}\pagebreak[0]}
     {\pagebreak[0]}
 
-% Estilo para código Java    
+% Estilo para código Java
 \lstloadlanguages{Java}
 
 \definecolor{javared}{rgb}{0.6,0,0}				% For strings
@@ -220,7 +220,7 @@
 }{\end{trivlist}}
 
 \renewcommand{\qed}
-{   
+{
     \nobreak \ifvmode \relax \else
     \ifdim\lastskip<1.5em \hskip-\lastskip
     \hskip1.5em plus0em minus0.5em \fi \nobreak
@@ -291,7 +291,7 @@
 {\bfseries\Large\vspace*{-4.0cm}}	% Formato título
 {	% Contenido de la etiqueta
     \filright
-    \Large\MakeUppercase\chaptertitlename\ \thechapter.\ 
+    \Large\MakeUppercase\chaptertitlename\ \thechapter.\
 }
 {0pt} % Espacio mínimo entre etiqueta y cuerpo
 {\filright\MakeUppercase} % Código que precede al cuerpo del título
@@ -316,7 +316,7 @@
 {0pt}
 {\vspace*{0.5cm}\itshape}
 
-\titlespacing*{\chapter} {0pt}{85pt}{20pt} 
+\titlespacing*{\chapter} {0pt}{85pt}{20pt}
 \titlespacing*{\section} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
@@ -455,7 +455,7 @@
             A\~no Ingreso: & \@annoingreso \\
             Tel\'efono: & \@telefono \\
             E-mail: & \@email \\
-            Profesor: & \@profesorguia \\ 
+            Profesor: & \@profesorguia \\
         \end{tabular}
     \end{flushright}
     \begin{center}
@@ -485,7 +485,7 @@
 			\vfill
 			{\normalsize \@ciudad\ -- \@pais\\
 			\@annoexamen}
-        \end{center}\par    
+        \end{center}\par
 \fi
 \restoregeometry
 } % End \makecubierta
@@ -502,10 +502,10 @@
         \null
 		\vfill\par
         \begin{flushleft}
-			\copyright\ 
-			\@autor \; - \@annoexamen \\ 
+			\copyright\
+			\@autor \; - \@annoexamen \\
 			\includegraphics[height=12pt]{images/licenses/cc_by.png}
-				~$\bullet$~~ Algunos derechos reservados. Esta obra est\'a bajo una Licencia Creative Commons Atribuci\'on-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.      
+				~$\bullet$~~ Algunos derechos reservados. Esta obra est\'a bajo una Licencia Creative Commons Atribuci\'on-Chile 3.0. Sus condiciones de uso pueden ser revisadas en: \url{http://creativecommons.org/licenses/by/3.0/cl/}.
         \end{flushleft}
     \fi
 }

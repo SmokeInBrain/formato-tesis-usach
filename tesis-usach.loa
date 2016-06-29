@@ -4,6 +4,8 @@
 \addvspace {10\p@ }
 \contentsline {algocf}{\numberline {3.1}{\ignorespaces Algoritmo de Fletcher-Reeves/Polak-Ribiere\relax }}{26}{algocf.3.1}
 \addvspace {10\p@ }
+\contentsline {algocf}{\numberline {4.1}{\ignorespaces Cálculo de $\chi ^{2}$ en paralelo\relax }}{31}{algocf.4.1}
+\contentsline {algocf}{\numberline {4.2}{\ignorespaces Cálculo de $\nabla \chi ^{2}$ en paralelo\relax }}{31}{algocf.4.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
