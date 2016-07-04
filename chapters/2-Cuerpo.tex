@@ -572,9 +572,11 @@ Para validar la solución se hace necesario enfocar las pruebas en dos aspectos 
 A continuación, se presentarán con más detalle cada uno de estos aspectos.
 
 \section{Benchmarks}
-Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM.
+Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM. Cabe destacar, que la solución no es una traducción de un código multihebra a un código GPU, sino un código completamente nuevo. Esto debido a que existen operaciones como suma y multiplicaciones de matrices que son posible paralelizar en GPU, además de la transformada de Fourier de CUDA \citep{cudafft} que a diferencia de la transformada de Fourier de \citep{numericalrecipes} que utiliza \texttt{uvmem} multi-hebra toma ésta con signo negativo, y por lo tanto, el cálculo del gradiente cambia.
 
-Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con un set de datos que contenga más de un canal y así comparar los speed-ups, tanto con la solución multi-hebra como con la solución implementada en GPU usando una única tarjeta.
+Debido a que existen en los códigos GPU y multi-hebra, la forma más justa de comparar el rendimiento de cada solución según la carga es comparando el tiempo promedio por iteración de cada una. Esto debido a que podría darse el caso en que éstas no converjan en la misma iteración, siendo injusto el comparar el tiempo total de ejecución.
+
+Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con set de datos que contengan más de un canal y así comparar los speed-ups entre la solución multihebra, con una GPU y con múltiples GPU.
 
 \section{Caracterización de MEM}
 
