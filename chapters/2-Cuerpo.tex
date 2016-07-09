@@ -572,9 +572,9 @@ Para validar la solución se hace necesario enfocar las pruebas en dos aspectos 
 A continuación, se presentarán con más detalle cada uno de estos aspectos.
 
 \section{Benchmarks}
-Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM.
+Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para realizar un análisis de cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM.
 
-Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con un set de datos que contenga más de un canal y así comparar los speed-ups, tanto con la solución multi-hebra como con la solución implementada en GPU usando una única tarjeta.
+Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se realizan pruebas con un set de datos que contenga más de un canal y así comparar los speed-ups, tanto con la solución multi-hebra como con la solución implementada en GPU usando una única tarjeta.
 
 \section{Caracterización de MEM}
 
