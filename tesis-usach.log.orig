@@ -1,8 +1,8 @@
 <<<<<<< HEAD
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.5.18)  28 JUN 2016 15:09
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  2 JUL 2016 20:53
 =======
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.5.16)  26 JUN 2016 16:47
->>>>>>> 491b2aac755f5c63d57515a9e0aaee0c8727fdf6
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2016.5.18)  7 JUL 2016 17:23
+>>>>>>> 109989b353714b144ec896061668ea33e9d9c589
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1086,6 +1086,12 @@ LaTeX Warning: Label `eq:chi2-multi' multiply defined.
 
 LaTeX Warning: Label `eq:dchi2-multi' multiply defined.
 
+
+LaTeX Warning: Label `alg:S' multiply defined.
+
+
+LaTeX Warning: Label `alg:chi2openmp' multiply defined.
+
 ) (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.aux) (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.aux))
 \openout1 = `tesis-usach.aux'.
 
@@ -1482,116 +1488,115 @@ Underfull \hbox (badness 1097) in paragraph at lines 358--359
 
 [23]
 File: ./images/matrixandvector.eps Graphic file (type eps)
- <./images/matrixandvector.eps> [24] [25]
-Cap\'itulo 3.
-
-Overfull \hbox (15.0pt too wide) detected at line 467
+ <./images/matrixandvector.eps> [24]
+Overfull \hbox (15.0pt too wide) detected at line 445
 [][] 
  []
 
-[26
 
-] [27]
+Overfull \hbox (15.0pt too wide) detected at line 455
+[][] 
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 473
+[][] 
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 483
+[][] 
+ []
+
+[25] [26]
+Cap\'itulo 3.
+
+Overfull \hbox (15.0pt too wide) detected at line 513
+[][] 
+ []
+
+[27
+
+] [28]
 Cap\'itulo 4.
 
-Overfull \hbox (2.63716pt too wide) in paragraph at lines 486--498
+Overfull \hbox (2.63716pt too wide) in paragraph at lines 532--544
  [][] 
  []
 
-[28
+[29
 
 ]
 File: ./images/p2p.eps Graphic file (type eps)
  <./images/p2p.eps>
-Underfull \hbox (badness 1253) in paragraph at lines 515--516
+Underfull \hbox (badness 1253) in paragraph at lines 561--562
 \EU1/Arial(0)/m/n/10 de memoria si todos los dispositivos tienen una capacidad de cómputo mayor o igual a
  []
 
-[29]
+[30]
 File: ./images/openmp.eps Graphic file (type eps)
- <./images/openmp.eps> [30] [31]
-Cap\'itulo 5.
-[32
+ <./images/openmp.eps> [31]
+Overfull \hbox (15.0pt too wide) detected at line 593
+[][] 
+ []
 
-]
+
+Overfull \hbox (15.0pt too wide) detected at line 607
+[][] 
+ []
+
+[32]
+Cap\'itulo 5.
+[33
+
+] [34]
 Cap\'itulo 6.
-) [33
+) [35
 
 ]
 \openout2 = `chapters/3-Conclusiones.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.tex
 Cap\'itulo 7.
-) [34
+) [36
 
 
 
+<<<<<<< HEAD
 ] (/home/miguel/Documents/formato-tesis-usach/tesis-usach.bbl [35
+=======
+] (./tesis-usach.bbl [37
+>>>>>>> 109989b353714b144ec896061668ea33e9d9c589
 
 
 ]
-Underfull \hbox (badness 1127) in paragraph at lines 157--161
+Underfull \hbox (badness 1127) in paragraph at lines 163--167
 \EU1/Arial(0)/m/it/10 ESAIM: Mathematical Modelling and Numerical Analysis - Modélisation Mathématique et
  []
 
-[36]) [37]
+[38]) [39]
 \openout2 = `anexos/Anexo-1.aux'.
 
  (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.tex
 Anexo A.
+<<<<<<< HEAD
+=======
+[40
+
+>>>>>>> 109989b353714b144ec896061668ea33e9d9c589
 
 Overfull \hbox (36.22789pt too wide) detected at line 70
 [][] \OT1/cmr/m/n/10 = [] [] [][][]\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[] + []\OMS/cmsy/m/n/10 f^^@\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi < X[]; Z[] >\OMS/cmsy/m/n/10 g[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]\OT1/cmr/m/n/10 )[][]
  []
 
+<<<<<<< HEAD
 [38
 
 
-] [39]
-Anexo B.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\chi' on input line 129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 129.
-
-[40
-
-]
-Anexo C.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nabla' on input line 131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\chi' on input line 131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
-
-) [41
-
-]
+]) [39]
+=======
+[41]) [42]
+>>>>>>> 109989b353714b144ec896061668ea33e9d9c589
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (/home/miguel/Documents/formato-tesis-usach/tesis-usach.aux (/home/miguel/Documents/formato-tesis-usach/preliminares/cubierta.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/dedicatoria.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/agradecimiento.aux) (/home/miguel/Documents/formato-tesis-usach/preliminares/abstract.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/1-Introduccion.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/2-Cuerpo.aux) (/home/miguel/Documents/formato-tesis-usach/chapters/3-Conclusiones.aux) (/home/miguel/Documents/formato-tesis-usach/anexos/Anexo-1.aux))
@@ -1604,12 +1609,24 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 30519 strings out of 495484
- 516841 string characters out of 6184925
- 585878 words of memory out of 5000000
- 33329 multiletter control sequences out of 15000+600000
- 12119 words of font info for 72 fonts, out of 8000000 for 9000
+<<<<<<< HEAD
+ 30504 strings out of 495484
+ 516620 string characters out of 6184925
+ 585733 words of memory out of 5000000
+ 33318 multiletter control sequences out of 15000+600000
+ 9467 words of font info for 60 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  55i,12n,63p,10371b,796s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (51 pages).
+Output written on /home/miguel/Documents/formato-tesis-usach/tesis-usach.pdf (49 pages).
+=======
+ 30400 strings out of 493918
+ 518968 string characters out of 6150563
+ 645335 words of memory out of 5000000
+ 33198 multiletter control sequences out of 15000+600000
+ 9435 words of font info for 56 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 53i,12n,50p,10407b,767s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on tesis-usach.pdf (52 pages).
+>>>>>>> 109989b353714b144ec896061668ea33e9d9c589

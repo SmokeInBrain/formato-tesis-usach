@@ -433,8 +433,54 @@ Sin embargo, como el número de canales de cada \textit{spectral window} es el m
 \end{figure}
 
 
+\begin{algorithm}
+	\begin{algorithmic}[1]
+		\STATE{$j = globalId.x$}
+		\IF{$j < Z$}
+			\STATE{$\chi^{2}(j) = W(j) * (Re(V^{R}(j))^{2} + Im(V^{R}(j))^{2})$}
+		\ENDIF
+	\end{algorithmic}
+	\caption{Algoritmo del kernel 1D que calcula el vector $\chi^{2}$}
+	\label{alg:chi2}
+\end{algorithm}
+
+\begin{algorithm}
+	\begin{algorithmic}[1]
+		\STATE{$k = globalId.x$}
+		\STATE{$i = globalId.y$}
+		\STATE{$S(i,k) = I(i,k) * \log(I(i,k)/G)$}
+	\end{algorithmic}
+	\caption{Algoritmo del kernel 2D que calcula el vector $S$}
+	\label{alg:S}
+\end{algorithm}
 
 
+\begin{algorithm}
+	\begin{algorithmic}[1]
+		\STATE{$k = globalId.x$}
+		\STATE{$i = globalId.y$}
+		\STATE{$x_{0} = x_{obs}$}
+		\STATE{$y_{0} = y_{obs}$}
+		\STATE{$x = (k-x_{0})*\Delta x$}
+		\STATE{$y = (i-y_{0})*\Delta y$}
+		\STATE{$\nabla \chi^{2}(i,k) = 0$}
+		\FOR{$j=0$ \TO Z}
+			\STATE{$\nabla \chi^{2}(i,k) \mathrel{+}= W(j) * [Re(V^{R}(j)) * \cos(2 \pi \langle(u(j),v(j)),(x,y)\rangle ) + Im(V^{R}(j)) * \sin(2 \pi \langle(u(j),v(j)),(x,y)\rangle)]$}
+		\ENDFOR
+	\end{algorithmic}
+	\caption{Algoritmo del kernel 2D que calcula $\nabla \chi^{2}$}
+	\label{alg:dchi2}
+\end{algorithm}
+
+\begin{algorithm}
+	\begin{algorithmic}[1]
+		\STATE{$k = globalId.x$}
+		\STATE{$i = globalId.y$}
+		\STATE{$\nabla S(i,k) =  \lambda * (\log(I(i,k)/G)+1)$}
+	\end{algorithmic}
+	\caption{Algoritmo del kernel 2D que calcula el vector $\nabla S$}
+	\label{alg:dS}
+\end{algorithm}
 
 \chapter{Optimización}
 \label{cap:opti}
@@ -572,11 +618,27 @@ Para validar la solución se hace necesario enfocar las pruebas en dos aspectos 
 A continuación, se presentarán con más detalle cada uno de estos aspectos.
 
 \section{Benchmarks}
-Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para realizar un análisis de cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM.
+Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM. Cabe destacar, que la solución no es una traducción de un código multihebra a un código GPU, sino un código completamente nuevo. Esto debido a que existen operaciones como suma y multiplicaciones de matrices que son posible paralelizar en GPU, además de la transformada de Fourier de CUDA \citep{cudafft} que a diferencia de la transformada de Fourier de \citep{numericalrecipes} que utiliza \texttt{uvmem} multi-hebra toma ésta con signo negativo, y por lo tanto, el cálculo del gradiente cambia.
 
-Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se realizan pruebas con un set de datos que contenga más de un canal y así comparar los speed-ups, tanto con la solución multi-hebra como con la solución implementada en GPU usando una única tarjeta.
+Debido a que existen en los códigos GPU y multi-hebra, la forma más justa de comparar el rendimiento de cada solución según la carga es comparando el tiempo promedio por iteración de cada una. Esto debido a que podría darse el caso en que éstas no converjan en la misma iteración, siendo injusto el comparar el tiempo total de ejecución.
+
+Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con set de datos que contengan más de un canal y así comparar los speed-ups entre la solución multihebra, con una GPU y con múltiples GPU.
 
 \section{Caracterización de MEM}
+
+Para caracterizar a MEM, es decir, para comprender las propiedades de las imágenes obtenidas con este, es necesario conocer su resolución espacial y las imágenes de residuos resultantes. Se entiende por resolución a la medida en arcosegundos del objeto más pequeño que se puede distinguir en una imagen. Así, se creará una imagen con un impulso, esto es, una imagen con el pixel $(255,255)$ con un valor positivo y los demás con valor 0. Luego de esto, se simulará esta imagen con set de datos que permitan señalar la distinta resolución espacial que se tiene al usar \textit{baselines} grandes y pequeños. En específico, se usarán los datos de HD142527 en banda nueve que tiene un \textit{baseline} de 400 metros aproximadamente y de HLTauri en banda tres, seis y siete que tienen un \textit{baseline} de aproximadamente 15 kilómetros. Luego de ello, se reconstruirá cada set de datos con CLEAN y con MEM, de manera de encontrar las diferencias de resolución entre estos métodos. Para ello es necesario encontrar la anchura a media altura (FWHM) en arcosegundos del impulso reconstruido ya sea en CLEAN o en MEM.
+
+Por otro lado, la imagen de residuos da a conocer qué tan buena es la deconvolución realizada con un algoritmo, para ello la intensidad por píxel de esta imagen debe ser parecida a un ruido independiente, es decir, no debe haber una correlación entre los píxeles. Además de esto, es importante estudiar el RMS de estas imágenes debido a que permite tomar la decisión sobre si una imagen de residuos es mejor o peor que otra. Para analizar estas imágenes, se reconstruyen tanto imágenes de datos reales, como de datos sintéticos. Es decir, se usa un patrón de muestreo $(u,v)$ de un set de datos conocido, específicamente HD142527 Banda 9 y HLTau Banda 6, y se cambia su valor de visibilidad real e imaginario, de manera que la imagen reconstruida es la figura sintética creada. Estas figuras sintéticas se muestran a continuación.
+
+Cabe destacar, que los astrónomos se remiten a la inspección visual de las imágenes de residuos, debido a que evalúan si cierto objeto es real o no dependiendo de cuan plana se vea la imagen de residuos.
+
+
+\section{Efecto baselines de gran longitud en las imágenes}
+
+ALMA tuvo una campaña de grandes baselines entre Septiembre y Diciembre de 2014, en ella se quiso probar y verificar el poder de separación usando antenas con un máximo de separación de 15 km. En esta se alcanzó una resolución espectral mayor que 0.025 arcosegundos revelando detalles finos de cuerpos que nunca había sido vistos antes \citep{longbaselines}.
+
+Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos de HLTau Banda 6 y sólo la \textit{spectral window} 0, y luego se crean distintos set de datos incrementando el baseline de 400 metros hasta 15 km. Esto permite estudiar cómo mejora la resolución de la imagen a medida que se incrementa la longitud de los \textit{baselines}.
+
 
 \chapter{Resultados}
 \label{cap:resultados}
