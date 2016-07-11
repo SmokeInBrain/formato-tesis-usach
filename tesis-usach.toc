@@ -33,9 +33,9 @@
 \contentsline {chapter}{\numberline {5}Pruebas}{33}{chapter.5}
 \contentsline {section}{\numberline {5.1}Benchmarks}{33}{section.5.1}
 \contentsline {section}{\numberline {5.2}Caracterización de MEM}{33}{section.5.2}
-\contentsline {section}{\numberline {5.3}Efecto baselines de gran longitud en las imágenes}{34}{section.5.3}
-\contentsline {chapter}{\numberline {6}Resultados}{35}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusiones}{36}{chapter.7}
-\contentsline {chapter}{Referencias bibliogr\'aficas}{39}{chapter*.24}
-\contentsline {chapter}{Anexos}{39}{section*.25}
-\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{40}{appendix.A}
+\contentsline {section}{\numberline {5.3}Efecto de baselines de gran longitud en las imágenes}{36}{section.5.3}
+\contentsline {chapter}{\numberline {6}Resultados}{37}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{38}{chapter.7}
+\contentsline {chapter}{Referencias bibliogr\'aficas}{41}{chapter*.25}
+\contentsline {chapter}{Anexos}{41}{section*.26}
+\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{42}{appendix.A}

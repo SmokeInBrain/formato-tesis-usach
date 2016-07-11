@@ -60,9 +60,10 @@
 \RequirePackage{epsf}
 \RequirePackage{psfrag}
 \RequirePackage{epic,eepic}
-\usepackage{subfig}
-\usepackage[titles,subfigure]{tocloft}
-\usepackage{color}
+\RequirePackage{subfig}
+\RequirePackage[titles,subfigure]{tocloft}
+\RequirePackage{color}
+
 
 % Referencias
 \RequirePackage{hyperref}
