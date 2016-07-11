@@ -386,6 +386,14 @@ INPUT ./images/p2p.eps
 INPUT ./images/p2p.eps
 INPUT ./images/openmp.eps
 INPUT ./images/openmp.eps
+INPUT ./images/phantoms/ball_whead.eps
+INPUT ./images/phantoms/ball_whead.eps
+INPUT ./images/phantoms/balls_whead.eps
+INPUT ./images/phantoms/balls_whead.eps
+INPUT ./images/phantoms/bigballs_whead.eps
+INPUT ./images/phantoms/bigballs_whead.eps
+INPUT ./images/phantoms/hltau_whead.eps
+INPUT ./images/phantoms/hltau_whead.eps
 OUTPUT chapters/3-Conclusiones.aux
 INPUT chapters/3-Conclusiones.tex
 INPUT chapters/3-Conclusiones.tex

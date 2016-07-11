@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{36}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -110,6 +110,12 @@ Maréchal, P., \& Wallach, D. (2009).
   of Mathematics to Medicine.
 \newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0895717708002380}
 
+\bibitem[{McMullin(2007)}]{casa}
+McMullin, W. B. S. D. Y. W. . G.~K., J.~P. (2007).
+\newblock Astronomical data analysis software and systems xvi.
+\newblock In .~D. J.~B. R.~A.~Shaw, F.~Hill (Ed.) {\em ASP Conf. Ser.\/}, 376,
+  (p. 127). San Francisco, CA.
+
 \bibitem[{{Narayan} \& {Nityananda}(1986)}]{MEM}
 {Narayan}, R., \& {Nityananda}, R. (1986).
 \newblock {Maximum entropy image restoration in astronomy}.
@@ -136,6 +142,86 @@ Owens, J.~D., Luebke, D., Govindaraju, N., Harris, M., Krüger, J., Lefohn, A.,
 \newblock A survey of general-purpose computation on graphics hardware.
 \newblock {\em Computer Graphics Forum\/}, {\em 26\/}(1), 80--113.
 \newline\urlprefix\url{http://www.blackwell-synergy.com/doi/pdf/10.1111/j.1467-8659.2007.01012.x}
+
+\bibitem[{Partnership et~al.(2015)Partnership, Fomalont, Vlahakis, Corder,
+  Remijan, Barkats, Lucas, Hunter, Brogan, Asaki, Matsushita, Dent, Hills,
+  Phillips, Richards, Cox, Amestica, Broguiere, Cotton, Hales, Hiriart, Hirota,
+  Hodge, Impellizzeri, Kern, Kneissl, Liuzzo, Marcelino, Marson, Mignano,
+  Nakanishi, Nikolic, Perez, Pérez, Toledo, Aladro, Butler, Cortes, Cortes,
+  Dhawan, Francesco, Espada, Galarza, Garcia-Appadoo, Guzman-Ramirez,
+  Humphreys, Jung, Kameno, Laing, Leon, Mangum, Marconi, Nagai, Nyman,
+  Radiszcz, Rodón, Sawada, Takahashi, Tilanus, van Kempen, Vilaro, Watson,
+  Wiklind, Gueth, Tatematsu, Wootten, Castro-Carrizo, Chapillon, Dumas,
+  de~Gregorio-Monsalvo, Francke, Gallardo, Garcia, Gonzalez, Hibbard, Hill,
+  Kaminski, Karim, Krips, Kurono, Lopez, Martin, Maud, Morales, Pietu, Plarre,
+  Schieven, Testi, Videla, Villard, Whyborn, Zwaan, Alves, Andreani, Avison,
+  Barta, Bedosti, Bendo, Bertoldi, Bethermin, Biggs, Boissier, Brand,
+  Burkutean, Casasola, Conway, Cortese, Dabrowski, Davis, Trigo, Fontani,
+  Franco-Hernandez, Fuller, Madrid, Giannetti, Ginsburg, Graves,
+  Hatziminaoglou, Hogerheijde, Jachym, Serra, Karlicky, Klaasen, Kraus,
+  Kunneriath, Lagos, Longmore, Leurini, Maercker, Magnelli, Vidal, Massardi,
+  Maury, Muehle, Muller, Muxlow, O’Gorman, Paladino, Petry, Pineda, Randall,
+  Richer, Rossetti, Rushton, Rygl, Monge, Schaaf, Schilke, Stanke, Schmalzl,
+  Stoehr, Urban, van Kampen, Vlemmings, Wang, Wild, Yang, Iguchi, Hasegawa,
+  Saito, Inatani, Mizuno, Asayama, Kosugi, Morita, Chiba, Kawashima, Okumura,
+  Ohashi, Ogasawara, Sakamoto, Noguchi, Huang, Liu, Kemper, Koch, Chen,
+  Chikada, Hiramatsu, Iono, Shimojo, Komugi, Kim, Lyo, Muller, Herrera, Miura,
+  Ueda, Chibueze, Su, Trejo-Cruz, Wang, Kiuchi, Ukita, Sugimoto, Kawabe,
+  Hayashi, Miyama, Ho, Kaifu, Ishiguro, Beasley, Bhatnagar, III, Brisbin,
+  Brunetti, Carilli, Crossley, D’Addario, Meyer, Emerson, Evans, Fisher,
+  Golap, Griffith, Hale, Halstead, Hardy, Hatz, Holdaway, Indebetouw, Jewell,
+  Kepley, Kim, Lacy, Leroy, Liszt, Lonsdale, Matthews, McKinnon, Mason,
+  Moellenbrock, Moullet, Myers, Ott, Peck, Pisano, Radford, Randolph, Venkata,
+  Rawlings, Rosen, Schnee, Scott, Sharp, Sheth, Simon, Tsutsumi, \&
+  Wood}]{longbaselines}
+Partnership, A., Fomalont, E.~B., Vlahakis, C., Corder, S., Remijan, A.,
+  Barkats, D., Lucas, R., Hunter, T.~R., Brogan, C.~L., Asaki, Y., Matsushita,
+  S., Dent, W. R.~F., Hills, R.~E., Phillips, N., Richards, A. M.~S., Cox, P.,
+  Amestica, R., Broguiere, D., Cotton, W., Hales, A.~S., Hiriart, R., Hirota,
+  A., Hodge, J.~A., Impellizzeri, C. M.~V., Kern, J., Kneissl, R., Liuzzo, E.,
+  Marcelino, N., Marson, R., Mignano, A., Nakanishi, K., Nikolic, B., Perez,
+  J.~E., Pérez, L.~M., Toledo, I., Aladro, R., Butler, B., Cortes, J., Cortes,
+  P., Dhawan, V., Francesco, J.~D., Espada, D., Galarza, F., Garcia-Appadoo,
+  D., Guzman-Ramirez, L., Humphreys, E.~M., Jung, T., Kameno, S., Laing, R.~A.,
+  Leon, S., Mangum, J., Marconi, G., Nagai, H., Nyman, L.-A., Radiszcz, M.,
+  Rodón, J.~A., Sawada, T., Takahashi, S., Tilanus, R. P.~J., van Kempen, T.,
+  Vilaro, B.~V., Watson, L.~C., Wiklind, T., Gueth, F., Tatematsu, K., Wootten,
+  A., Castro-Carrizo, A., Chapillon, E., Dumas, G., de~Gregorio-Monsalvo, I.,
+  Francke, H., Gallardo, J., Garcia, J., Gonzalez, S., Hibbard, J.~E., Hill,
+  T., Kaminski, T., Karim, A., Krips, M., Kurono, Y., Lopez, C., Martin, S.,
+  Maud, L., Morales, F., Pietu, V., Plarre, K., Schieven, G., Testi, L.,
+  Videla, L., Villard, E., Whyborn, N., Zwaan, M.~A., Alves, F., Andreani, P.,
+  Avison, A., Barta, M., Bedosti, F., Bendo, G.~J., Bertoldi, F., Bethermin,
+  M., Biggs, A., Boissier, J., Brand, J., Burkutean, S., Casasola, V., Conway,
+  J., Cortese, L., Dabrowski, B., Davis, T.~A., Trigo, M.~D., Fontani, F.,
+  Franco-Hernandez, R., Fuller, G., Madrid, R.~G., Giannetti, A., Ginsburg, A.,
+  Graves, S.~F., Hatziminaoglou, E., Hogerheijde, M., Jachym, P., Serra, I.~J.,
+  Karlicky, M., Klaasen, P., Kraus, M., Kunneriath, D., Lagos, C., Longmore,
+  S., Leurini, S., Maercker, M., Magnelli, B., Vidal, I.~M., Massardi, M.,
+  Maury, A., Muehle, S., Muller, S., Muxlow, T., O’Gorman, E., Paladino, R.,
+  Petry, D., Pineda, J., Randall, S., Richer, J.~S., Rossetti, A., Rushton, A.,
+  Rygl, K., Monge, A.~S., Schaaf, R., Schilke, P., Stanke, T., Schmalzl, M.,
+  Stoehr, F., Urban, S., van Kampen, E., Vlemmings, W., Wang, K., Wild, W.,
+  Yang, Y., Iguchi, S., Hasegawa, T., Saito, M., Inatani, J., Mizuno, N.,
+  Asayama, S., Kosugi, G., Morita, K.-I., Chiba, K., Kawashima, S., Okumura,
+  S.~K., Ohashi, N., Ogasawara, R., Sakamoto, S., Noguchi, T., Huang, Y.-D.,
+  Liu, S.-Y., Kemper, F., Koch, P.~M., Chen, M.-T., Chikada, Y., Hiramatsu, M.,
+  Iono, D., Shimojo, M., Komugi, S., Kim, J., Lyo, A.-R., Muller, E., Herrera,
+  C., Miura, R.~E., Ueda, J., Chibueze, J., Su, Y.-N., Trejo-Cruz, A., Wang,
+  K.-S., Kiuchi, H., Ukita, N., Sugimoto, M., Kawabe, R., Hayashi, M., Miyama,
+  S., Ho, P. T.~P., Kaifu, N., Ishiguro, M., Beasley, A.~J., Bhatnagar, S.,
+  III, J. A.~B., Brisbin, D.~G., Brunetti, N., Carilli, C., Crossley, J.~H.,
+  D’Addario, L., Meyer, J. L.~D., Emerson, D.~T., Evans, A.~S., Fisher, P.,
+  Golap, K., Griffith, D.~M., Hale, A.~E., Halstead, D., Hardy, E.~J., Hatz,
+  M.~C., Holdaway, M., Indebetouw, R., Jewell, P.~R., Kepley, A.~A., Kim,
+  D.-C., Lacy, M.~D., Leroy, A.~K., Liszt, H.~S., Lonsdale, C.~J., Matthews,
+  B., McKinnon, M., Mason, B.~S., Moellenbrock, G., Moullet, A., Myers, S.~T.,
+  Ott, J., Peck, A.~B., Pisano, J., Radford, S. J.~E., Randolph, W.~T.,
+  Venkata, U.~R., Rawlings, M.~G., Rosen, R., Schnee, S.~L., Scott, K.~S.,
+  Sharp, N.~K., Sheth, K., Simon, R.~S., Tsutsumi, T., \& Wood, S.~J. (2015).
+\newblock The 2014 alma long baseline campaign: An overview.
+\newblock {\em The Astrophysical Journal Letters\/}, {\em 808\/}(1), L1.
+\newline\urlprefix\url{http://stacks.iop.org/2041-8205/808/i=1/a=L1}
 
 \bibitem[{Peck \& Beasley(2008{\natexlab{a}})}]{alma}
 Peck, A.~B., \& Beasley, A.~J. (2008{\natexlab{a}}).

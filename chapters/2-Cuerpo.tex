@@ -437,7 +437,7 @@ Sin embargo, como el número de canales de cada \textit{spectral window} es el m
 	\begin{algorithmic}[1]
 		\STATE{$j = globalId.x$}
 		\IF{$j < Z$}
-			\STATE{$\chi^{2}(j) = w(j) * (Re(V^{R}(j))^{2} + Im(V^{R}(j))^{2})$}
+			\STATE{$\chi^{2}(j) = W(j) * (Re(V^{R}(j))^{2} + Im(V^{R}(j))^{2})$}
 		\ENDIF
 	\end{algorithmic}
 	\caption{Algoritmo del kernel 1D que calcula el vector $\chi^{2}$}
@@ -465,7 +465,7 @@ Sin embargo, como el número de canales de cada \textit{spectral window} es el m
 		\STATE{$y = (i-y_{0})*\Delta y$}
 		\STATE{$\nabla \chi^{2}(i,k) = 0$}
 		\FOR{$j=0$ \TO Z}
-			\STATE{$\nabla \chi^{2}(i,k) \mathrel{+}= w(j) * [Re(V^{R}(j)) * \cos(2 \pi \langle(u(j),v(j)),(x,y)\rangle ) + Im(V^{R}(j)) * \sin(2 \pi \langle(u(j),v(j)),(x,y)\rangle)]$}
+			\STATE{$\nabla \chi^{2}(i,k) \mathrel{+}= W(j) * [Re(V^{R}(j)) * \cos(2 \pi \langle(u(j),v(j)),(x,y)\rangle ) + Im(V^{R}(j)) * \sin(2 \pi \langle(u(j),v(j)),(x,y)\rangle)]$}
 		\ENDFOR
 	\end{algorithmic}
 	\caption{Algoritmo del kernel 2D que calcula $\nabla \chi^{2}$}
@@ -479,7 +479,7 @@ Sin embargo, como el número de canales de cada \textit{spectral window} es el m
 		\STATE{$\nabla S(i,k) =  \lambda * (\log(I(i,k)/G)+1)$}
 	\end{algorithmic}
 	\caption{Algoritmo del kernel 2D que calcula el vector $\nabla S$}
-	\label{alg:S}
+	\label{alg:dS}
 \end{algorithm}
 
 \chapter{Optimización}
@@ -626,10 +626,46 @@ Además, de hacer esta comparación, se debe analizar la aceleración obtenida u
 
 \section{Caracterización de MEM}
 
-Para caracterizar el algoritmo, es decir, para comprender las propiedades de las imágenes obtenidas con el algoritmo, es necesario conocer su resolución espacial y su imagen de residuo. Se entiende por resolución a la medida en arcosegundos del objeto más pequeño que se puede distinguir en una imagen. Así, se creará una imagen con un impulso, esto es, una imagen con el pixel $(255,255)$ con un valor positivo. Luego de esto, se simulará esta imagen con set de datos que permitan señalar la distinta resolución espacial que se tiene al usar \textit{baselines} grandes y pequeños. En específico, se usarán los datos de HD142527 en banda nueve que tiene un \textit{baseline} de 400 metros aproximadamente y de HLTauri en banda tres, seis y siete que tienen un \textit{baseline} de aproximadamente 15 kilómetros, para simular la imagen de un impulso. Luego de ello, se reconstruirá cada set de datos con CLEAN y con MEM, de manera de encontrar las diferencias de resolución entre estos métodos. Para ello es necesario encontrar la anchura a media altura (FWHM) en arcosegundos del impulso reconstruido ya sea en CLEAN o en MEM.
+Para caracterizar a MEM, es decir, para comprender las propiedades de las imágenes obtenidas con este, es necesario conocer su resolución espacial y las imágenes de residuos resultantes. Se entiende por resolución a la medida en arcosegundos del objeto más pequeño que se puede distinguir en una imagen. Así, se creará una imagen con un impulso, esto es, una imagen con el pixel $(255,255)$ con un valor positivo y los demás con valor 0. Luego de esto, se simulará esta imagen con set de datos que permitan señalar la distinta resolución espacial que se tiene al usar \textit{baselines} grandes y pequeños. En específico, se usarán los datos de HD142527 en banda nueve que tiene un \textit{baseline} de 400 metros aproximadamente y de HLTauri en banda tres, seis y siete que tienen un \textit{baseline} de aproximadamente 15 kilómetros. Luego de ello, se reconstruirá cada set de datos con CLEAN y con MEM, de manera de encontrar las diferencias de resolución entre estos métodos. Para ello es necesario encontrar la anchura a media altura (FWHM) en arcosegundos del impulso reconstruido ya sea en CLEAN o en MEM.
 
-Por otro lado, la imagen de residuos da a conocer qué tan buena es la deconvolución realizada con un algoritmo, para ello la intensidad por píxel de esta imagen debe ser parecida a un ruido independiente, es decir, no debe haber una correlación entre los píxeles.
+Por otro lado, la imagen de residuos da a conocer qué tan buena es la deconvolución realizada con un algoritmo, para ello la intensidad por píxel de esta imagen debe ser parecida a un ruido independiente, es decir, no debe haber una correlación entre los píxeles. Además de esto, es importante estudiar el RMS de estas imágenes debido a que permite tomar la decisión sobre si una imagen de residuos es mejor o peor que otra. Cabe destacar, que los astrónomos se remiten a la inspección visual de las imágenes de residuos, debido a que evalúan si cierto objeto es real o no dependiendo de cuan plana se vea la imagen de residuos.
 
-Cabe destacar, que los astrónomos se remiten a la inspección visual de las imágenes de residuos. Así evalúan si cierto objeto es real o no dependiendo de cuan plana se vea la imagen de residuos.
+Para analizar estas imágenes, se reconstruyen tanto imágenes de datos reales, como de datos sintéticos. Es decir, se usa un patrón de muestreo $(u,v)$ de un set de datos conocido, específicamente HD142527 Banda 9 y HLTau Banda 6, y se cambia su valor de visibilidad real e imaginario, de manera que la imagen reconstruida es la figura sintética creada. Estas imágenes sintéticas se muestran a continuación.
+
+\begin{figure}[h!]
+\centering
+\subfloat[Círculo en el centro]{
+	\includegraphics[scale=0.4]{./images/phantoms/ball_whead.eps}
+	\label{subfig:circle}
+}~
+\subfloat[Círculos con diferentes radios]{
+	\includegraphics[scale=0.4]{./images/phantoms/balls_whead.eps}
+	\label{subfig:dcircle}
+}\\
+\subfloat[Círculos con el mismo radio]{
+	\includegraphics[scale=0.4]{./images/phantoms/bigballs_whead.eps}
+	\label{subfig:bigballs}
+}~
+\subfloat[Imagen sintética de HLTau]{
+	\includegraphics[scale=0.4]{./images/phantoms/hltau_whead.eps}
+	\label{subfig:hltau_hd142}
+}
+\label{fig:phantoms}
+\caption{Imágenes sintéticas a reconstruir}
+\end{figure}
+
+\clearpage
+
+La idea de reconstruir estas distintas figuras sintéticas tiene como fin comparar la resolución de los set de datos simulados con un \textit{baseline} pequeño con otro grande, la resolución según la posición en donde se encuentra un objeto y su tamaño, y verificar que el algoritmo funciona si es que existiese un error en los datos en el valor de las visibilidades.
+
+
+
+\section{Efecto de baselines de gran longitud en las imágenes}
+
+ALMA tuvo una campaña de grandes baselines entre Septiembre y Diciembre de 2014, en ella se quiso probar y verificar el poder de separación usando antenas con un máximo de separación de 15 km. En esta se alcanzó una resolución espectral mayor a 0.025 arcosegundos revelando detalles finos de cuerpos que nunca habían sido vistos antes \citep{longbaselines}.
+
+Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos de HLTau Banda 6 y sólo la \textit{spectral window} 0, y luego se crean distintos set de datos incrementando el baseline de 400 metros hasta 15 km., permitiendo estudiar cómo mejora la resolución de la imagen a medida que se incrementa la longitud de los \textit{baselines}.
+
+
 \chapter{Resultados}
 \label{cap:resultados}

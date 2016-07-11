@@ -13,48 +13,104 @@ A level-1 auxiliary file: anexos/Anexo-1.aux
 Database file #1: bibliografia.bib
 Warning--entry type for "howalma" isn't style-file defined
 --line 17 of file bibliografia.bib
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1401 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
+Too many commas in name 1 of "McMullin, J. P., Waters, B., Schiebel, D., Young, W., & Golap, K." for entry casa
+while executing---line 1474 of file apa-good.bst
 Warning--there's a number but no volume in pablo
 Warning--there's a number but no volume in skilling1984
 Warning--can't use both author and editor fields in skilling1991
-You've used 34 entries,
+You've used 36 entries,
             2804 wiz_defined-function locations,
-            831 strings with 10914 characters,
-and the built_in function-call counts, 19194 in all, are:
-= -- 1536
-> -- 697
-< -- 34
-+ -- 268
-- -- 227
-* -- 1463
-:= -- 2972
-add.period$ -- 107
-call.type$ -- 34
-change.case$ -- 248
-chr.to.int$ -- 33
-cite$ -- 37
-duplicate$ -- 1429
-empty$ -- 1491
-format.name$ -- 334
-if$ -- 3761
+            846 strings with 15158 characters,
+and the built_in function-call counts, 33400 in all, are:
+= -- 2119
+> -- 2706
+< -- 36
++ -- 1023
+- -- 978
+* -- 3023
+:= -- 5366
+add.period$ -- 114
+call.type$ -- 36
+change.case$ -- 512
+chr.to.int$ -- 35
+cite$ -- 39
+duplicate$ -- 2017
+empty$ -- 1828
+format.name$ -- 1089
+if$ -- 6208
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 308
-newline$ -- 197
-num.names$ -- 139
-pop$ -- 557
+missing$ -- 573
+newline$ -- 208
+num.names$ -- 149
+pop$ -- 1081
 preamble$ -- 1
-purify$ -- 211
+purify$ -- 469
 quote$ -- 0
-skip$ -- 514
+skip$ -- 552
 stack$ -- 0
-substring$ -- 908
-swap$ -- 788
-text.length$ -- 6
+substring$ -- 944
+swap$ -- 1337
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 282
+type$ -- 300
 warning$ -- 3
-while$ -- 138
+while$ -- 147
 width$ -- 0
-write$ -- 468
-(There were 4 warnings)
+write$ -- 497
+(There were 28 error messages)
