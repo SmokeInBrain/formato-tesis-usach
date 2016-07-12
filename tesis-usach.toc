@@ -34,11 +34,11 @@
 \contentsline {section}{\numberline {5.1}Benchmarks}{33}{section.5.1}
 \contentsline {section}{\numberline {5.2}Caracterización de MEM}{33}{section.5.2}
 \contentsline {section}{\numberline {5.3}Efecto de baselines de gran longitud en las imágenes}{37}{section.5.3}
-\contentsline {chapter}{\numberline {6}Resultados}{38}{chapter.6}
-\contentsline {section}{\numberline {6.1}Benchmarks}{38}{section.6.1}
-\contentsline {section}{\numberline {6.2}Caracterización de MEM}{38}{section.6.2}
-\contentsline {section}{\numberline {6.3}Efecto de baselines de gran longitud en las imágenes}{38}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusiones}{39}{chapter.7}
-\contentsline {chapter}{Referencias bibliogr\'aficas}{42}{chapter*.26}
-\contentsline {chapter}{Anexos}{42}{section*.27}
-\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{43}{appendix.A}
+\contentsline {chapter}{\numberline {6}Resultados}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Benchmarks}{39}{section.6.1}
+\contentsline {section}{\numberline {6.2}Caracterización de MEM}{39}{section.6.2}
+\contentsline {section}{\numberline {6.3}Efecto de baselines de gran longitud en las imágenes}{39}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusiones}{40}{chapter.7}
+\contentsline {chapter}{Referencias bibliogr\'aficas}{43}{chapter*.28}
+\contentsline {chapter}{Anexos}{43}{section*.29}
+\contentsline {chapter}{\numberline {A}Cálculo del gradiente de la función objetivo}{44}{appendix.A}

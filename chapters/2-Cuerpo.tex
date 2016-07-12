@@ -680,7 +680,23 @@ Para analizar estas imágenes, se reconstruyen tanto imágenes de datos reales, 
 \caption{Imágenes sintéticas a reconstruir con los datos de HLTau Banda 6}
 \end{figure}
 
-Es necesario recalcar que para reconstruir imágenes de distintos set de datos, estos deben ser construidos con la escala de intensidad y el tamaño del píxel de la imagen resultante de estos.
+Es necesario recalcar que para construir los set de datos de las imágenes a ser simuladas, estas deben tener la  escala de intensidad y el tamaño del píxel de la imagen resultante de los conjuntos de datos originales. En la Figura \ref{fig:result_simu} se presentan las imágenes MEM resultantes de HD142527 Banda 9 y de HLTau Banda 6.
+
+\begin{figure}[h!]
+\centering
+\subfloat[HD142527 Banda 9]{
+	\includegraphics[scale=0.3]{./images/to_simulate/hd_142.eps}
+	\label{subfig:circle_hltau}
+}\hspace*{0.0cm}
+\subfloat[HLTau Banda 6]{
+	\includegraphics[scale=0.3]{./images/to_simulate/hltau_tosimulate.eps}
+	\label{subfig:dcircle_hltau}
+}
+\label{fig:result_simu}
+\caption{Imágenes MEM resultantes usadas para simular las imágenes sintéticas}
+\end{figure}
+
+Para ello, es posible copiar el header de una imagen a otra usando Python o PERL, copiando así datos como el número de píxeles, las coordenadas astrométricas, el tamaño del píxel en la coordenada $x$ y en la coordenada $y$, entre otros.
 
 Por otro lado, la idea de reconstruir estas distintas figuras sintéticas tiene como fin comparar la resolución de los set de datos simulados con un \textit{baseline} pequeño con otro grande, la resolución según la posición en donde se encuentra un objeto y su tamaño, y verificar que el algoritmo funciona si es que existiese un error en los datos en el valor de las visibilidades.
 
@@ -690,9 +706,16 @@ Por otro lado, la idea de reconstruir estas distintas figuras sintéticas tiene 
 
 ALMA tuvo una campaña de grandes baselines entre Septiembre y Diciembre de 2014, en ella se quiso probar y verificar el poder de separación usando antenas con un máximo de separación de 15 km. En esta se alcanzó una resolución espectral mayor a 0.025 arcosegundos revelando detalles finos de cuerpos que nunca habían sido vistos antes \citep{longbaselines}.
 
-Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos de HLTau Banda 6 y sólo la \textit{spectral window} 0, y luego se crean distintos set de datos incrementando el baseline de 400 metros hasta 15 km., permitiendo estudiar cómo mejora la resolución de la imagen a medida que se incrementa la longitud de los \textit{baselines}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.0]{./images/subsampling/graph.eps}
+\caption{Coordenadas $(u,v)$ de HLTau Banda 6 y radios de reconstrucción}
+\label{fig:uv_radios}
+\end{figure}
 
-Esto se explica de mejor forma en la Figura X.X:
+En la Figura \ref{fig:uv_radios}, se aprecian las coordenadas $(u,v)$ en metros de HLTau Banda 6, y además se observan círculos con radios definidos respecto a la longitud de los \textit{baselines}. Es decir, se crean distintos conjuntos de datos en donde las coordenadas $u$ y $v$ sean menores que los radios definidos. Cabe destacar que un par de antenas forma una coordenada $(u,v)$ y sus valores de visibilidad. Por lo tanto, los puntos del centro son producidos por \textit{baselines} pequeños o antenas separadas por una corta distancia. En cambio, a medida que aumenta el radio, la separación de las antenas aumenta.
+
+Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos mencionado anteriormente y sólo la \textit{spectral window} 0, luego se crean distintos set de datos incrementando el radio de 400 metros a 1000 metros con saltos de 200 metros, y luego de 1000 metros hasta 16 km. con saltos de 1 km.
 
 
 \chapter{Resultados}
