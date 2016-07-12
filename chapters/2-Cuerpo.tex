@@ -489,7 +489,7 @@ En este capítulo se aborda el uso de método de gradiente conjugado para la min
 
 \section{Métodos de gradiente conjugado en múltiples dimensiones}
 
-Los dos métodos de gradiente conjugado más importantes son el método de Fletcher-Reeves y el método de Polak-Ribiere. Estos métodos están relacionados puesto que sólo un paso de su algoritmo los diferencia. Estos algoritmos convergen al mínimo de una función en un número finito de iteraciones. Para ello, se localiza el intervalo donde se encuentra el mínimo, y luego éste se reduce.
+Los dos métodos de gradiente conjugado más importantes son el método de Fletcher-Reeves y el método de Polak-Ribiere. Estos métodos están relacionados puesto que sólo un paso de su algoritmo los diferencia. Estos algoritmos convergen al mínimo de una función en un número finito de iteraciones, para ello se localiza el intervalo donde se encuentra el mínimo, y luego se reduce.
 
 \begin{algorithm}
 	\begin{algorithmic}[1]
@@ -635,28 +635,54 @@ Para analizar estas imágenes, se reconstruyen tanto imágenes de datos reales, 
 \begin{figure}[h!]
 \centering
 \subfloat[Círculo en el centro]{
-	\includegraphics[scale=0.4]{./images/phantoms/ball_whead.eps}
+	\includegraphics[scale=0.45]{./images/phantoms/ball_whead.eps}
 	\label{subfig:circle}
-}~
+}\hspace*{0.0cm}
 \subfloat[Círculos con diferentes radios]{
-	\includegraphics[scale=0.4]{./images/phantoms/balls_whead.eps}
+	\includegraphics[scale=0.45]{./images/phantoms/balls_whead.eps}
 	\label{subfig:dcircle}
-}\\
+}
+
 \subfloat[Círculos con el mismo radio]{
-	\includegraphics[scale=0.4]{./images/phantoms/bigballs_whead.eps}
+	\includegraphics[scale=0.45]{./images/phantoms/bigballs_whead.eps}
 	\label{subfig:bigballs}
-}~
+}\hspace*{0.0cm}
 \subfloat[Imagen sintética de HLTau]{
-	\includegraphics[scale=0.4]{./images/phantoms/hltau_whead.eps}
+	\includegraphics[scale=0.45]{./images/phantoms/hltau_whead.eps}
 	\label{subfig:hltau_hd142}
 }
 \label{fig:phantoms}
-\caption{Imágenes sintéticas a reconstruir}
+\caption{Imágenes sintéticas a reconstruir con los datos de HD142527 Banda 9}
 \end{figure}
 
 \clearpage
 
-La idea de reconstruir estas distintas figuras sintéticas tiene como fin comparar la resolución de los set de datos simulados con un \textit{baseline} pequeño con otro grande, la resolución según la posición en donde se encuentra un objeto y su tamaño, y verificar que el algoritmo funciona si es que existiese un error en los datos en el valor de las visibilidades.
+\begin{figure}[h!]
+\centering
+\subfloat[Círculo en el centro]{
+	\includegraphics[scale=0.45]{./images/phantoms/ball_HLTau.eps}
+	\label{subfig:circle_hltau}
+}\hspace*{0.0cm}
+\subfloat[Círculos con diferentes radios]{
+	\includegraphics[scale=0.45]{./images/phantoms/balls_whead_HLTau.eps}
+	\label{subfig:dcircle_hltau}
+}
+
+\subfloat[Círculos con el mismo radio]{
+	\includegraphics[scale=0.45]{./images/phantoms/balls_same_HLTau.eps}
+	\label{subfig:bigballs_hltau}
+}\hspace*{0.0cm}
+\subfloat[Imagen sintética de HLTau]{
+	\includegraphics[scale=0.45]{./images/phantoms/hltau5_whead.eps}
+	\label{subfig:hltau_hltau}
+}
+\label{fig:phantoms2}
+\caption{Imágenes sintéticas a reconstruir con los datos de HLTau Banda 6}
+\end{figure}
+
+Es necesario recalcar que para reconstruir imágenes de distintos set de datos, estos deben ser construidos con la escala de intensidad y el tamaño del píxel de la imagen resultante de estos.
+
+Por otro lado, la idea de reconstruir estas distintas figuras sintéticas tiene como fin comparar la resolución de los set de datos simulados con un \textit{baseline} pequeño con otro grande, la resolución según la posición en donde se encuentra un objeto y su tamaño, y verificar que el algoritmo funciona si es que existiese un error en los datos en el valor de las visibilidades.
 
 
 
@@ -666,6 +692,14 @@ ALMA tuvo una campaña de grandes baselines entre Septiembre y Diciembre de 2014
 
 Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos de HLTau Banda 6 y sólo la \textit{spectral window} 0, y luego se crean distintos set de datos incrementando el baseline de 400 metros hasta 15 km., permitiendo estudiar cómo mejora la resolución de la imagen a medida que se incrementa la longitud de los \textit{baselines}.
 
+Esto se explica de mejor forma en la Figura X.X:
+
 
 \chapter{Resultados}
 \label{cap:resultados}
+
+En este capítulo se dan a conocer los resultados obtenidos con la versión GPU del método de máxima entropía. En una primera parte de dan a conocer los resultados de el tiempo de cómputo comparado con su versión multi-hebra. En las siguientes secciones de dan a conocer los resultados que permiten caracterizar el algoritmo.
+
+\section{Benchmarks}
+\section{Caracterización de MEM}
+\section{Efecto de baselines de gran longitud en las imágenes}
