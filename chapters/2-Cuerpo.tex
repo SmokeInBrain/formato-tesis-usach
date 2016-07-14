@@ -188,22 +188,19 @@ Por otro lado, cada antena contiene un receptor (también llamado \textit{Front-
 
 \begin{table}[h!]
 	\centering
-	\ra{1.2}
-	\begin{tabular}{@{}rcrrcr@{}}
-		\toprule
-		\multicolumn{1}{c}{{\bf Banda}} & \phantom{a} & \multicolumn{2}{c}{{\bf Rango de frecuencia (GHz)}}  & \multicolumn{1}{c}{{\bf Temperatura (K)}} \\
-		\midrule
-		1  &   & 31 - 45   &   & 26  \\
-		2  &   & 67 - 90   &   & 47  \\
-		3  &   & 84 - 116  &   & 60  \\
-		4  &   & 125 - 163 &   & 82  \\
-		5  &   & 162 - 211 &   & 105 \\
-		6  &   & 211 - 275 &   & 136 \\
-		7  &   & 275 - 373 &   & 219 \\
-		8  &   & 385 - 500 &   & 292 \\
-		9  &   & 602 - 720 &   & 261 \\
-		10 &   & 787 - 950 &   & 344 \\
-		\toprule
+	\begin{tabular}{@{}lll@{}}
+	\toprule
+	Banda & Rango de frecuencia (GHz) & Temperatura (K) \\ \midrule
+	1     & 31 - 45                   & 26              \\
+	2     & 67 - 90                   & 47              \\
+	3     & 84 - 116                  & 60              \\
+	4     & 125 - 163                 & 82              \\
+	5     & 162 - 211                 & 105             \\
+	6     & 211 - 275                 & 136             \\
+	7     & 275 - 373                 & 219             \\
+	8     & 385 - 500                 & 292             \\
+	9     & 602 - 720                 & 261             \\
+	10    & 787 - 950                 & 344             \\ \bottomrule
 	\end{tabular}
 	\caption{Las 10 Bandas de frecuencia de ALMA}
 	\label{tab:bands}
@@ -725,4 +722,272 @@ En este capítulo se dan a conocer los resultados obtenidos con la versión GPU 
 
 \section{Benchmarks}
 \section{Caracterización de MEM}
-\section{Efecto de baselines de gran longitud en las imágenes}
+\section{Efecto de grandes baselines en las imágenes}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_400m.eps}
+	\label{subfig:subsampling_mod_400}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_400m.eps}
+	\label{subfig:subsampling_res_400}
+}
+\label{fig:subsampling_400}
+\caption{400 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_600m.eps}
+	\label{subfig:subsampling_mod_600}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_600m.eps}
+	\label{subfig:subsampling_res_600}
+}
+\label{fig:subsampling_600}
+\caption{600 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_800m.eps}
+	\label{subfig:subsampling_mod_800}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_800m.eps}
+	\label{subfig:subsampling_res_800}
+}
+\label{fig:subsampling_800}
+\caption{800 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_1000m.eps}
+	\label{subfig:subsampling_mod_1000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_1000m.eps}
+	\label{subfig:subsampling_res_1000}
+}
+\label{fig:subsampling_1000}
+\caption{1000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_2000m.eps}
+	\label{subfig:subsampling_mod_2000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_2000m.eps}
+	\label{subfig:subsampling_res_2000}
+}
+\label{fig:subsampling_2000}
+\caption{2000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_3000m.eps}
+	\label{subfig:subsampling_mod_3000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_3000m.eps}
+	\label{subfig:subsampling_res_3000}
+}
+\label{fig:subsampling_3000}
+\caption{3000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_4000m.eps}
+	\label{subfig:subsampling_mod_4000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_4000m.eps}
+	\label{subfig:subsampling_res_4000}
+}
+\label{fig:subsampling_4000}
+\caption{4000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_5000m.eps}
+	\label{subfig:subsampling_mod_5000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_5000m.eps}
+	\label{subfig:subsampling_res_5000}
+}
+\label{fig:subsampling_5000}
+\caption{5000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_6000m.eps}
+	\label{subfig:subsampling_mod_6000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_6000m.eps}
+	\label{subfig:subsampling_res_6000}
+}
+\label{fig:subsampling_6000}
+\caption{6000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_7000m.eps}
+	\label{subfig:subsampling_mod_7000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_7000m.eps}
+	\label{subfig:subsampling_res_7000}
+}
+\label{fig:subsampling_7000}
+\caption{7000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_8000m.eps}
+	\label{subfig:subsampling_mod_8000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_8000m.eps}
+	\label{subfig:subsampling_res_8000}
+}
+\label{fig:subsampling_8000}
+\caption{8000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_9000m.eps}
+	\label{subfig:subsampling_mod_9000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_9000m.eps}
+	\label{subfig:subsampling_res_9000}
+}
+\label{fig:subsampling_9000}
+\caption{9000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_10000m.eps}
+	\label{subfig:subsampling_mod_10000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_10000m.eps}
+	\label{subfig:subsampling_res_10000}
+}
+\label{fig:subsampling_10000}
+\caption{10000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_11000m.eps}
+	\label{subfig:subsampling_mod_11000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_11000m.eps}
+	\label{subfig:subsampling_res_11000}
+}
+\label{fig:subsampling_11000}
+\caption{11000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_12000m.eps}
+	\label{subfig:subsampling_mod_12000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_12000m.eps}
+	\label{subfig:subsampling_res_12000}
+}
+\label{fig:subsampling_12000}
+\caption{12000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_13000m.eps}
+	\label{subfig:subsampling_mod_13000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_13000m.eps}
+	\label{subfig:subsampling_res_13000}
+}
+\label{fig:subsampling_13000}
+\caption{13000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_14000m.eps}
+	\label{subfig:subsampling_mod_14000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_14000m.eps}
+	\label{subfig:subsampling_res_13000}
+}
+\label{fig:subsampling_14000}
+\caption{14000 metros}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_15000m.eps}
+	\label{subfig:subsampling_mod_15000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_15000m.eps}
+	\label{subfig:subsampling_res_15000}
+}
+\label{fig:subsampling_15000}
+\caption{15000 metros}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_16000m.eps}
+	\label{subfig:subsampling_mod_16000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_16000m.eps}
+	\label{subfig:subsampling_res_16000}
+}
+\label{fig:subsampling_16000}
+\caption{16000 metros}
+\end{figure}
