@@ -5,9 +5,11 @@ A level-1 auxiliary file: preliminares/cubierta.aux
 A level-1 auxiliary file: preliminares/dedicatoria.aux
 A level-1 auxiliary file: preliminares/agradecimiento.aux
 A level-1 auxiliary file: preliminares/abstract.aux
-A level-1 auxiliary file: chapters/1-Introduccion.aux
-A level-1 auxiliary file: chapters/2-Cuerpo.aux
-A level-1 auxiliary file: chapters/3-Conclusiones.aux
+A level-1 auxiliary file: chapters/introduccion.aux
+A level-1 auxiliary file: chapters/ALMA.aux
+A level-1 auxiliary file: chapters/multigpu.aux
+A level-1 auxiliary file: chapters/pruebas.aux
+A level-1 auxiliary file: chapters/conclusiones.aux
 The style file: apa-good.bst
 A level-1 auxiliary file: anexos/Anexo-1.aux
 Database file #1: bibliografia.bib
@@ -74,7 +76,7 @@ Warning--there's a number but no volume in skilling1984
 Warning--can't use both author and editor fields in skilling1991
 You've used 36 entries,
             2804 wiz_defined-function locations,
-            846 strings with 15158 characters,
+            848 strings with 15191 characters,
 and the built_in function-call counts, 33400 in all, are:
 = -- 2119
 > -- 2706

@@ -1,0 +1,431 @@
+% !TEX root = ./../tesis-usach.tex
+% !TEX program = xelatex
+% !BIB program = bibtex
+\chapter{Pruebas}
+\label{cap:pruebas}
+
+Para validar la solución se hace necesario enfocar las pruebas en dos aspectos del algoritmo implementado. Por un lado, se tienen las pruebas de aceleración, es decir, saber cuánto más rápido es MEM implementado en GPU, comparado con la solución \textit{multi-thread}. Por otra parte, se tienen las pruebas de caracterización que consisten en encontrar distintas características del algoritmo, tales como la resolución, nivel de ruido, entre otras.
+
+A continuación, se presentarán con más detalle cada uno de estos aspectos.
+
+\section{Benchmarks}
+Según lo visto, el cálculo de $\Phi$ y $\nabla \Phi$ dependen tanto del número de visibilidades que se tengan en el set de datos como del número de píxeles de la imagen a reconstruir. Es por ello que para ver cuánto más rápido es el algoritmo es necesario escalar en ambas variables y comparar los resultados obtenidos con la solución multihebreada de MEM. Cabe destacar, que la solución no es una traducción de un código multihebra a un código GPU, sino un código completamente nuevo. Esto debido a que existen operaciones como suma y multiplicaciones de matrices que son posible paralelizar en GPU, además de la transformada de Fourier de CUDA \citep{cudafft} que a diferencia de la transformada de Fourier de \citep{numericalrecipes} que utiliza \texttt{uvmem} multi-hebra toma ésta con signo negativo, y por lo tanto, el cálculo del gradiente cambia.
+
+Debido a que existen en los códigos GPU y multi-hebra, la forma más justa de comparar el rendimiento de cada solución según la carga es comparando el tiempo promedio por iteración de cada una. Esto debido a que podría darse el caso en que éstas no converjan en la misma iteración, siendo injusto el comparar el tiempo total de ejecución.
+
+Además, de hacer esta comparación, se debe analizar la aceleración obtenida usando múltiples GPU. Para ello, se harán pruebas con set de datos que contengan más de un canal y así comparar los speed-ups entre la solución multihebra, con una GPU y con múltiples GPU.
+
+\section{Caracterización de MEM}
+
+Para caracterizar a MEM, es decir, para comprender las propiedades de las imágenes obtenidas con este, es necesario conocer su resolución espacial y las imágenes de residuos resultantes. Se entiende por resolución a la medida en arcosegundos del objeto más pequeño que se puede distinguir en una imagen. Así, se creará una imagen con un impulso, esto es, una imagen con el pixel $(255,255)$ con un valor positivo y los demás con valor 0. Luego de esto, se simulará esta imagen con set de datos que permitan señalar la distinta resolución espacial que se tiene al usar \textit{baselines} grandes y pequeños. En específico, se usarán los datos de HD142527 en banda nueve que tiene un \textit{baseline} de 400 metros aproximadamente y de HLTauri en banda tres, seis y siete que tienen un \textit{baseline} de aproximadamente 15 kilómetros. Luego de ello, se reconstruirá cada set de datos con CLEAN y con MEM, de manera de encontrar las diferencias de resolución entre estos métodos. Para ello es necesario encontrar la anchura a media altura (FWHM) en arcosegundos del impulso reconstruido ya sea en CLEAN o en MEM.
+
+Por otro lado, la imagen de residuos da a conocer qué tan buena es la deconvolución realizada con un algoritmo, para ello la intensidad por píxel de esta imagen debe ser parecida a un ruido independiente, es decir, no debe haber una correlación entre los píxeles. Además de esto, es importante estudiar el RMS de estas imágenes debido a que permite tomar la decisión sobre si una imagen de residuos es mejor o peor que otra. Cabe destacar, que los astrónomos se remiten a la inspección visual de las imágenes de residuos, debido a que evalúan si cierto objeto es real o no dependiendo de cuan plana se vea la imagen de residuos.
+
+Para analizar estas imágenes, se reconstruyen tanto imágenes de datos reales, como de datos sintéticos. Es decir, se usa un patrón de muestreo $(u,v)$ de un set de datos conocido, específicamente HD142527 Banda 9 y HLTau Banda 6, y se cambia su valor de visibilidad real e imaginario, de manera que la imagen reconstruida es la figura sintética creada. Estas imágenes sintéticas se muestran a continuación.
+
+\begin{figure}[h!]
+\centering
+\subfloat[Círculo en el centro]{
+	\includegraphics[scale=0.45]{./images/phantoms/ball_whead.eps}
+	\label{subfig:circle}
+}\hspace*{0.0cm}
+\subfloat[Círculos con diferentes radios]{
+	\includegraphics[scale=0.45]{./images/phantoms/balls_whead.eps}
+	\label{subfig:dcircle}
+}
+
+\subfloat[Círculos con el mismo radio]{
+	\includegraphics[scale=0.45]{./images/phantoms/bigballs_whead.eps}
+	\label{subfig:bigballs}
+}\hspace*{0.0cm}
+\subfloat[Imagen sintética de HLTau]{
+	\includegraphics[scale=0.45]{./images/phantoms/hltau_whead.eps}
+	\label{subfig:hltau_hd142}
+}
+\label{fig:phantoms}
+\caption{Imágenes sintéticas a reconstruir con los datos de HD142527 Banda 9}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h!]
+\centering
+\subfloat[Círculo en el centro]{
+	\includegraphics[scale=0.45]{./images/phantoms/ball_HLTau.eps}
+	\label{subfig:circle_hltau}
+}\hspace*{0.0cm}
+\subfloat[Círculos con diferentes radios]{
+	\includegraphics[scale=0.45]{./images/phantoms/balls_whead_HLTau.eps}
+	\label{subfig:dcircle_hltau}
+}
+
+\subfloat[Círculos con el mismo radio]{
+	\includegraphics[scale=0.45]{./images/phantoms/balls_same_HLTau.eps}
+	\label{subfig:bigballs_hltau}
+}\hspace*{0.0cm}
+\subfloat[Imagen sintética de HLTau]{
+	\includegraphics[scale=0.45]{./images/phantoms/hltau5_whead.eps}
+	\label{subfig:hltau_hltau}
+}
+\label{fig:phantoms2}
+\caption{Imágenes sintéticas a reconstruir con los datos de HLTau Banda 6}
+\end{figure}
+
+Es necesario recalcar que para construir los set de datos de las imágenes a ser simuladas, estas deben tener la  escala de intensidad y el tamaño del píxel de la imagen resultante de los conjuntos de datos originales. En la Figura \ref{fig:result_simu} se presentan las imágenes MEM resultantes de HD142527 Banda 9 y de HLTau Banda 6.
+
+\begin{figure}[h!]
+\centering
+\subfloat[HD142527 Banda 9]{
+	\includegraphics[scale=0.3]{./images/to_simulate/hd_142.eps}
+	\label{subfig:circle_hltau}
+}\hspace*{0.0cm}
+\subfloat[HLTau Banda 6]{
+	\includegraphics[scale=0.3]{./images/to_simulate/hltau_tosimulate.eps}
+	\label{subfig:dcircle_hltau}
+}
+\label{fig:result_simu}
+\caption{Imágenes MEM resultantes usadas para simular las imágenes sintéticas}
+\end{figure}
+
+Para ello, es posible copiar el header de una imagen a otra usando Python o PERL, copiando así datos como el número de píxeles, las coordenadas astrométricas, el tamaño del píxel en la coordenada $x$ y en la coordenada $y$, entre otros.
+
+Por otro lado, la idea de reconstruir estas distintas figuras sintéticas tiene como fin comparar la resolución de los set de datos simulados con un \textit{baseline} pequeño con otro grande, la resolución según la posición en donde se encuentra un objeto y su tamaño, y verificar que el algoritmo funciona si es que existiese un error en los datos en el valor de las visibilidades.
+
+
+
+\section{Efecto de baselines de gran longitud en las imágenes}
+
+ALMA tuvo una campaña de grandes baselines entre Septiembre y Diciembre de 2014, en ella se quiso probar y verificar el poder de separación usando antenas con un máximo de separación de 15 km. En esta se alcanzó una resolución espectral mayor a 0.025 arcosegundos revelando detalles finos de cuerpos que nunca habían sido vistos antes \citep{longbaselines}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.0]{./images/subsampling/graph.eps}
+\caption{Coordenadas $(u,v)$ de HLTau Banda 6 y radios de reconstrucción}
+\label{fig:uv_radios}
+\end{figure}
+
+En la Figura \ref{fig:uv_radios}, se aprecian las coordenadas $(u,v)$ en metros de HLTau Banda 6, y además se observan círculos con radios definidos respecto a la longitud de los \textit{baselines}. Es decir, se crean distintos conjuntos de datos en donde las coordenadas $u$ y $v$ sean menores que los radios definidos. Cabe destacar que un par de antenas forma una coordenada $(u,v)$ y sus valores de visibilidad. Por lo tanto, los puntos del centro son producidos por \textit{baselines} pequeños o antenas separadas por una corta distancia. En cambio, a medida que aumenta el radio, la separación de las antenas aumenta.
+
+Por otra parte, CASA \citep{casa} es un software que permite realizar distintos pre-procesamientos y procesamientos en los set de datos. En este caso, se usó el set de datos mencionado anteriormente y sólo la \textit{spectral window} 0, luego se crean distintos set de datos incrementando el radio de 400 metros a 1000 metros con saltos de 200 metros, y luego de 1000 metros hasta 16 km. con saltos de 1 km.
+
+
+\chapter{Resultados}
+\label{cap:resultados}
+
+En este capítulo se dan a conocer los resultados obtenidos con la versión GPU del método de máxima entropía. En una primera parte de dan a conocer los resultados de el tiempo de cómputo comparado con su versión multi-hebra. En las siguientes secciones de dan a conocer los resultados que permiten caracterizar el algoritmo.
+
+\section{Benchmarks}
+
+\begin{table}[h!]
+\centering
+\caption{Tiempo promedio por iteración CPU}
+\label{tab:time_cpu}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+ & 256x256 & 512x512 & 1024x1024 & 2048x2048 & 4096x4096 \\ \midrule
+69.092 &  14,223 &  56,431 &  114,715 &  236,063 &  \\
+107.494 &  20,050 & 62,408 &  268,168 &  411,880 &  528,949\\
+835.360 &  &  &  &  &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Tiempo promedio por iteración GPU}
+\label{tab:time_gpu}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+ & 256x256 & 512x512 & 1024x1024 & 2048x2048 & 4096x4096 \\ \midrule
+69.092 & 0,351 &  0,951&  1,716&  2,053&  3,452\\
+107.494 &  0,428&  1,252&  4,698&  6,626&  8,011\\
+835.360 & X &  9,254&  36,221&  143,536&  591,502\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Speedup}
+\label{tab:speedup}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+ & 256x256 & 512x512 & 1024x1024 & 2048x2048 & 4096x4096 \\ \midrule
+69.092 & 40,53 &  59,34 &  66,87 &  114,96 &  \\
+107.494 &  46,78 &  49,85 &  57,08 &  62,160 &  65,69 \\
+835.360 & X & 59,88 &  &  &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+\section{Caracterización de MEM}
+\section{Efecto de grandes baselines en las imágenes}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_400m.eps}
+	\label{subfig:subsampling_mod_400}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_400m.eps}
+	\label{subfig:subsampling_res_400}
+}
+\label{fig:subsampling_400}
+\caption{400 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_600m.eps}
+	\label{subfig:subsampling_mod_600}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_600m.eps}
+	\label{subfig:subsampling_res_600}
+}
+\label{fig:subsampling_600}
+\caption{600 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_800m.eps}
+	\label{subfig:subsampling_mod_800}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_800m.eps}
+	\label{subfig:subsampling_res_800}
+}
+\label{fig:subsampling_800}
+\caption{800 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_1000m.eps}
+	\label{subfig:subsampling_mod_1000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_1000m.eps}
+	\label{subfig:subsampling_res_1000}
+}
+\label{fig:subsampling_1000}
+\caption{1000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_2000m.eps}
+	\label{subfig:subsampling_mod_2000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_2000m.eps}
+	\label{subfig:subsampling_res_2000}
+}
+\label{fig:subsampling_2000}
+\caption{2000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_3000m.eps}
+	\label{subfig:subsampling_mod_3000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_3000m.eps}
+	\label{subfig:subsampling_res_3000}
+}
+\label{fig:subsampling_3000}
+\caption{3000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_4000m.eps}
+	\label{subfig:subsampling_mod_4000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_4000m.eps}
+	\label{subfig:subsampling_res_4000}
+}
+\label{fig:subsampling_4000}
+\caption{4000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_5000m.eps}
+	\label{subfig:subsampling_mod_5000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_5000m.eps}
+	\label{subfig:subsampling_res_5000}
+}
+\label{fig:subsampling_5000}
+\caption{5000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_6000m.eps}
+	\label{subfig:subsampling_mod_6000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_6000m.eps}
+	\label{subfig:subsampling_res_6000}
+}
+\label{fig:subsampling_6000}
+\caption{6000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_7000m.eps}
+	\label{subfig:subsampling_mod_7000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_7000m.eps}
+	\label{subfig:subsampling_res_7000}
+}
+\label{fig:subsampling_7000}
+\caption{7000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_8000m.eps}
+	\label{subfig:subsampling_mod_8000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_8000m.eps}
+	\label{subfig:subsampling_res_8000}
+}
+\label{fig:subsampling_8000}
+\caption{8000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_9000m.eps}
+	\label{subfig:subsampling_mod_9000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_9000m.eps}
+	\label{subfig:subsampling_res_9000}
+}
+\label{fig:subsampling_9000}
+\caption{9000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_10000m.eps}
+	\label{subfig:subsampling_mod_10000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_10000m.eps}
+	\label{subfig:subsampling_res_10000}
+}
+\label{fig:subsampling_10000}
+\caption{10000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_11000m.eps}
+	\label{subfig:subsampling_mod_11000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_11000m.eps}
+	\label{subfig:subsampling_res_11000}
+}
+\label{fig:subsampling_11000}
+\caption{11000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_12000m.eps}
+	\label{subfig:subsampling_mod_12000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_12000m.eps}
+	\label{subfig:subsampling_res_12000}
+}
+\label{fig:subsampling_12000}
+\caption{12000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_13000m.eps}
+	\label{subfig:subsampling_mod_13000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_13000m.eps}
+	\label{subfig:subsampling_res_13000}
+}
+\label{fig:subsampling_13000}
+\caption{13000 metros}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_14000m.eps}
+	\label{subfig:subsampling_mod_14000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_14000m.eps}
+	\label{subfig:subsampling_res_13000}
+}
+\label{fig:subsampling_14000}
+\caption{14000 metros}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_15000m.eps}
+	\label{subfig:subsampling_mod_15000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_15000m.eps}
+	\label{subfig:subsampling_res_15000}
+}
+\label{fig:subsampling_15000}
+\caption{15000 metros}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\subfloat[Imagen modelo]{
+	\includegraphics[scale=0.3]{./images/subsampling/models/mod_out_16000m.eps}
+	\label{subfig:subsampling_mod_16000}
+}\hspace*{0.0cm}
+\subfloat[Imagen de residuos]{
+	\includegraphics[scale=0.3]{./images/subsampling/residuals/residuals_16000m.eps}
+	\label{subfig:subsampling_res_16000}
+}
+\label{fig:subsampling_16000}
+\caption{16000 metros}
+\end{figure}
